@@ -1,17 +1,14 @@
 import React, { useEffect } from 'react'
-import axios from 'axios';
+import axios from 'axios'
 import logo from './logo.svg'
 import './App.css'
-import { URL } from './constants/config';
+import { URL } from './constants/config'
 
 function App() {
-
     useEffect(() => {
-        console.log('useEffect');
-        axios.get(`${URL.BASE_URL_DEV}/.netlify/functions/hello`)
-            .then(data => console.log(data));
-    }, []);
-
+        console.log('useEffect')
+        axios.get(`${URL.BASE_URL_DEV}/.netlify/functions/hello`).then((data) => console.log(data))
+    }, [])
 
     return (
         <div className="App">
