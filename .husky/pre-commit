@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running pre-commit hook..."
+echo $PWD
+
+echo "Running prettier..."
+npm run prettier-format-all
+
+echo "Running lint..."
+npm run lint
