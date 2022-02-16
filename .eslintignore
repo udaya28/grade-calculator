@@ -2,4 +2,4 @@
 *.svg
 *.test.tsx
 build
-build-lambda
+built-lambda

@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import logo from './logo.svg'
 import './App.css'
 import { URL } from './constants/config'
+import Header from './components/Header/Header.jsx'
+// import test from './test.svg'
 
 function App() {
     useEffect(() => {
@@ -11,18 +12,16 @@ function App() {
     }, [])
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit
-                    <code>src/App.tsx</code>
-                    and save to reload.
-                </p>{' '}
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
+        <div>
+            <Header />
+            <header>
+                <h1>Logo</h1>
             </header>
+            <main>
+                <div className="container mx-auto">
+                    <h1 className="text-3xl font-bold underline fill-red-700">Hello world!</h1>
+                </div>
+            </main>
         </div>
     )
 }
