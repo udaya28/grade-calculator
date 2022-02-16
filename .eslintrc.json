@@ -17,14 +17,14 @@
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "react/jsx-filename-extension": ["off", { "extensions": [".tsx"] }],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "ts": "never",
-                "tsx": "never"
-            }
-        ],
+        // "import/extensions": [
+        //     "error",
+        //     "ignorePackages",
+        //     {
+        //         "ts": "never",
+        //         "tsx": "never"
+        //     }
+        // ],
         "@typescript-eslint/no-shadow": ["error"],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
@@ -41,7 +41,8 @@
         ],
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": ["error"],
-        "no-console": "off"
+        "no-console": "off",
+        "import/extensions":"off"
     },
     "settings": {
         "import/resolver": {

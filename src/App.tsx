@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import './App.css'
 import { URL } from './constants/config'
-import Header from './components/Header/Header.jsx'
+import Header from './components/Header/Header'
 // import test from './test.svg'
 
 function App() {
