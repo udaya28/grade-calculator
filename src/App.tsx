@@ -13,7 +13,6 @@ function App() {
     return (
         <div className="app h-screen">
             <Header />
-
             <main>hi</main>
         </div>
     )
