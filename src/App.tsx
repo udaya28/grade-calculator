@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
-// import test from './test.svg'
+import './App.styles.css'
 
 function App() {
     useEffect(() => {
@@ -11,16 +11,10 @@ function App() {
     }, [])
 
     return (
-        <div>
+        <div className="app h-screen">
             <Header />
-            <header>
-                <h1>Logo</h1>
-            </header>
-            <main>
-                <div className="container mx-auto">
-                    <h1 className="text-3xl font-bold underline fill-red-700">Hello world!</h1>
-                </div>
-            </main>
+
+            <main>hi</main>
         </div>
     )
 }
