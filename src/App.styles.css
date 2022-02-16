@@ -1,0 +1,19 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.app {
+    background-color: #e5e5e5;
+}
+
+:root {
+    --primary: rgba(45, 212, 191, 1);
+    --secondary: rgba(24, 26, 27, 0.6);
+}
+
+.primary {
+    color: var(--primary);
+}
+.secondary {
+    color: var(--secondary);
+}
