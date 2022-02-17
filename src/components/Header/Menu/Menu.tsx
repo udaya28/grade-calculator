@@ -6,7 +6,7 @@ interface Props {
 
 function Menu({ toggleMenu }: Props) {
     return (
-        <div className="block md:hidden ">
+        <div className="block md:hidden mr-3">
             <button
                 type="button"
                 id="nav-toggle"

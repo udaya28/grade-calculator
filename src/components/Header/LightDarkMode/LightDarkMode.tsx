@@ -8,7 +8,7 @@ interface Props {
 
 function LightDarkMode({ isDarkMode, toggleDarkMode }: Props) {
     return (
-        <button className="mr-4 " type="button" onClick={() => toggleDarkMode()}>
+        <button className="mr-3" type="button" onClick={() => toggleDarkMode()}>
             <p
                 className={`${
                     !isDarkMode && 'hidden'
