@@ -3,6 +3,7 @@ import axios from 'axios'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
 import './App.styles.css'
+import Main from './components/Main/Main'
 
 function App() {
     useEffect(() => {
@@ -11,9 +12,11 @@ function App() {
     }, [])
 
     return (
-        <div className="app h-screen">
+        <div className="app min-h-screen">
             <Header />
-            {/* <main>Hello</main> */}
+            <div className="mx-4 md:mx-8 lg:mx-12 my-5">
+                <Main />
+            </div>
         </div>
     )
 }
