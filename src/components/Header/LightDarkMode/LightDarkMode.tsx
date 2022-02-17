@@ -4,14 +4,15 @@ interface Props {
     isDarkMode: boolean
     toggleDarkMode: () => void
 }
+// ease-in duration-300
 
 function LightDarkMode({ isDarkMode, toggleDarkMode }: Props) {
     return (
-        <button className="mr-4" type="button" onClick={() => toggleDarkMode()}>
+        <button className="mr-4 " type="button" onClick={() => toggleDarkMode()}>
             <p
                 className={`${
                     !isDarkMode && 'hidden'
-                } hover:text-secondary  text-primary font-semibold ease-in duration-300`}
+                } text-secondary  hover:text-primary font-semibold animate-fade-in-down`}
             >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path
@@ -24,7 +25,7 @@ function LightDarkMode({ isDarkMode, toggleDarkMode }: Props) {
             <p
                 className={`${
                     isDarkMode && 'hidden'
-                } hover:text-secondary  text-primary font-semibold ease-in duration-300`}
+                } text-secondary  hover:text-primary font-semibold  animate-fade-in-down`}
             >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />

@@ -8,6 +8,21 @@ module.exports = {
                 white: 'rgba(255, 255, 255, 0.8)',
                 whiteLight: 'rgba(255, 255, 255, 0.6)',
             },
+            keyframes: {
+                'fade-in-down': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(-30%)',
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)',
+                    },
+                },
+            },
+            animation: {
+                'fade-in-down': 'fade-in-down 0.35s ease-out',
+            },
         },
     },
     plugins: [],

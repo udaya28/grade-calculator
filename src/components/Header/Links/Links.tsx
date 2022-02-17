@@ -9,10 +9,10 @@ function Links({ isOpen }: Props) {
         <nav
             className={`absolute right-6 top-20 bg-primary p-5 rounded ${
                 isOpen && 'hidden'
-            } md:static md:flex flex-row justify-evenly md:w-full md:bg-inherit md:p-0`}
+            } md:static md:flex flex-row justify-evenly md:w-full md:bg-inherit md:p-0 md:animate-none animate-fade-in-down`}
         >
             <a
-                href="/"
+                href="#/"
                 className="text-whiteLight hover:text-stone-50 md:text-secondary  md:hover:text-primary md:hover:underline font-semibold"
             >
                 SGPA
@@ -20,7 +20,7 @@ function Links({ isOpen }: Props) {
             <br />
 
             <a
-                href="/"
+                href="#/"
                 className="text-whiteLight hover:text-stone-50 md:text-secondary  md:hover:text-primary md:hover:underline font-semibold"
             >
                 CGPA
@@ -28,7 +28,7 @@ function Links({ isOpen }: Props) {
             <br />
 
             <a
-                href="/"
+                href="#/"
                 className="text-whiteLight hover:text-stone-50 md:text-secondary  md:hover:text-primary md:hover:underline font-semibold"
             >
                 ABOUT US
@@ -36,7 +36,7 @@ function Links({ isOpen }: Props) {
             <br />
 
             <a
-                href="/"
+                href="#/"
                 className="text-whiteLight hover:text-stone-50 md:text-secondary  md:hover:text-primary md:hover:underline font-semibold"
             >
                 CONTACT US
