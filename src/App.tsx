@@ -13,7 +13,7 @@ function App() {
     return (
         <div className="app h-screen">
             <Header />
-            <main>hi</main>
+            {/* <main>Hello</main> */}
         </div>
     )
 }
