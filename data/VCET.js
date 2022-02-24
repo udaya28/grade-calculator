@@ -1,6 +1,5 @@
 const VCET = {
-    "name": "VCET",
-    
+    name: 'VCET',
 }
 
-export default VCET;
+export default VCET
