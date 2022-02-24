@@ -1,49 +1,44 @@
-import React, { useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
+import React, { useState } from 'react'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import Menu from '@mui/material/Menu'
+import MenuIcon from '@mui/icons-material/Menu'
+import Container from '@mui/material/Container'
+import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import Tooltip from '@mui/material/Tooltip'
+import MenuItem from '@mui/material/MenuItem'
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Products', 'Pricing', 'Blog']
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 function Header() {
-    const [anchorElNav, setAnchorElNav]:any = useState(null );
-    const [anchorElUser, setAnchorElUser]:any = useState(null);
+    const [anchorElNav, setAnchorElNav]: any = useState(null)
+    const [anchorElUser, setAnchorElUser]: any = useState(null)
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
+        setAnchorElNav(event.currentTarget)
+    }
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
+        setAnchorElUser(event.currentTarget)
+    }
 
     const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+        setAnchorElNav(null)
+    }
 
     const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+        setAnchorElUser(null)
+    }
 
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                    >
+                    <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
                         LOGO
                     </Typography>
 
@@ -135,6 +130,6 @@ function Header() {
                 </Toolbar>
             </Container>
         </AppBar>
-    );
-};
-export default Header;
+    )
+}
+export default Header

@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import Button from '@mui/material/Button';
+import Button from '@mui/material/Button'
 import { URL } from './constants/config'
-import Header from './components/Header/Header';
-
+import Header from './components/Header/Header'
 
 function App() {
     useEffect(() => {
@@ -13,12 +12,11 @@ function App() {
 
     return (
         <div className="App">
-           {/* <AppBar position="static"/>
-            */}
-           
-           <Header/>
-           <Button variant="outlined">Hello World</Button>
+            {/* <AppBar position="static"/>
+             */}
 
+            <Header />
+            <Button variant="outlined">Hello World</Button>
         </div>
     )
 }
