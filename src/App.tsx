@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
+import { ThemeProvider } from '@mui/material/styles';
 import axios from 'axios'
 import Button from '@mui/material/Button'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
+import theme from './theme'
 
 function App() {
     useEffect(() => {
@@ -12,10 +14,12 @@ function App() {
 
     return (
         <div className="App">
-            {/* <AppBar position="static"/>
+            <ThemeProvider theme={theme}>
+                {/* <AppBar position="static"/>
              */}
-            <Header />
-            <Button variant="outlined">Hello World</Button>
+                <Header />
+                <Button variant="outlined">Hello World</Button>
+            </ThemeProvider>
         </div>
     )
 }
