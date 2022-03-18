@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles'
 import axios from 'axios'
 import Button from '@mui/material/Button'
 import { URL } from './constants/config'
@@ -16,7 +16,7 @@ function App() {
         <div className="App">
             <ThemeProvider theme={theme}>
                 {/* <AppBar position="static"/>
-             */}
+                 */}
                 <Header />
                 <Button variant="outlined">Hello World</Button>
             </ThemeProvider>
