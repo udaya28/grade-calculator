@@ -16,11 +16,10 @@ function App() {
         console.log('useEffect')
         console.log(darkMode)
         axios.get(`${URL.BASE_URL_DEV}/.netlify/functions/hello`).then((data) => console.log(data))
-        if(localStorage.getItem("preferred-theme") === "dark") {
+        if (localStorage.getItem('preferred-theme') === 'dark') {
             setDarkMode(true)
         }
     }, [])
-
 
     // const handleThemeChange = () => {
     //     if (darkMode) {
@@ -32,14 +31,10 @@ function App() {
     //     }
     // }
 
-
-
     return (
         <div className="App">
             <themeContext.Provider value={theme}>
                 <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-                    {/* <AppBar position="static"/>
-                 */}
                     <Header />
                     <Button variant="outlined">Hello World</Button>
                 </ThemeProvider>
