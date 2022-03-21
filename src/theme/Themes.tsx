@@ -1,8 +1,11 @@
 import { createTheme } from '@mui/material/styles'
 
 const lightTheme = createTheme({
+    typography: {
+        fontFamily: `"Poppins", "sans-serif"`,
+    },
+    //   type: "light",
     palette: {
-        //   type: "light",
         primary: {
             main: '#2DD4BF',
         },
@@ -15,6 +18,9 @@ const lightTheme = createTheme({
     },
 })
 const darkTheme = createTheme({
+    typography: {
+        fontFamily: `"Poppins", "sans-serif"`,
+    },
     //   type: "dark",
     palette: {
         primary: {

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import axios from 'axios'
-import Button from '@mui/material/Button'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
 import { darkTheme, lightTheme } from './theme/Themes'
@@ -36,7 +35,7 @@ function App() {
             <themeContext.Provider value={theme}>
                 <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
                     <Header />
-                    <Button variant="outlined">Hello World</Button>
+                    <h1>Hello World</h1>
                 </ThemeProvider>
             </themeContext.Provider>
         </div>
