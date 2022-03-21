@@ -4,7 +4,7 @@ import axios from 'axios'
 import Button from '@mui/material/Button'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
-import { darkTheme, lightTheme } from './theme/theme'
+import { darkTheme, lightTheme } from './theme/Themes'
 import themeContext from './theme/ThemeHandler'
 
 function App() {
