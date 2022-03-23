@@ -10,10 +10,10 @@ const lightTheme = createTheme({
             main: '#2DD4BF',
         },
         secondary: {
-            main: '#FFFFFF',
+            main: 'rgba(24, 26, 27, 0.6);',
         },
         background: {
-            default: '#E5E5E5',
+            default: '#FFFFFF',
         },
     },
 })
@@ -27,10 +27,10 @@ const darkTheme = createTheme({
             main: '#2DD4BF',
         },
         secondary: {
-            main: 'rgba(24, 26, 27, 0.6)',
+            main: '#FFFFFF',
         },
         background: {
-            default: '#181A1B',
+            default: 'rgba(24, 26, 27, 1)'
         },
     },
 })

@@ -34,7 +34,7 @@ function App() {
         <div className="App">
             <themeContext.Provider value={theme}>
                 <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-                    <Header />
+                    <Header darkMode={darkMode} setDarkMode={setDarkMode} />
                     <h1>Hello World</h1>
                 </ThemeProvider>
             </themeContext.Provider>
