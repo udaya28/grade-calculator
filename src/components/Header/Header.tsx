@@ -11,7 +11,6 @@ interface Props {
 }
 
 function Header({ darkMode, setDarkMode }: Props) {
-    
     const menuItems = [
         { id: 1, name: 'SGPA', link: '#SGPA' },
         { id: 2, name: 'CGPA', link: '#CGPA' },
