@@ -1,7 +1,8 @@
 import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import { Grid, IconButton, Link, Typography } from '@mui/material'
+import { NavLink } from 'react-router-dom'
+import { Grid, IconButton, Typography } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import Logo from '../Logo/Logo'
@@ -15,10 +16,10 @@ interface Props {
 
 function Header({ darkMode, handleThemeChange }: Props) {
     const menuItems = [
-        { id: 1, name: 'SGPA', link: '#SGPA' },
-        { id: 2, name: 'CGPA', link: '#CGPA' },
-        { id: 3, name: 'ABOUT US', link: '#ABOUT-US' },
-        { id: 4, name: 'CONTACT US', link: '#CONTACT-US' },
+        { id: 1, name: 'SGPA', link: '#sgpa' },
+        { id: 2, name: 'CGPA', link: '#cgpa' },
+        { id: 3, name: 'ABOUT US', link: '#about-us' },
+        { id: 4, name: 'CONTACT US', link: '#contact-us' },
     ]
     return (
         <div className="App">
@@ -29,7 +30,7 @@ function Header({ darkMode, handleThemeChange }: Props) {
                             <Grid container alignItems="center" justifyContent="flex-start">
                                 <Grid item>
                                     {/* <Logo /> */}
-                                    <Typography variant="h3" sx={{ fontWeight: 800, mr: '10px' }}>
+                                    <Typography variant="h4" sx={{ fontWeight: 500, mr: '10px' }}>
                                         G
                                     </Typography>
                                 </Grid>
@@ -53,18 +54,28 @@ function Header({ darkMode, handleThemeChange }: Props) {
                                     <Grid container alignItems="center" justifyContent="space-evenly">
                                         {menuItems.map((item) => (
                                             <Grid item key={item.id}>
-                                                <Link href={item.link} underline="hover">
+                                                <NavLink
+                                                    to={`${item.link}`}
+                                                    style={{ textDecoration: 'none' }}
+                                                    // style={({ isActive }) =>
+                                                    //     isActive ?  : undefined
+                                                    // }
+                                                >
                                                     <Typography
                                                         sx={{
                                                             color: 'secondary.main',
                                                             fontSize: '16px',
                                                             fontWeight: 700,
-                                                            '&:hover': { color: 'primary.main' },
+                                                            '&:hover': {
+                                                                color: 'primary.main',
+                                                                borderBottom: '3px solid black',
+                                                                borderBottomColor: 'primary.main',
+                                                            },
                                                         }}
                                                     >
                                                         {item.name}
                                                     </Typography>
-                                                </Link>
+                                                </NavLink>
                                             </Grid>
                                         ))}
                                     </Grid>

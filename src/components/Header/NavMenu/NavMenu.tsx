@@ -1,6 +1,7 @@
 import { IconButton, Menu, MenuItem, MenuList, Typography } from '@mui/material'
 import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
+import { NavLink } from 'react-router-dom'
 
 interface Props {
     menuItems: Array<{ id: number; name: string; link: string }>
@@ -56,7 +57,15 @@ function NavMenu({ menuItems }: Props) {
                 <MenuList>
                     {menuItems.map((item) => (
                         <MenuItem onClick={() => handleClose()} key={item.id}>
-                            <Typography sx={{ color: '#FFF', fontWeight: 800 }}>{item.name}</Typography>
+                            <NavLink
+                                to={`${item.link}`}
+                                style={{ textDecoration: 'none' }}
+                                // style={({ isActive }) =>
+                                //     isActive ?  : undefined
+                                // }
+                            >
+                                <Typography sx={{ color: '#FFF', fontWeight: 800 }}>{item.name}</Typography>
+                            </NavLink>
                         </MenuItem>
                     ))}
                 </MenuList>
