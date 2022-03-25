@@ -3,6 +3,8 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Grid, IconButton, Link, Typography } from '@mui/material'
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Logo from '../../img/logo.svg'
 
 interface Props {
@@ -36,29 +38,49 @@ function Header({ darkMode, setDarkMode }: Props) {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item sx={{ display: { md: 'none' } }}>
-                            <IconButton size="large" color="inherit" aria-label="menu">
-                                <MenuIcon color="primary" />
-                            </IconButton>
-                        </Grid>
-                        <Grid item xs={6} sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-                            <Grid container alignItems="center" justifyContent='space-evenly'>
-                                {
-                                    menuItems.map((item) => (
-                                        <Grid item key={item.id}>
-                                            <Link href={item.link} underline='hover'>
-                                                <Typography
-                                                    sx={{ color: 'secondary.main', fontSize: '16px', fontWeight: 700, '&:hover': { color: 'primary.main' } }}
-                                                >
-                                                    {item.name}
-                                                </Typography>
-                                            </Link>
-                                        </Grid>
-                                    )
-                                    )
-                                }
+                        <Grid item xs={6}>
+                            <Grid container alignItems="center" justifyContent="flex-end" >
+
+                                <Grid item xs={10} sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+                                    <Grid container alignItems="center" justifyContent='space-evenly'>
+                                        {
+                                            menuItems.map((item) => (
+                                                <Grid item key={item.id}>
+                                                    <Link href={item.link} underline='hover'>
+                                                        <Typography
+                                                            sx={{ color: 'secondary.main', fontSize: '16px', fontWeight: 700, '&:hover': { color: 'primary.main' } }}
+                                                        >
+                                                            {item.name}
+                                                        </Typography>
+                                                    </Link>
+                                                </Grid>
+                                            )
+                                            )
+                                        }
+                                    </Grid>
+                                </Grid>
+
+
+                                <Grid item >
+                                    <Grid container alignItems="center" justifyContent="flex-end">
+                                        <IconButton size="large" color="inherit" aria-label="menu" onClick={() => setDarkMode(!darkMode)}>
+                                            {darkMode ? <Brightness7Icon color='primary' /> : <Brightness4Icon color='primary' />}
+                                        </IconButton>
+                                    </Grid>
+                                    {/* : <Brightness4Icon /> */}
+                                </Grid>
+
+                                <Grid item sx={{ display: { md: 'none' } }}>
+                                    <IconButton size="large" color="inherit" aria-label="menu">
+                                        <MenuIcon color="primary" />
+                                    </IconButton>
+                                </Grid>
+
+
+
                             </Grid>
                         </Grid>
+
                     </Grid>
                 </Toolbar>
             </AppBar>
