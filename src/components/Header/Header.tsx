@@ -1,12 +1,12 @@
 import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import { NavLink } from 'react-router-dom'
-import { Grid, IconButton, Typography } from '@mui/material'
-import Brightness4Icon from '@mui/icons-material/Brightness4'
-import Brightness7Icon from '@mui/icons-material/Brightness7'
+import { Grid } from '@mui/material'
+
 import Logo from '../Logo/Logo'
 import NavMenu from './NavMenu/NavMenu'
+import ThemeToggle from './ThemeToggle/ThemeToggle'
+import NavItems from './NavItems/NavItems'
 // import Logo from '../../img/logo.svg'
 
 interface Props {
@@ -23,79 +23,21 @@ function Header({ darkMode, handleThemeChange }: Props) {
     ]
     return (
         <div className="App">
-            <AppBar sx={{ backgroundColor: 'background.default' }} position="static">
+            <AppBar sx={{ backgroundColor: 'background.default' }} position="fixed">
                 <Toolbar>
                     <Grid container direction="row" justifyContent="space-between" alignItems="center">
                         <Grid item>
-                            <Grid container alignItems="center" justifyContent="flex-start">
-                                <Grid item>
-                                    {/* <Logo /> */}
-                                    <Typography variant="h4" sx={{ fontWeight: 500, mr: '10px' }}>
-                                        G
-                                    </Typography>
-                                </Grid>
-                                <Grid item>
-                                    <Typography
-                                        sx={{
-                                            color: 'primary.main',
-                                            display: { xs: 'none', sm: 'block' },
-                                            fontSize: '24px',
-                                            fontWeight: 700,
-                                        }}
-                                    >
-                                        Grade Calculator
-                                    </Typography>
-                                </Grid>
-                            </Grid>
+                            <Logo />
                         </Grid>
+
                         <Grid item xs={6}>
                             <Grid container alignItems="center" justifyContent="flex-end">
                                 <Grid item xs={10} sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-                                    <Grid container alignItems="center" justifyContent="space-evenly">
-                                        {menuItems.map((item) => (
-                                            <Grid item key={item.id}>
-                                                <NavLink
-                                                    to={`${item.link}`}
-                                                    style={{ textDecoration: 'none' }}
-                                                    // style={({ isActive }) =>
-                                                    //     isActive ?  : undefined
-                                                    // }
-                                                >
-                                                    <Typography
-                                                        sx={{
-                                                            color: 'secondary.main',
-                                                            fontSize: '16px',
-                                                            fontWeight: 700,
-                                                            '&:hover': {
-                                                                color: 'primary.main',
-                                                                borderBottom: '3px solid black',
-                                                                borderBottomColor: 'primary.main',
-                                                            },
-                                                        }}
-                                                    >
-                                                        {item.name}
-                                                    </Typography>
-                                                </NavLink>
-                                            </Grid>
-                                        ))}
-                                    </Grid>
+                                    <NavItems menuItems={menuItems} />
                                 </Grid>
 
                                 <Grid item>
-                                    <Grid container alignItems="center" justifyContent="flex-end">
-                                        <IconButton
-                                            size="large"
-                                            color="inherit"
-                                            aria-label="menu"
-                                            onClick={() => handleThemeChange()}
-                                        >
-                                            {darkMode ? (
-                                                <Brightness7Icon color="primary" />
-                                            ) : (
-                                                <Brightness4Icon color="primary" />
-                                            )}
-                                        </IconButton>
-                                    </Grid>
+                                    <ThemeToggle darkMode={darkMode} handleThemeChange={handleThemeChange} />
                                 </Grid>
 
                                 <Grid item sx={{ display: { md: 'none' } }}>
