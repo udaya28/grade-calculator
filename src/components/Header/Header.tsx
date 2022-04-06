@@ -2,6 +2,7 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import { Grid } from '@mui/material'
+import { NavLink } from 'react-router-dom'
 
 import Logo from '../Logo/Logo'
 import NavMenu from './NavMenu/NavMenu'
@@ -27,7 +28,9 @@ function Header({ darkMode, handleThemeChange }: Props) {
                 <Toolbar>
                     <Grid container direction="row" justifyContent="space-between" alignItems="center">
                         <Grid item>
-                            <Logo />
+                            <NavLink to="/" style={{ textDecoration: 'none' }}>
+                                <Logo />
+                            </NavLink>
                         </Grid>
 
                         <Grid item xs={6}>
