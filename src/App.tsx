@@ -39,6 +39,7 @@ function App() {
                 <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
                     <Box sx={{ height: '200vh', backgroundColor: 'background.default' }}>
                         <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
+                        <Box sx={{ pt: '80px' }} />
                         <Main />
                     </Box>
                 </ThemeProvider>
