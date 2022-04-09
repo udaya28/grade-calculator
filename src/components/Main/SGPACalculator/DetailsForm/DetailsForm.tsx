@@ -60,6 +60,11 @@ function DetailsForm() {
                 borderColor: 'secondary.main',
             },
         },
+        '& .MuiOutlinedInput-root:hover': {
+            '& > fieldset': {
+                borderColor: 'secondary.main',
+            },
+        },
         '& .MuiSvgIcon-root': {
             color: 'secondary.main',
         },
