@@ -54,6 +54,17 @@ function DetailsForm() {
         setSelectedCollege(+e.target.value)
     }
 
+    const sxrop = {
+        '& .MuiOutlinedInput-root': {
+            '& > fieldset': {
+                borderColor: 'secondary.main',
+            },
+        },
+        '& .MuiSvgIcon-root': {
+            color: 'secondary.main',
+        },
+    }
+
     return (
         <>
             <Grid item xs={12} sm={6}>
@@ -63,8 +74,10 @@ function DetailsForm() {
                     id="outlined-basic"
                     label="University/College"
                     variant="outlined"
-                    sx={{ width: '100%' }}
+                    fullWidth
                     onChange={(e) => handelChange(e)}
+                    InputProps={{ sx: { color: 'secondary.main' } }}
+                    sx={sxrop}
                 >
                     {colleges.map((college) => (
                         <MenuItem key={college.id} value={college.id}>
@@ -75,7 +88,15 @@ function DetailsForm() {
             </Grid>
 
             <Grid item xs={6} sm={3}>
-                <TextField select id="outlined-basic" label="Regulation" variant="outlined" sx={{ width: '100%' }}>
+                <TextField
+                    select
+                    id="outlined-basic"
+                    label="Regulation"
+                    variant="outlined"
+                    fullWidth
+                    InputProps={{ sx: { color: 'secondary.main' } }}
+                    sx={sxrop}
+                >
                     {regulations.map((regulation) => (
                         <MenuItem key={regulation.id} value={regulation.id}>
                             {regulation.name}
@@ -85,7 +106,15 @@ function DetailsForm() {
             </Grid>
 
             <Grid item xs={6} sm={3}>
-                <TextField select id="outlined-basic" label="Department" variant="outlined" sx={{ width: '100%' }}>
+                <TextField
+                    select
+                    id="outlined-basic"
+                    label="Department"
+                    variant="outlined"
+                    fullWidth
+                    InputProps={{ sx: { color: 'secondary.main' } }}
+                    sx={sxrop}
+                >
                     {departments.map((department) => (
                         <MenuItem key={department.id} value={department.id}>
                             {department.name}

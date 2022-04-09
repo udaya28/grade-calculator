@@ -17,6 +17,7 @@ const lightTheme = createTheme({
         },
         background: {
             default: '#FFFFFF',
+            paper: '#FFFFFF',
         },
     },
 })
@@ -27,6 +28,9 @@ const darkTheme = createTheme({
             color: '#FFFFFF',
         },
     },
+    // components:{
+    //     MuiIn
+    // },
     //   type: "dark",
     palette: {
         primary: {
@@ -37,6 +41,7 @@ const darkTheme = createTheme({
         },
         background: {
             default: 'rgba(24, 26, 27, 1)',
+            paper: 'rgba(24, 26, 27, 1)',
         },
     },
 })
