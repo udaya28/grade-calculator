@@ -14,7 +14,6 @@ function GradeCalculator() {
             <Typography sx={{ fontSize: { xs: '14px', sm: '16px', md: '18px' } }}>
                 Lorem ipsum, dolor sit amet consectetur ad ipisicing elit. Neque dolor dolore voluptatibus corpor is,
                 iusto quod assumenda alias quos. Id nobis aspernatur quos delectus possimus exercita tionem ipsa,
-                molestiae omnis voluptas cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </Typography>
         </Grid>
     )

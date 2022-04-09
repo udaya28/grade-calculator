@@ -1,7 +1,8 @@
 import React from 'react'
-import { Grid, Container, Typography } from '@mui/material'
+import { Grid, Container } from '@mui/material'
 import GradeCalculator from './GradeCalculator/GradeCalculator'
 import SGPACalculator from './SGPACalculator/SGPACalculator'
+import Aside from './Aside/Aside'
 
 function Main() {
     return (
@@ -15,7 +16,9 @@ function Main() {
                 </Grid>
 
                 <Grid item xs={12} md={4}>
-                    aside
+                    <Grid container alignItems="flex-start" justifyContent="flex-start" rowSpacing={2}>
+                        <Aside />
+                    </Grid>
                 </Grid>
             </Grid>
         </Container>

@@ -41,7 +41,7 @@ const darkTheme = createTheme({
         },
         background: {
             default: 'rgba(24, 26, 27, 1)',
-            paper: 'rgba(24, 26, 27, 1)',
+            paper: 'rgba(35, 38, 39, 1)',
         },
     },
 })
