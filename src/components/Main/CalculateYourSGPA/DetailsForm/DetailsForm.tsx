@@ -46,8 +46,8 @@ function DetailsForm() {
     ]
 
     const [selectedCollege, setSelectedCollege] = useState<number>(0)
-    const [selectedRegulation, setSelectedRegulation] = useState(null)
-    const [selectedDepartment, setSelectedDepartments] = useState(null)
+    const [selectedRegulation, setSelectedRegulation] = useState('')
+    const [selectedDepartment, setSelectedDepartments] = useState('')
 
     const handelChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         console.log(e.target.value)

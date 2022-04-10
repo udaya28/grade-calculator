@@ -37,7 +37,7 @@ function App() {
         <BrowserRouter>
             <themeContext.Provider value={theme}>
                 <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-                    <Box sx={{ height: '200vh', backgroundColor: 'background.default' }}>
+                    <Box sx={{ pb: '50vh', backgroundColor: 'background.default' }}>
                         <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
                         <Box sx={{ pt: '80px' }} />
                         <Main />

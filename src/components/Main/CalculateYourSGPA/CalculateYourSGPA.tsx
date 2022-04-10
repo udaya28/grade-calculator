@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Grid, MenuItem, TextField, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import DetailsForm from './DetailsForm/DetailsForm'
+import SGPACalculator from './SGPACalculator/SGPACalculator'
 
-function SGPACalculator() {
+function CalculateYourSGPA() {
     return (
         <Grid item xs={12}>
             <Grid container columnSpacing={2} rowSpacing={2}>
@@ -17,9 +18,11 @@ function SGPACalculator() {
                 </Grid>
 
                 <DetailsForm />
+
+                <SGPACalculator />
             </Grid>
         </Grid>
     )
 }
 
-export default SGPACalculator
+export default CalculateYourSGPA
