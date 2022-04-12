@@ -13,10 +13,14 @@ interface Props {
 
 function SemesterDetails({ semesterNumber }: Props) {
     return (
-        <Grid item xs={12} sx={{ borderBottom: '1px solid rgba(24, 26, 27, 0.3)' }}>
+        <Grid item xs={12}>
             <Accordion square elevation={0}>
-                <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                    <Typography>{`Semester ${semesterNumber}`}</Typography>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon sx={{ color: 'secondary.main' }} />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                >
+                    <Typography sx={{ fontWeight: 'bold' }}>{`Semester ${semesterNumber}`}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <SubjectDetails />

@@ -1,4 +1,5 @@
-import { Grid, Input, MenuItem, Select, TextField } from '@mui/material'
+import { Grid, Input, MenuItem, Select, Typography } from '@mui/material'
+import { fontWeight } from '@mui/system'
 import React, { useState } from 'react'
 
 const removeBorder = {
@@ -12,6 +13,10 @@ const removeBorder = {
     p: '10px',
     color: 'secondary.main',
     '& div:focus': { backgroundColor: 'inherit' },
+    '& .MuiSvgIcon-root': {
+        color: 'secondary.main',
+        opacity: 0.9,
+    },
 }
 
 function SubjectDetails() {
@@ -59,7 +64,24 @@ function SubjectDetails() {
             }}
         >
             <Grid item xs={12} sm={6}>
-                <Input id="outlined-basic" fullWidth size="small" placeholder="Subject" sx={removeBorder} />
+                <Input
+                    id="outlined-basic"
+                    fullWidth
+                    size="small"
+                    placeholder="Subject"
+                    sx={[
+                        removeBorder,
+                        {
+                            '& > input::placeholder': {
+                                color: 'secondary.main',
+                                fontWeight: 500,
+                                fontSize: '1rem',
+                                lineHeight: 1.5,
+                                opacity: 0.8,
+                            },
+                        },
+                    ]}
+                />
             </Grid>
             <Grid item xs={6} sm={3}>
                 <Select
@@ -71,8 +93,13 @@ function SubjectDetails() {
                     displayEmpty
                     value={credit}
                     onChange={(e) => setCredit(e.target.value)}
-                    renderValue={credit !== '' ? undefined : () => 'Credits'}
+                    // renderValue={credit !== '' ? undefined : () => 'Credits'}
                 >
+                    <MenuItem value="" disabled>
+                        <Typography style={{ color: 'secondary.main', opacity: 0.8, fontWeight: 500 }}>
+                            Credits
+                        </Typography>
+                    </MenuItem>
                     {creditsArr.map((item) => (
                         <MenuItem key={item.value} value={item.value}>
                             {item.name}
@@ -90,8 +117,13 @@ function SubjectDetails() {
                     displayEmpty
                     value={grade}
                     onChange={(e) => setGrade(e.target.value)}
-                    renderValue={grade !== '' ? undefined : () => 'Grade'}
+                    // renderValue={grade !== '' ? undefined : () => 'Grade'}
                 >
+                    <MenuItem value="" disabled>
+                        <Typography style={{ color: 'secondary.main', opacity: 0.8, fontWeight: 500 }}>
+                            Grade
+                        </Typography>
+                    </MenuItem>
                     {gradeArr.map((item) => (
                         <MenuItem key={item.value} value={item.value}>
                             {`${item.name}`}
