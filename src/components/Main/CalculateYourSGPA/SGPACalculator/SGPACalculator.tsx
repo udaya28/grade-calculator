@@ -9,10 +9,10 @@ function SGPACalculator() {
             <Grid
                 container
                 sx={{
-                    p: { xs: '6px', sm: '10px', lg: '20px' },
-                    borderWidth: '1px',
+                    p: { xs: '10px', sm: '20px', lg: '30px' },
+                    borderWidth: '3px',
                     borderStyle: 'solid',
-                    borderColor: 'rgba(24, 26, 27, 0.8)',
+                    borderColor: 'secondary.main',
                     borderRadius: '5px',
                 }}
             >
