@@ -25,18 +25,38 @@ function SemesterDetails({ semesterNumber }: Props) {
                 <AccordionDetails>
                     <Box
                         sx={{
-                            border: {
-                                xs: '0px solid #e0e0e0',
-                                sm: '1px solid #e0e0e0',
-                                md: '1px solid #e0e0e0',
-                                lg: '1px solid #e0e0e0',
-                                xl: '1px solid #e0e0e0',
+                            borderWidth: {
+                                xs: '0px',
+                                sm: '1px',
+                                md: '1px',
+                                lg: '1px',
+                                xl: '1px',
                             },
+                            borderStyle: 'solid',
+                            borderColor: 'secondary.main',
                             borderRadius: '5px',
                             '& > div:last-child > div': {
                                 borderBottom: {
                                     xs: '0px solid #e0e0e0',
                                 },
+                                borderColor: { xs: 'secondary.main' },
+                            },
+                            '& > div:last-child > div:first-child': {
+                                borderBottomWidth: {
+                                    xs: '1px',
+                                    sm: '0px',
+                                    md: '0px',
+                                    lg: '0px',
+                                    xl: '0px',
+                                },
+                                borderBottomStyle: 'solid',
+                                borderBottomColor: 'secondary.main',
+                            },
+                            '& > div > div': {
+                                borderColor: 'secondary.main',
+                            },
+                            '& > div': {
+                                borderColor: 'secondary.main',
                             },
                         }}
                     >
