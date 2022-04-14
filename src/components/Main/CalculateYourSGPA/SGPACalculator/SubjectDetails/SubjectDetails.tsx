@@ -10,7 +10,7 @@ const removeBorder = {
         borderBottom: 'none',
     },
     height: '100%',
-    p: '10px',
+    // p: '16px',
     color: 'secondary.main',
     '& div:focus': { backgroundColor: 'inherit' },
     '& .MuiSvgIcon-root': {
@@ -43,27 +43,43 @@ function SubjectDetails() {
             container
             sx={{
                 '& > div': {
-                    border: '1px solid #e0e0e0',
-                    // borderWidth: '0px',
-                    // borderStyle: 'solid',
-                    // borderColor: 'rgba(24, 26, 27, 0.8)',
-                    // borderRightWidth: '1px',
-                    // // borderLeftWidth: '1px',
-                    // borderTopWidth: 'none',
-                    // borderBottomWidth: '1px',
+                    p: '16px',
                 },
-                // '& > div:first-child':{
-                //     borderLeftWidth: '1px',
-                // },
-                // '& > div:first-column':{
-                //     borderTopWidth: '1px',
-                // },
                 '& div, li': {
                     textAlign: 'center',
                 },
+                my: { xs: '10px', sm: 0, md: 0, lg: 0, xl: 0 },
+                border: {
+                    xs: '1px solid #e0e0e0',
+                    sm: '0px solid #e0e0e0',
+                    md: '0px solid #e0e0e0',
+                    lg: '0px solid #e0e0e0',
+                    xl: '0px solid #e0e0e0',
+                },
+                borderRadius: '5px',
             }}
         >
-            <Grid item xs={12} sm={6}>
+            <Grid
+                item
+                xs={12}
+                sm={6}
+                sx={{
+                    borderBottom: {
+                        xs: '1px solid #e0e0e0',
+                        sm: '1px solid #e0e0e0',
+                        md: '1px solid #e0e0e0',
+                        lg: '1px solid #e0e0e0',
+                        xl: '1px solid #e0e0e0',
+                    },
+                    borderRight: {
+                        xs: '0px solid #e0e0e0',
+                        sm: '1px solid #e0e0e0',
+                        md: '1px solid #e0e0e0',
+                        lg: '1px solid #e0e0e0',
+                        xl: '1px solid #e0e0e0',
+                    },
+                }}
+            >
                 <Input
                     id="outlined-basic"
                     fullWidth
@@ -83,17 +99,30 @@ function SubjectDetails() {
                     ]}
                 />
             </Grid>
-            <Grid item xs={6} sm={3}>
+            <Grid
+                item
+                xs={6}
+                sm={3}
+                sx={{
+                    borderBottom: {
+                        xs: '0px solid #e0e0e0',
+                        sm: '1px solid #e0e0e0',
+                        md: '1px solid #e0e0e0',
+                        lg: '1px solid #e0e0e0',
+                        xl: '1px solid #e0e0e0',
+                    },
+                    borderRight: '1px solid #e0e0e0',
+                }}
+            >
                 <Select
                     id="outlined-basic"
                     variant="standard"
                     fullWidth
-                    sx={removeBorder}
+                    sx={[removeBorder, {}]}
                     size="small"
                     displayEmpty
                     value={credit}
                     onChange={(e) => setCredit(e.target.value)}
-                    // renderValue={credit !== '' ? undefined : () => 'Credits'}
                 >
                     <MenuItem value="" disabled>
                         <Typography style={{ color: 'secondary.main', opacity: 0.8, fontWeight: 500 }}>
@@ -107,7 +136,20 @@ function SubjectDetails() {
                     ))}
                 </Select>
             </Grid>
-            <Grid item xs={6} sm={3}>
+            <Grid
+                item
+                xs={6}
+                sm={3}
+                sx={{
+                    borderBottom: {
+                        xs: '0px solid #e0e0e0',
+                        sm: '1px solid #e0e0e0',
+                        md: '1px solid #e0e0e0',
+                        lg: '1px solid #e0e0e0',
+                        xl: '1px solid #e0e0e0',
+                    },
+                }}
+            >
                 <Select
                     id="outlined-basic"
                     variant="standard"
@@ -117,7 +159,6 @@ function SubjectDetails() {
                     displayEmpty
                     value={grade}
                     onChange={(e) => setGrade(e.target.value)}
-                    // renderValue={grade !== '' ? undefined : () => 'Grade'}
                 >
                     <MenuItem value="" disabled>
                         <Typography style={{ color: 'secondary.main', opacity: 0.8, fontWeight: 500 }}>
@@ -127,7 +168,6 @@ function SubjectDetails() {
                     {gradeArr.map((item) => (
                         <MenuItem key={item.value} value={item.value}>
                             {`${item.name}`}
-                            {/* ${(item.name.length === 1)? " ":""} - ${item.value} */}
                         </MenuItem>
                     ))}
                 </Select>
