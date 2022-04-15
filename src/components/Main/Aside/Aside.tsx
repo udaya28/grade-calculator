@@ -6,7 +6,9 @@ function Aside() {
     return (
         <>
             <Grid item xs={12}>
-                <img style={{ maxWidth: '100%' }} src={AsideImage} alt="icon" />
+                <Grid container justifyContent="center">
+                    <img style={{ maxWidth: '100%' }} src={AsideImage} alt="icon" />
+                </Grid>
             </Grid>
             <Grid item xs={12}>
                 <Paper sx={{ p: '20px' }} elevation={2}>
