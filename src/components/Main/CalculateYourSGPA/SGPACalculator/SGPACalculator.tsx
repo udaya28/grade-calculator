@@ -10,7 +10,7 @@ function SGPACalculator() {
                 container
                 sx={{
                     p: { xs: '10px', sm: '20px', lg: '30px' },
-                    borderWidth: '2px',
+                    borderWidth: '1px',
                     borderStyle: 'solid',
                     borderColor: 'secondary.main',
                     borderRadius: '5px',
