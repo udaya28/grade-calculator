@@ -13,21 +13,12 @@ interface Props {
 }
 
 const boxStyles: SxProps<Theme> = {
-    // borderWidth: {
-    //     xs: '0px',
-    //     sm: '1px',
-    //     md: '1px',
-    //     lg: '1px',
-    //     xl: '1px',
-    // },
-    // borderStyle: 'solid',
-    borderColor: 'secondary.main',
-    // borderRadius: '5px',
     '& > div > div> div:last-child > div': {
         borderBottom: {
-            xs: '0px solid #e0e0e0',
+            xs: '0px',
         },
-        borderColor: { xs: 'secondary.main' },
+        borderBottomColor: { xs: 'secondary.main' },
+        borderBottomStyle: { xs: 'solid' },
     },
     '&  > div > div> div:last-child > div:first-child': {
         borderBottomWidth: {
