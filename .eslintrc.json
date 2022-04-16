@@ -43,7 +43,8 @@
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": "warn",
         "no-console": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "react/jsx-props-no-spreading": "off"
     },
     "settings": {
         "import/resolver": {
