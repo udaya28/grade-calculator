@@ -13,7 +13,7 @@ const lightTheme = createTheme({
             main: '#2DD4BF',
         },
         secondary: {
-            main: 'rgba(24, 26, 27, 0.8)',
+            main: 'rgba(24, 26, 27, 1)',
         },
         background: {
             default: '#FFFFFF',
