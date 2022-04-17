@@ -24,7 +24,7 @@ const removeBorder: SxProps<Theme> = {
         fontWeight: 500,
         fontSize: '1rem',
         lineHeight: 1.5,
-        opacity: 0.8,
+        opacity: 0.7,
     },
 }
 
@@ -39,9 +39,6 @@ const boxStyles: SxProps<Theme> = {
     borderWidth: {
         xs: '1px',
         sm: '0px',
-        md: '0px',
-        lg: '0px',
-        xl: '0px',
     },
     borderStyle: 'solid',
     borderColor: 'secondary.main',
