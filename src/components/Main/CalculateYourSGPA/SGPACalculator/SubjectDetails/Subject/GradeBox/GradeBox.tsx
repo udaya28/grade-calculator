@@ -2,21 +2,15 @@ import React from 'react'
 import { Grid, MenuItem, Select, Theme, Typography, SxProps } from '@mui/material'
 
 const gradeBoxStyles: SxProps<Theme> = {
-    borderBottom: {
+    borderBottomWidth: {
         xs: '0px',
         sm: '1px',
-        md: '1px',
-        lg: '1px',
-        xl: '1px',
     },
-    borderBottomColor: 'secondary.main',
+    borderBottomColor: 'secondary.main', // browser BUG
     borderBottomStyle: 'solid',
     borderRightWidth: {
         xs: '0px',
         sm: '1px',
-        md: '1px',
-        lg: '1px',
-        xl: '1px',
     },
     borderRightStyle: 'solid',
     borderRightColor: 'secondary.main',

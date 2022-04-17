@@ -5,21 +5,21 @@ const SubjectBoxStyles: SxProps<Theme> = {
     borderBottomWidth: {
         xs: '1px',
         sm: '1px',
-        md: '1px',
-        lg: '1px',
-        xl: '1px',
     },
     borderBottomStyle: 'solid',
-    borderBottomColor: 'secondary.main',
+    borderBottomColor: 'secondary.main', // browser BUG
     borderRightWidth: {
         xs: '0px',
         sm: '1px',
-        md: '1px',
-        lg: '1px',
-        xl: '1px',
     },
     borderRightStyle: 'solid',
     borderRightColor: 'secondary.main',
+    borderLeftWidth: {
+        xs: '0px',
+        sm: '1px',
+    },
+    borderLeftStyle: 'solid',
+    borderLeftColor: 'secondary.main',
 }
 
 interface Props {

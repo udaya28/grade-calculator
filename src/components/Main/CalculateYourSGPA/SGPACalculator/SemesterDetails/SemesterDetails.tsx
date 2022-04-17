@@ -1,4 +1,4 @@
-import { Box, Button, Grid, IconButton } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
@@ -13,29 +13,45 @@ interface Props {
 }
 
 const boxStyles: SxProps<Theme> = {
-    '& > div > div> div:last-child > div': {
-        borderBottom: {
+    // subject box
+    '& > div:first-child > div > div > div:first-child': {
+        borderTopWidth: {
             xs: '0px',
+            sm: '1px',
         },
-        borderBottomColor: { xs: 'secondary.main' },
-        borderBottomStyle: { xs: 'solid' },
-    },
-    '&  > div > div> div:last-child > div:first-child': {
-        borderBottomWidth: {
-            xs: '1px',
-            sm: '0px',
-            md: '0px',
-            lg: '0px',
-            xl: '0px',
+        borderTopStyle: 'solid',
+        borderTopColor: 'secondary.main',
+        borderTopLeftRadius: {
+            xs: '0px',
+            sm: '5px',
         },
-        borderBottomStyle: 'solid',
-        borderBottomColor: 'secondary.main',
     },
-    '& > div > div': {
-        borderColor: 'secondary.main',
+    '& > div:last-child > div > div > div:first-child': {
+        borderBottomLeftRadius: { xs: '0px', sm: '5px' },
     },
-    '& > div': {
-        borderColor: 'secondary.main',
+
+    // credit box
+    '& > div:first-child > div > div > div:nth-child(2)': {
+        borderTopWidth: {
+            xs: '0px',
+            sm: '1px',
+        },
+        borderTopStyle: 'solid',
+        borderTopColor: 'secondary.main',
+    },
+
+    // grade box
+    '& > div:last-child > div > div > div:last-child': {
+        borderBottomRightRadius: '5px',
+    },
+    '& > div:first-child > div > div > div:last-child': {
+        borderTopRightRadius: '5px',
+        borderTopWidth: {
+            xs: '0px',
+            sm: '1px',
+        },
+        borderTopStyle: 'solid',
+        borderTopColor: 'secondary.main',
     },
 }
 

@@ -2,18 +2,15 @@ import { Grid, MenuItem, Select, Theme, Typography, SxProps } from '@mui/materia
 import React from 'react'
 
 const creditBoxStyles: SxProps<Theme> = {
-    borderBottom: {
+    borderBottomWidth: {
         xs: '0px',
         sm: '1px',
-        md: '1px',
-        lg: '1px',
-        xl: '1px',
     },
     borderBottomColor: 'secondary.main',
     borderBottomStyle: 'solid',
     borderRightWidth: '1px',
     borderRightStyle: 'solid',
-    borderRightColor: 'secondary.main',
+    borderRightColor: 'secondary.main', // browser BUG
 }
 
 interface Props {
