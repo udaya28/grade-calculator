@@ -10,8 +10,8 @@ function SubjectDetails() {
                 <Subject />
             </Grid>
             <Grid item xs={1}>
-                <Grid container justifyContent="unset" alignItems="center">
-                    <IconButton>
+                <Grid container justifyContent="flex-end" alignItems="center">
+                    <IconButton sx={{ p: { xs: '0px', sm: '12px' } }}>
                         <CancelOutlinedIcon sx={{ color: 'secondary.main' }} />
                     </IconButton>
                 </Grid>
