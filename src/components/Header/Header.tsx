@@ -8,7 +8,6 @@ import Logo from '../Logo/Logo'
 import NavMenu from './NavMenu/NavMenu'
 import ThemeToggle from './ThemeToggle/ThemeToggle'
 import NavItems from './NavItems/NavItems'
-// import Logo from '../../img/logo.svg'
 
 interface Props {
     darkMode: boolean
