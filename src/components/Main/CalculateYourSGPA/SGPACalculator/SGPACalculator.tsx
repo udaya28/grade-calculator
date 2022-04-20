@@ -1,9 +1,10 @@
+import React from 'react'
 import { Grid } from '@mui/material'
-
-import React, { useState } from 'react'
 import SemesterDetails from './SemesterDetails/SemesterDetails'
 
 function SGPACalculator() {
+    // const [semesterDetails, setSemesterDetails] = useState([])
+
     return (
         <Grid item xs={12}>
             <Grid
