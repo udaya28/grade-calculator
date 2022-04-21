@@ -1,4 +1,4 @@
-const environment = process.env.ENV;
+const environment = process.env.ENV_NAME;
 let url;
 switch (environment) {
     case 'development':

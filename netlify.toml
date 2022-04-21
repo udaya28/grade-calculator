@@ -7,6 +7,8 @@
 
 [build.environment]
   GENERATE_SOURCEMAP = "true"
+  ENV_NAME=development
 
 [build.production.environment]
   GENERATE_SOURCEMAP = "false"
+  ENV_NAME=development
