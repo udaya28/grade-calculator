@@ -28,7 +28,8 @@
     "scripts": {
         "start": "react-scripts start",
         "start:lambda": "SET NODE_OPTIONS=--openssl-legacy-provider && netlify-lambda serve api",
-        "build": "run-p build:**",
+        "build": "GENERATE_SOURCEMAP=false react-scripts build",
+        "build1": "run-p build:**",
         "build:app": "GENERATE_SOURCEMAP=false react-scripts build",
         "build:lambda": "netlify-lambda build api",
         "test": "react-scripts test",
