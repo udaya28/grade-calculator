@@ -1,74 +1,37 @@
 import { Grid, MenuItem, TextField } from '@mui/material'
 import React, { useState } from 'react'
 
-function DetailsForm() {
-    const colleges = [
-        {
-            id: 0,
-            name: 'None',
+const sxrop = {
+    '& .MuiOutlinedInput-root': {
+        '& > fieldset': {
+            borderColor: 'secondary.main',
         },
-        {
-            id: 1,
-            name: 'VCET',
+    },
+    '& .MuiOutlinedInput-root:hover': {
+        '& > fieldset': {
+            borderColor: 'secondary.main',
         },
-        {
-            id: 2,
-            name: 'AU',
-        },
-    ]
-    const regulations = [
-        {
-            id: 1,
-            name: '2018',
-        },
-        {
-            id: 2,
-            name: '2021',
-        },
-    ]
-    const departments = [
-        {
-            id: 1,
-            name: 'CSE',
-        },
-        {
-            id: 2,
-            name: 'IT',
-        },
-        {
-            id: 3,
-            name: 'ECE',
-        },
-        {
-            id: 4,
-            name: 'MEC',
-        },
-    ]
+    },
+    '& .MuiSvgIcon-root': {
+        color: 'secondary.main',
+    },
+}
 
-    const [selectedCollege, setSelectedCollege] = useState<number>(0)
+function DetailsForm() {
+    const colleges = ['None', 'VCET', 'AU']
+    const regulations = ['2016', '2018']
+    const departments = ['CSE','IT','ECE','MEC']
+
+    const [selectedCollege, setSelectedCollege] = useState<string>('None')
     // const [selectedRegulation, setSelectedRegulation] = useState('')
     // const [selectedDepartment, setSelectedDepartments] = useState('')
 
     const handelChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         console.log(e.target.value)
-        setSelectedCollege(+e.target.value)
+        setSelectedCollege(e.target.value)
     }
 
-    const sxrop = {
-        '& .MuiOutlinedInput-root': {
-            '& > fieldset': {
-                borderColor: 'secondary.main',
-            },
-        },
-        '& .MuiOutlinedInput-root:hover': {
-            '& > fieldset': {
-                borderColor: 'secondary.main',
-            },
-        },
-        '& .MuiSvgIcon-root': {
-            color: 'secondary.main',
-        },
-    }
+
 
     return (
         <>
@@ -85,8 +48,8 @@ function DetailsForm() {
                     sx={sxrop}
                 >
                     {colleges.map((college) => (
-                        <MenuItem key={college.id} value={college.id}>
-                            {college.name}
+                        <MenuItem key={college} value={college}>
+                            {college}
                         </MenuItem>
                     ))}
                 </TextField>
@@ -103,8 +66,8 @@ function DetailsForm() {
                     sx={sxrop}
                 >
                     {regulations.map((regulation) => (
-                        <MenuItem key={regulation.id} value={regulation.id}>
-                            {regulation.name}
+                        <MenuItem key={regulation} value={regulation}>
+                            {regulation}
                         </MenuItem>
                     ))}
                 </TextField>
@@ -121,8 +84,8 @@ function DetailsForm() {
                     sx={sxrop}
                 >
                     {departments.map((department) => (
-                        <MenuItem key={department.id} value={department.id}>
-                            {department.name}
+                        <MenuItem key={department} value={department}>
+                            {department}
                         </MenuItem>
                     ))}
                 </TextField>
