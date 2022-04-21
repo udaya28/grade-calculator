@@ -5,7 +5,10 @@ function send(data) {
     return {
         statusCode: 200,
         body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
+        headers: {
+            "Content-Type": "application/json",
+            "access-control-allow-origin": "*"
+        }
     }
 }
 
