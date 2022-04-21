@@ -1,32 +1,34 @@
 /* eslint-disable */
 import Data from '../../data/Data.js'
-export async function handler(event, context) {
-    console.log(event.queryStringParameters)
-    const { college, regulation, department } = event.queryStringParameters;
-    if (college && regulation && department) {
-        const data = Data[college]?.[regulation]?.[department]
-        return {
-            statusCode: 200,
-            body: JSON.stringify(data),
-        }
-    }
-    if (college && regulation) {
-        const data = Object.keys(Data[college]?.[regulation])
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ departments: data }),
-        }
-    }
-    if (college) {
-        const data = Object.keys(Data[college])
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ regulations: data }),
-        }
-    }
-    const data = Object.keys(Data)
+
+function send(data) {
     return {
         statusCode: 200,
-        body: JSON.stringify({ colleges: data }),
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
     }
+}
+
+export async function handler(event, context) {
+    const { college, regulation, department } = event.queryStringParameters;
+    console.log({ college, regulation, department })
+
+
+    if (college && regulation && department) {
+        const data = { semesters: Data[college]?.[regulation]?.[department] }
+        return send(data)
+    }
+
+    if (college && regulation) {
+        const data = { departments: Object.keys(Data[college]?.[regulation]) }
+        return send(data)
+    }
+
+    if (college) {
+        const data = { regulations: Object.keys(Data[college]) }
+        return send(data)
+    }
+
+    const data = { colleges: Object.keys(Data) }
+    return send(data)
 }
