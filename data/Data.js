@@ -1,6 +1,6 @@
 const DATA = {
     "VCET": {
-        "R-2018": {
+        "2018": {
             "CSE": {
                 "1": {
                     "total-credit": 22,
@@ -170,10 +170,11 @@ const DATA = {
                 }
             }
         },
-        "R-2016": {
+        "2016": {
             "hhi": 444
         }
-    }
+    },
+    "AU":{}
 }
 
 export default DATA
