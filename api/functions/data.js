@@ -7,7 +7,8 @@ function send(data) {
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json",
-            "access-control-allow-origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
         }
     }
 }
