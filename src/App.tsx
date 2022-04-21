@@ -21,7 +21,7 @@ function App() {
         if (localStorage.getItem('preferred-theme') === 'dark') {
             setDarkMode(true)
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleThemeChange = () => {
