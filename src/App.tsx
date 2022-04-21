@@ -15,7 +15,7 @@ function App() {
     const [darkMode, setDarkMode] = useState(false)
 
     useEffect(() => {
-        console.log('useEffect')
+        console.log(process.env.REACT_APP_ENV_NAME)
         console.log(darkMode)
         axios.get(`${URL.FULL_URL}/data`).then((data) => console.log(data))
         if (localStorage.getItem('preferred-theme') === 'dark') {

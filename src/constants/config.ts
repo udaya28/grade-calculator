@@ -1,4 +1,4 @@
-const environment = process.env.ENV_NAME;
+const environment = process.env.REACT_APP_ENV_NAME;
 let url;
 switch (environment) {
     case 'development':
