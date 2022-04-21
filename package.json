@@ -28,6 +28,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "GENERATE_SOURCEMAP=false react-scripts build",
+        "build-dev": "ENV=development GENERATE_SOURCEMAP=false react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint": "eslint . --ext .jsx,.tsx,.js,.ts",
