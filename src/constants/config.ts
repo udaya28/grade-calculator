@@ -2,10 +2,10 @@ const environment = process.env.REACT_APP_ENV_NAME;
 let url;
 switch (environment) {
     case 'development':
-        url = 'http://grade-api-dev.netlify.app';
+        url = 'https://grade-api-dev.netlify.app';
         break;
     case 'production':
-        url = 'http://grade-api-prod.netlify.app';
+        url = 'https://grade-api-prod.netlify.app';
         break;
     default:
         url = 'http://localhost:9000';
