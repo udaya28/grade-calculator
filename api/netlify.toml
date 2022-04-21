@@ -1,0 +1,12 @@
+[build]
+  command = "yarn build" # the command you run to build this file
+  functions = "built-lambda" # netlify-lambda builds to this folder AND Netlify reads functions from here
+
+[dev]
+  functionsPort = 9000
+
+[build.environment]
+  GENERATE_SOURCEMAP = "true"
+
+[build.production.environment]
+  GENERATE_SOURCEMAP = "false"
