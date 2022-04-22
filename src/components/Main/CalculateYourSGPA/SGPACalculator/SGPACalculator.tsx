@@ -3,8 +3,6 @@ import { Grid } from '@mui/material'
 import SemesterDetails from './SemesterDetails/SemesterDetails'
 
 function SGPACalculator() {
-    // const [semesterDetails, setSemesterDetails] = useState([])
-
     return (
         <Grid item xs={12}>
             <Grid

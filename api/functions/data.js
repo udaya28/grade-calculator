@@ -6,19 +6,18 @@ function send(data) {
         statusCode: 200,
         body: JSON.stringify(data),
         headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "GET",
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Methods': 'GET',
             'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-        }
+        },
     }
 }
 
 export async function handler(event, context) {
-    const { college, regulation, department } = event.queryStringParameters;
+    const { college, regulation, department } = event.queryStringParameters
     console.log({ college, regulation, department })
-
 
     if (college && regulation && department) {
         const data = { semesters: Data[college]?.[regulation]?.[department] }
