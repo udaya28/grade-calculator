@@ -18,11 +18,11 @@ const sxrop = {
     },
 }
 
-function DetailsForm() {
-    // const colleges = ['None', 'VCET', 'AU']
-    // const regulations = ['2016', '2018']
-    // const departments = ['CSE', 'IT', 'ECE', 'MEC']
+interface Props {
+    setFormData: (data: any) => void
+}
 
+function DetailsForm({ setFormData }: Props) {
     const [colleges, setColleges] = useState(['None'])
     const [regulations, setRegulations] = useState([''])
     const [departments, setDepartments] = useState([''])
@@ -63,6 +63,12 @@ function DetailsForm() {
         )
         const data = await response.json()
         console.log(data.semesters)
+        setFormData({
+            college: selectedCollege,
+            regulation: selectedRegulation,
+            department: selectedDepartment,
+            semesters: data.semesters,
+        })
     }
 
     useEffect(() => {
