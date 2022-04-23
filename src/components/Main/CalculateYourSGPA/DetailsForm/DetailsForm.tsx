@@ -19,7 +19,8 @@ const sxrop = {
 }
 
 interface Props {
-    setFormData: (data: any) => void
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setFormData: any
 }
 
 function DetailsForm({ setFormData }: Props) {
