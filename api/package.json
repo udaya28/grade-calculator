@@ -1,15 +1,15 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "description": "api's",
-  "main": "index.js",
-  "scripts": {
-    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && netlify-lambda serve functions",
-    "build": "netlify-lambda build functions"
-  },
-  "author": "udaya28",
-  "license": "ISC",
-  "devDependencies": {
-    "netlify-lambda": "^2.0.15"
-  }
+    "name": "api",
+    "version": "1.0.0",
+    "description": "api's",
+    "main": "index.js",
+    "scripts": {
+        "start": "SET NODE_OPTIONS=--openssl-legacy-provider && netlify-lambda serve functions",
+        "build": "netlify-lambda build functions"
+    },
+    "author": "udaya28",
+    "license": "ISC",
+    "devDependencies": {
+        "netlify-lambda": "^2.0.15"
+    }
 }
