@@ -9,6 +9,7 @@ function CalculateYourSGPA() {
         college: 'None',
         regulation: '',
         department: '',
+        semesters: {},
     })
 
     const [mainData, setMainData] = useState({
@@ -18,19 +19,6 @@ function CalculateYourSGPA() {
         semesters: {},
     })
 
-    const fetchSemesters = async () => {
-        const response = await fetch(
-            `${URL.FULL_URL}/data?college=${formData.college}&regulation=${formData.regulation}&department=${formData.department}`,
-        )
-        const data = await response.json()
-        setMainData({
-            college: formData.college,
-            regulation: formData.regulation,
-            department: formData.department,
-            semesters: data.semesters,
-        })
-    }
-
     useEffect(() => {
         if (
             formData.college !== 'None' &&
@@ -38,20 +26,26 @@ function CalculateYourSGPA() {
             formData.regulation !== '' &&
             formData.department !== ''
         ) {
-            fetchSemesters()
+            setMainData({
+                college: formData.college,
+                regulation: formData.regulation,
+                department: formData.department,
+                semesters: formData.semesters,
+            })
         }
-        // else {
-        //     setMainData({
-        //         college: 'None',
-        //         regulation: '',
-        //         department: '',
-        //         semesters: {}
-        //     })
-        // }
+
+        if (formData.college === 'None' || formData.regulation === '' || formData.department === '') {
+            setMainData({
+                college: 'None',
+                regulation: '',
+                department: '',
+                semesters: {},
+            })
+        }
     }, [formData])
 
     useEffect(() => {
-        console.log(mainData)
+        console.log('mainData', mainData)
     }, [mainData])
 
     return (
@@ -69,7 +63,7 @@ function CalculateYourSGPA() {
 
                 <DetailsForm setFormData={setFormData} />
 
-                <SGPACalculator />
+                <SGPACalculator mainData={mainData} />
             </Grid>
         </Grid>
     )

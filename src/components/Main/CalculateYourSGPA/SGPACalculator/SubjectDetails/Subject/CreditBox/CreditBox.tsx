@@ -15,12 +15,13 @@ const creditBoxStyles: SxProps<Theme> = {
 
 interface Props {
     removeBorder: SxProps<Theme>
-    credit: string
-    setCredit: React.Dispatch<React.SetStateAction<string>>
+    credit: number
+    setCredit: React.Dispatch<React.SetStateAction<number>>
 }
 
 function CreditBox({ removeBorder, credit, setCredit }: Props) {
     const creditsArr = [
+        { value: 0, name: 0 },
         { value: 1, name: 1 },
         { value: 2, name: 2 },
         { value: 3, name: 3 },
@@ -38,7 +39,7 @@ function CreditBox({ removeBorder, credit, setCredit }: Props) {
                 size="small"
                 displayEmpty
                 value={credit}
-                onChange={(e) => setCredit(e.target.value)}
+                onChange={(e) => setCredit(+e.target.value)}
             >
                 <MenuItem value="" disabled>
                     <Typography style={{ color: 'secondary.main', opacity: 0.8, fontWeight: 500 }}>Credits</Typography>

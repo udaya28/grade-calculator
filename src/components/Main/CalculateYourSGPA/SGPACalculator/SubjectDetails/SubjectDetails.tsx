@@ -3,11 +3,18 @@ import React from 'react'
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined'
 import Subject from './Subject/Subject'
 
-function SubjectDetails() {
+interface Props {
+    subject: {
+        subject: string
+        credit: number
+    }
+}
+
+function SubjectDetails({ subject }: Props) {
     return (
         <Grid container alignItems="center" justifyContent="space-between">
             <Grid item xs={11}>
-                <Subject />
+                <Subject subjectDetails={subject} />
             </Grid>
             <Grid item xs={1}>
                 <Grid container justifyContent="flex-end" alignItems="center">
@@ -20,4 +27,4 @@ function SubjectDetails() {
     )
 }
 
-export default SubjectDetails
+export default React.memo(SubjectDetails)

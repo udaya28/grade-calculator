@@ -45,9 +45,16 @@ const boxStyles: SxProps<Theme> = {
     borderRadius: '5px',
 }
 
-function Subject() {
-    const [subject, setSubject] = useState('')
-    const [credit, setCredit] = useState('')
+interface Props {
+    subjectDetails: {
+        subject: string
+        credit: number
+    }
+}
+
+function Subject({ subjectDetails }: Props) {
+    const [subject, setSubject] = useState(subjectDetails.subject)
+    const [credit, setCredit] = useState(subjectDetails.credit)
     const [grade, setGrade] = useState('')
 
     const subjectProps = {
