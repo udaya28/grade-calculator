@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, MenuItem, Select, Theme, Typography, SxProps } from '@mui/material'
+import { Grid, MenuItem, Select, Theme, Typography, SxProps, SelectChangeEvent } from '@mui/material'
 
 const gradeBoxStyles: SxProps<Theme> = {
     borderBottomWidth: {
@@ -27,11 +27,12 @@ const gradeArr = [
 
 interface Props {
     removeBorder: SxProps<Theme>
-    grade: string
-    setGrade: React.Dispatch<React.SetStateAction<string>>
+    grade: number
+    handleGradeChange: (event: SelectChangeEvent<string>) => void
 }
 
-function GradeBox({ removeBorder, grade, setGrade }: Props) {
+function GradeBox({ removeBorder, grade, handleGradeChange }: Props) {
+    console.log('GradeBox', grade, grade.toString())
     return (
         <Grid item xs={6} sm={3} sx={gradeBoxStyles}>
             <Select
@@ -41,8 +42,8 @@ function GradeBox({ removeBorder, grade, setGrade }: Props) {
                 sx={removeBorder}
                 size="small"
                 displayEmpty
-                value={grade}
-                onChange={(e) => setGrade(e.target.value)}
+                value={grade.toString() || ''}
+                onChange={handleGradeChange}
             >
                 <MenuItem value="" disabled>
                     <Typography style={{ color: 'secondary.main', opacity: 0.8, fontWeight: 500 }}>Grade</Typography>

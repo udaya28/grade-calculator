@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid } from '@mui/material'
+import { Grid, SelectChangeEvent } from '@mui/material'
 import { SxProps, Theme } from '@mui/system'
 import SubjectBox from './SubjectBox/SubjectBox'
 import CreditBox from './CreditBox/CreditBox'
@@ -49,13 +49,17 @@ interface Props {
     subjectDetails: {
         subject: string
         credit: number
+        grade: number
     }
+    semesterNumber: number
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dispatch: React.Dispatch<any>
 }
 
-function Subject({ subjectDetails }: Props) {
+function Subject({ subjectDetails, semesterNumber, dispatch }: Props) {
     const [subject, setSubject] = useState(subjectDetails.subject)
     const [credit, setCredit] = useState(subjectDetails.credit)
-    const [grade, setGrade] = useState('')
+    const [grade, setGrade] = useState(subjectDetails.grade)
 
     const subjectProps = {
         removeBorder,
@@ -69,11 +73,26 @@ function Subject({ subjectDetails }: Props) {
         setCredit,
     }
 
+    const handleGradeChange = (event: SelectChangeEvent<string>) => {
+        console.log(event)
+        dispatch({
+            type: 'UPDATE_GRADE_DETAILS',
+            payload: {
+                grade: event.target.value,
+                subjectName: subject,
+                semesterNumber,
+            },
+        })
+        setGrade(Number.parseInt(event.target.value, 10))
+    }
+
     const gradeProps = {
         removeBorder,
         grade,
-        setGrade,
+        handleGradeChange,
     }
+
+    // const
 
     return (
         <Grid container sx={boxStyles}>

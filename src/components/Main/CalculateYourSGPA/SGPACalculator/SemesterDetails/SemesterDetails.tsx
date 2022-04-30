@@ -57,9 +57,10 @@ interface Props {
     handleAccordionChange: (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => void
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data: any
+    dispatch: React.Dispatch<any>
 }
 
-function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordionChange }: Props) {
+function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordionChange, dispatch }: Props) {
     return (
         <Grid item xs={12}>
             <Accordion
@@ -84,7 +85,12 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                                 data.subject.length &&
                                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                 data.subject.map((subject: any) => (
-                                    <SubjectDetails key={subject.subjectCode} subject={subject} />
+                                    <SubjectDetails
+                                        key={subject.subjectCode}
+                                        subject={subject}
+                                        semesterNumber={semesterNumber}
+                                        dispatch={dispatch}
+                                    />
                                 ))}
 
                             {/* {data.map((subject: any) =><SubjectDetails key={subject.subjectCode}/>)} */}
