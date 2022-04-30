@@ -1,6 +1,5 @@
-import { Grid, IconButton } from '@mui/material'
+import { Grid } from '@mui/material'
 import React from 'react'
-import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined'
 import Subject from './Subject/Subject'
 
 interface Props {
