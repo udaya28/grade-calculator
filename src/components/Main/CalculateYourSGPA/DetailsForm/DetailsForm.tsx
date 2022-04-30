@@ -105,6 +105,12 @@ function DetailsForm({ setFormData }: Props) {
 
     useEffect(() => {
         console.log({ selectedCollege, selectedRegulation, selectedDepartment })
+        setFormData({
+            college: selectedCollege,
+            regulation: selectedRegulation,
+            department: selectedDepartment,
+            semesters: {},
+        })
     }, [selectedCollege, selectedRegulation, selectedDepartment])
 
     return (

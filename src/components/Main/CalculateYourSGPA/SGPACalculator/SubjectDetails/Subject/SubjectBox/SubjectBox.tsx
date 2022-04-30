@@ -39,6 +39,8 @@ function SubjectBox({ subject, setSubject, removeBorder }: Props) {
                 sx={removeBorder}
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
+                // disabled
+                readOnly
             />
         </Grid>
     )

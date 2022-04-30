@@ -44,7 +44,8 @@
         "no-console": "off",
         "import/extensions": "off",
         "react/jsx-props-no-spreading": "off",
-        "react-hooks/exhaustive-deps": "off"
+        "react-hooks/exhaustive-deps": "off",
+        "@typescript-eslint/no-explicit-any": "off"
     },
     "settings": {
         "import/resolver": {

@@ -1,23 +1,32 @@
-import { Grid, IconButton } from '@mui/material'
+import { Grid } from '@mui/material'
 import React from 'react'
-import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined'
 import Subject from './Subject/Subject'
 
-function SubjectDetails() {
+interface Props {
+    subject: {
+        subject: string
+        credit: number
+        grade: number
+    }
+    semesterNumber: number
+    dispatch: React.Dispatch<any>
+}
+
+function SubjectDetails({ subject, semesterNumber, dispatch }: Props) {
     return (
-        <Grid container alignItems="center" justifyContent="space-between">
+        <Grid container alignItems="center" justifyContent="center">
             <Grid item xs={11}>
-                <Subject />
+                <Subject subjectDetails={subject} semesterNumber={semesterNumber} dispatch={dispatch} />
             </Grid>
-            <Grid item xs={1}>
+            {/* <Grid item xs={1}>
                 <Grid container justifyContent="flex-end" alignItems="center">
                     <IconButton sx={{ p: { xs: '0px', sm: '12px' } }}>
                         <CancelOutlinedIcon sx={{ color: 'secondary.main' }} />
                     </IconButton>
                 </Grid>
-            </Grid>
+            </Grid> */}
         </Grid>
     )
 }
 
-export default SubjectDetails
+export default React.memo(SubjectDetails)

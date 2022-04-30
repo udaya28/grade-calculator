@@ -8,10 +8,6 @@ import React from 'react'
 import { SxProps, Theme } from '@mui/system'
 import SubjectDetails from '../SubjectDetails/SubjectDetails'
 
-interface Props {
-    semesterNumber: number
-}
-
 const boxStyles: SxProps<Theme> = {
     // subject box
     '& > div:first-child > div > div > div:first-child': {
@@ -55,10 +51,25 @@ const boxStyles: SxProps<Theme> = {
     },
 }
 
-function SemesterDetails({ semesterNumber }: Props) {
+interface Props {
+    semesterNumber: number
+    currentAccordion: number
+    handleAccordionChange: (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => void
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data: any
+    dispatch: React.Dispatch<any>
+}
+
+function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordionChange, dispatch }: Props) {
     return (
         <Grid item xs={12}>
-            <Accordion square elevation={0} sx={{ backgroundColor: 'inherit' }}>
+            <Accordion
+                square
+                elevation={0}
+                sx={{ backgroundColor: 'inherit' }}
+                expanded={currentAccordion === semesterNumber}
+                onChange={handleAccordionChange(semesterNumber)}
+            >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon sx={{ color: 'secondary.main' }} />}
                     aria-controls="panel1a-content"
@@ -67,14 +78,30 @@ function SemesterDetails({ semesterNumber }: Props) {
                     <Typography sx={{ fontWeight: 'bold' }}>{`Semester ${semesterNumber}`}</Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ padding: '8px' }}>
-                    <Box sx={boxStyles}>
+                    {currentAccordion === semesterNumber && (
+                        <Box sx={boxStyles}>
+                            {data &&
+                                data.subject &&
+                                data.subject.length &&
+                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                data.subject.map((subject: any) => (
+                                    <SubjectDetails
+                                        key={subject.subjectCode}
+                                        subject={subject}
+                                        semesterNumber={semesterNumber}
+                                        dispatch={dispatch}
+                                    />
+                                ))}
+
+                            {/* {data.map((subject: any) =><SubjectDetails key={subject.subjectCode}/>)} */}
+                            {/* <SubjectDetails />
                         <SubjectDetails />
                         <SubjectDetails />
                         <SubjectDetails />
                         <SubjectDetails />
-                        <SubjectDetails />
-                        <SubjectDetails />
-                    </Box>
+                        <SubjectDetails /> */}
+                        </Box>
+                    )}
                 </AccordionDetails>
             </Accordion>
         </Grid>
