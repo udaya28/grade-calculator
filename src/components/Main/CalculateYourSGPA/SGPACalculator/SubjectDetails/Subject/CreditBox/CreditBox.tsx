@@ -40,6 +40,7 @@ function CreditBox({ removeBorder, credit, setCredit }: Props) {
                 displayEmpty
                 value={credit}
                 onChange={(e) => setCredit(+e.target.value)}
+                readOnly
             >
                 <MenuItem value="" disabled>
                     <Typography style={{ color: 'secondary.main', opacity: 0.8, fontWeight: 500 }}>Credits</Typography>

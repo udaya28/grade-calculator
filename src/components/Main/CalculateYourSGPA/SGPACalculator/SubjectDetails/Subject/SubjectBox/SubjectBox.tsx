@@ -29,7 +29,6 @@ interface Props {
 }
 
 function SubjectBox({ subject, setSubject, removeBorder }: Props) {
-    console.log(subject)
     return (
         <Grid item xs={12} sm={6} sx={SubjectBoxStyles}>
             <Input
@@ -41,7 +40,7 @@ function SubjectBox({ subject, setSubject, removeBorder }: Props) {
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 // disabled
-                // readOnly
+                readOnly
             />
         </Grid>
     )
