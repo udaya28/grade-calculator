@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import { Grid, Typography } from '@mui/material'
 import DetailsForm from './DetailsForm/DetailsForm'
 import SGPACalculator from './SGPACalculator/SGPACalculator'
+import reducer from './reducer'
 
 function CalculateYourSGPA() {
     const [formData, setFormData] = useState({
@@ -11,12 +12,37 @@ function CalculateYourSGPA() {
         semesters: {},
     })
 
-    const [mainData, setMainData] = useState({
+    // const [mainData, setMainData] = useState({
+    //     college: 'None',
+    //     regulation: '',
+    //     department: '',
+    //     semesters: {},
+    // })
+
+    const [mainData, dispatch] = useReducer(reducer, {
         college: 'None',
         regulation: '',
         department: '',
         semesters: {},
     })
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const addGrade = (semesters: any): any => {
+        // console.log(semesters)
+
+        const data: any = {}
+        Object.keys(semesters).forEach((semester) => {
+            data[semester] = {
+                ...semesters[semester],
+                // eslint-disable-next-line arrow-body-style
+                subject: semesters[semester].subject.map((sub: any) => {
+                    return { ...sub, grade: '' }
+                }),
+            }
+        })
+
+        return data
+    }
 
     useEffect(() => {
         if (
@@ -25,20 +51,26 @@ function CalculateYourSGPA() {
             formData.regulation !== '' &&
             formData.department !== ''
         ) {
-            setMainData({
-                college: formData.college,
-                regulation: formData.regulation,
-                department: formData.department,
-                semesters: formData.semesters,
+            dispatch({
+                type: 'ADD',
+                payload: {
+                    college: formData.college,
+                    regulation: formData.regulation,
+                    department: formData.department,
+                    semesters: addGrade(formData.semesters),
+                },
             })
         }
 
         if (formData.college === 'None' || formData.regulation === '' || formData.department === '') {
-            setMainData({
-                college: 'None',
-                regulation: '',
-                department: '',
-                semesters: {},
+            dispatch({
+                type: 'DEFAULT',
+                payload: {
+                    college: 'None',
+                    regulation: '',
+                    department: '',
+                    semesters: {},
+                },
             })
         }
     }, [formData])
@@ -62,7 +94,7 @@ function CalculateYourSGPA() {
 
                 <DetailsForm setFormData={setFormData} />
 
-                <SGPACalculator mainData={mainData} />
+                <SGPACalculator mainData={mainData} dispatch={dispatch} />
             </Grid>
         </Grid>
     )
