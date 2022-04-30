@@ -82,6 +82,7 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                             {data &&
                                 data.subject &&
                                 data.subject.length &&
+                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                 data.subject.map((subject: any) => (
                                     <SubjectDetails key={subject.subjectCode} subject={subject} />
                                 ))}

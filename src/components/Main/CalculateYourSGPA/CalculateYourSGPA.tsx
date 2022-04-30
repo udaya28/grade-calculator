@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Grid, Typography } from '@mui/material'
 import DetailsForm from './DetailsForm/DetailsForm'
 import SGPACalculator from './SGPACalculator/SGPACalculator'
-import { URL } from '../../../constants/config'
 
 function CalculateYourSGPA() {
     const [formData, setFormData] = useState({
