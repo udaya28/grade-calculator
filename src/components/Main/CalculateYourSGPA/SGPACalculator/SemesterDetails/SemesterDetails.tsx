@@ -19,11 +19,11 @@ const boxStyles: SxProps<Theme> = {
         borderTopColor: 'secondary.main',
         borderTopLeftRadius: {
             xs: '0px',
-            sm: '5px',
+            sm: '10px',
         },
     },
     '& > div:last-child > div > div > div:first-child': {
-        borderBottomLeftRadius: { xs: '0px', sm: '5px' },
+        borderBottomLeftRadius: { xs: '0px', sm: '10px' },
     },
 
     // credit box
@@ -38,10 +38,10 @@ const boxStyles: SxProps<Theme> = {
 
     // grade box
     '& > div:last-child > div > div > div:last-child': {
-        borderBottomRightRadius: '5px',
+        borderBottomRightRadius: '10px',
     },
     '& > div:first-child > div > div > div:last-child': {
-        borderTopRightRadius: '5px',
+        borderTopRightRadius: '10px',
         borderTopWidth: {
             xs: '0px',
             sm: '1px',
@@ -49,6 +49,24 @@ const boxStyles: SxProps<Theme> = {
         borderTopStyle: 'solid',
         borderTopColor: 'secondary.main',
     },
+}
+
+function roundToTwo(num: number) {
+    return Math.round((num + Number.EPSILON) * 100) / 100
+}
+
+function displayResult(subjects: Array<any>) {
+    console.log(subjects)
+    let result = 0
+
+    const totalCredit = subjects.reduce((acc, curr) => acc + curr.credit, 0)
+    const totalGradePoints = subjects.reduce((acc, curr) => acc + (curr.grade ? curr.grade : 0) * curr.credit, 0)
+
+    console.log({ totalCredit, totalGradePoints })
+
+    result = totalGradePoints / totalCredit
+    console.log('totalCredit', totalCredit)
+    return `SGPA ${roundToTwo(result)}`
 }
 
 interface Props {
@@ -75,7 +93,18 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography sx={{ fontWeight: 'bold' }}>{`Semester ${semesterNumber}`}</Typography>
+                    <Grid container justifyContent="flex-start" alignItems="center">
+                        <Grid item>
+                            <Typography
+                                sx={{ fontWeight: 'bold' }}
+                            >{`Semester ${semesterNumber} \u00A0  - \u00A0`}</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+                                {`${displayResult(data?.subject || [])}`}
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </AccordionSummary>
                 <AccordionDetails sx={{ padding: '8px' }}>
                     {currentAccordion === semesterNumber && (

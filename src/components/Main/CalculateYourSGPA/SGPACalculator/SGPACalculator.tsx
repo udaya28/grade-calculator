@@ -32,7 +32,7 @@ function SGPACalculator({ mainData, dispatch }: Props) {
                         borderWidth: '1px',
                         borderStyle: 'solid',
                         borderColor: 'secondary.main',
-                        borderRadius: '5px',
+                        borderRadius: '10px',
                     }}
                 >
                     {mainData.college !== 'None' &&
