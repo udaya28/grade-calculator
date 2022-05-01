@@ -6,6 +6,7 @@ const sxStyles = {
     '& .MuiOutlinedInput-root': {
         '& > fieldset': {
             borderColor: 'secondary.main',
+            borderRadius: '10px',
         },
     },
     '& .MuiOutlinedInput-root:hover': {

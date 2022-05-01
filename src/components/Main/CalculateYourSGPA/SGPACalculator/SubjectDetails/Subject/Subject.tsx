@@ -30,7 +30,7 @@ const removeBorder: SxProps<Theme> = {
 
 const boxStyles: SxProps<Theme> = {
     '& > div': {
-        padding: '10px 16px',
+        padding: { xs: '8px 12px', sm: '10px 16px' },
     },
     '& div, li': {
         textAlign: 'center',
@@ -42,7 +42,7 @@ const boxStyles: SxProps<Theme> = {
     },
     borderStyle: 'solid',
     borderColor: 'secondary.main',
-    borderRadius: '5px',
+    borderRadius: '10px',
 }
 
 interface Props {

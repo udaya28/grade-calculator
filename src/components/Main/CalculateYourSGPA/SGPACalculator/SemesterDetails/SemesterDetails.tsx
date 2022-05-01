@@ -19,11 +19,11 @@ const boxStyles: SxProps<Theme> = {
         borderTopColor: 'secondary.main',
         borderTopLeftRadius: {
             xs: '0px',
-            sm: '5px',
+            sm: '10px',
         },
     },
     '& > div:last-child > div > div > div:first-child': {
-        borderBottomLeftRadius: { xs: '0px', sm: '5px' },
+        borderBottomLeftRadius: { xs: '0px', sm: '10px' },
     },
 
     // credit box
@@ -38,10 +38,10 @@ const boxStyles: SxProps<Theme> = {
 
     // grade box
     '& > div:last-child > div > div > div:last-child': {
-        borderBottomRightRadius: '5px',
+        borderBottomRightRadius: '10px',
     },
     '& > div:first-child > div > div > div:last-child': {
-        borderTopRightRadius: '5px',
+        borderTopRightRadius: '10px',
         borderTopWidth: {
             xs: '0px',
             sm: '1px',

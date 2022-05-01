@@ -15,7 +15,7 @@ interface Props {
 function SubjectDetails({ subject, semesterNumber, dispatch }: Props) {
     return (
         <Grid container alignItems="center" justifyContent="center">
-            <Grid item xs={11}>
+            <Grid item xs={12}>
                 <Subject subjectDetails={subject} semesterNumber={semesterNumber} dispatch={dispatch} />
             </Grid>
             {/* <Grid item xs={1}>
