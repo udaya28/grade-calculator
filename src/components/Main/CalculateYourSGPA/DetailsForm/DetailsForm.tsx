@@ -2,7 +2,7 @@ import { Grid, MenuItem, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { URL } from '../../../../constants/config'
 
-const sxrop = {
+const sxStyles = {
     '& .MuiOutlinedInput-root': {
         '& > fieldset': {
             borderColor: 'secondary.main',
@@ -16,21 +16,36 @@ const sxrop = {
     '& .MuiSvgIcon-root': {
         color: 'secondary.main',
     },
+    '& .MuiInputLabel-root.Mui-disabled': {
+        WebkitTextFillColor: 'secondary.main',
+        color: 'secondary.main',
+        opacity: 0.6,
+    },
+    '& .Mui-disabled': {
+        '& > fieldset': {
+            borderColor: 'secondary.main',
+            // opacity: 0.6,
+        },
+    },
+    // '& .Mui-disabled > fieldset .MuiOutlinedInput-notchedOutline': {
+    //     borderColor: 'secondary.main',
+    // },
 }
 
 interface Props {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setFormData: any
+    formData: any
 }
 
-function DetailsForm({ setFormData }: Props) {
+function DetailsForm({ setFormData, formData }: Props) {
     const [colleges, setColleges] = useState(['None'])
     const [regulations, setRegulations] = useState([''])
     const [departments, setDepartments] = useState([''])
 
-    const [selectedCollege, setSelectedCollege] = useState<string>('None')
-    const [selectedRegulation, setSelectedRegulation] = useState('')
-    const [selectedDepartment, setSelectedDepartment] = useState('')
+    const [selectedCollege, setSelectedCollege] = useState<string>(formData.college)
+    const [selectedRegulation, setSelectedRegulation] = useState(formData.regulation)
+    const [selectedDepartment, setSelectedDepartment] = useState(formData.department)
 
     const handelChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         console.log(e.target.value)
@@ -63,7 +78,6 @@ function DetailsForm({ setFormData }: Props) {
             `${URL.FULL_URL}/data?college=${selectedCollege}&regulation=${selectedRegulation}&department=${selectedDepartment}`,
         )
         const data = await response.json()
-        console.log(data.semesters)
         setFormData({
             college: selectedCollege,
             regulation: selectedRegulation,
@@ -79,21 +93,21 @@ function DetailsForm({ setFormData }: Props) {
     useEffect(() => {
         if (selectedCollege !== 'None' && selectedCollege !== '') {
             fetchRegulation()
-            setSelectedRegulation('')
+            setSelectedRegulation(formData.regulation || '')
         }
         if (selectedCollege === 'None' || selectedCollege === '') {
-            setSelectedRegulation('')
+            setSelectedRegulation(formData.regulation || '')
         }
     }, [selectedCollege])
 
     useEffect(() => {
         if (selectedCollege !== 'None' && selectedCollege !== '' && selectedRegulation !== '') {
             fetchDepartment()
-            setSelectedDepartment('')
+            setSelectedDepartment(formData.department || '')
         }
         if (selectedRegulation === '') {
-            setSelectedDepartment('')
-            setSelectedRegulation('')
+            setSelectedDepartment(formData.department || '')
+            setSelectedRegulation(formData.regulation || '')
         }
     }, [selectedRegulation])
 
@@ -125,7 +139,7 @@ function DetailsForm({ setFormData }: Props) {
                     fullWidth
                     onChange={(e) => handelChange(e)}
                     InputProps={{ sx: { color: 'secondary.main' } }}
-                    sx={sxrop}
+                    sx={sxStyles}
                 >
                     {colleges.map((college) => (
                         <MenuItem key={college} value={college}>
@@ -143,7 +157,7 @@ function DetailsForm({ setFormData }: Props) {
                     variant="outlined"
                     fullWidth
                     InputProps={{ sx: { color: 'secondary.main' } }}
-                    sx={sxrop}
+                    sx={sxStyles}
                     disabled={selectedCollege === 'None'}
                     value={selectedRegulation}
                     onChange={(e) => setSelectedRegulation(e.target.value)}
@@ -164,7 +178,7 @@ function DetailsForm({ setFormData }: Props) {
                     variant="outlined"
                     fullWidth
                     InputProps={{ sx: { color: 'secondary.main' } }}
-                    sx={sxrop}
+                    sx={sxStyles}
                     disabled={selectedCollege === 'None' || selectedRegulation === ''}
                     value={selectedDepartment}
                     onChange={(e) => setSelectedDepartment(e.target.value)}
