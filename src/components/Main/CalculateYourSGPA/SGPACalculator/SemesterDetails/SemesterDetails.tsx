@@ -66,7 +66,7 @@ function displayResult(subjects: Array<any>) {
 
     result = totalGradePoints / totalCredit
     console.log('totalCredit', totalCredit)
-    return `SGPA ${roundToTwo(result)}`
+    return roundToTwo(result)
 }
 
 interface Props {
@@ -101,7 +101,7 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                         </Grid>
                         <Grid item>
                             <Typography sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-                                {`${displayResult(data?.subject || [])}`}
+                                {`CGPA ${displayResult(data?.subject || []) || '0'}`}
                             </Typography>
                         </Grid>
                     </Grid>

@@ -34,19 +34,17 @@ const sxStyles = {
 }
 
 interface Props {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setFormData: any
-    formData: any
 }
 
-function DetailsForm({ setFormData, formData }: Props) {
+function DetailsForm({ setFormData }: Props) {
     const [colleges, setColleges] = useState(['None'])
     const [regulations, setRegulations] = useState([''])
     const [departments, setDepartments] = useState([''])
 
-    const [selectedCollege, setSelectedCollege] = useState<string>(formData.college)
-    const [selectedRegulation, setSelectedRegulation] = useState(formData.regulation)
-    const [selectedDepartment, setSelectedDepartment] = useState(formData.department)
+    const [selectedCollege, setSelectedCollege] = useState<string>('None')
+    const [selectedRegulation, setSelectedRegulation] = useState('')
+    const [selectedDepartment, setSelectedDepartment] = useState('')
 
     const handelChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         console.log(e.target.value)
@@ -94,21 +92,21 @@ function DetailsForm({ setFormData, formData }: Props) {
     useEffect(() => {
         if (selectedCollege !== 'None' && selectedCollege !== '') {
             fetchRegulation()
-            setSelectedRegulation(formData.regulation || '')
+            setSelectedRegulation('')
         }
         if (selectedCollege === 'None' || selectedCollege === '') {
-            setSelectedRegulation(formData.regulation || '')
+            setSelectedRegulation('')
         }
     }, [selectedCollege])
 
     useEffect(() => {
         if (selectedCollege !== 'None' && selectedCollege !== '' && selectedRegulation !== '') {
             fetchDepartment()
-            setSelectedDepartment(formData.department || '')
+            setSelectedDepartment('')
         }
         if (selectedRegulation === '') {
-            setSelectedDepartment(formData.department || '')
-            setSelectedRegulation(formData.regulation || '')
+            setSelectedDepartment('')
+            setSelectedRegulation('')
         }
     }, [selectedRegulation])
 

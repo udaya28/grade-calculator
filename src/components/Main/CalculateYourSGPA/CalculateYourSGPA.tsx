@@ -98,7 +98,7 @@ function CalculateYourSGPA() {
                     </Typography>
                 </Grid>
 
-                <DetailsForm formData={formData} setFormData={setFormData} />
+                <DetailsForm setFormData={setFormData} />
 
                 <SGPACalculator mainData={mainData} dispatch={dispatch} />
             </Grid>
