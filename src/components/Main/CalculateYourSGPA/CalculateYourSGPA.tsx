@@ -3,6 +3,7 @@ import { Grid, Typography } from '@mui/material'
 import DetailsForm from './DetailsForm/DetailsForm'
 import SGPACalculator from './SGPACalculator/SGPACalculator'
 import reducer from './reducer'
+// import useLocalStorage from '../../../hooks/useLocalStorage'
 
 function CalculateYourSGPA() {
     const [formData, setFormData] = useState({
@@ -12,13 +13,6 @@ function CalculateYourSGPA() {
         semesters: {},
     })
 
-    // const [mainData, setMainData] = useState({
-    //     college: 'None',
-    //     regulation: '',
-    //     department: '',
-    //     semesters: {},
-    // })
-
     const [mainData, dispatch] = useReducer(reducer, {
         college: 'None',
         regulation: '',
@@ -26,10 +20,22 @@ function CalculateYourSGPA() {
         semesters: {},
     })
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const addGrade = (semesters: any): any => {
-        // console.log(semesters)
+    // const initializer = (
+    //     initialValue = {
+    //         college: 'None',
+    //         regulation: '',
+    //         department: '',
+    //         semesters: {},
+    //     },
+    // ) => JSON.parse(localStorage.getItem('mainData') || '') || initialValue
 
+    // const [mainData, dispatch] = useReducer(reducer, initializer())
+
+    // useEffect(() => {
+    //     localStorage.setItem('mainData', JSON.stringify(mainData))
+    // }, [mainData])
+
+    const addGrade = (semesters: any): any => {
         const data: any = {}
         Object.keys(semesters).forEach((semester) => {
             data[semester] = {
@@ -92,7 +98,7 @@ function CalculateYourSGPA() {
                     </Typography>
                 </Grid>
 
-                <DetailsForm setFormData={setFormData} />
+                <DetailsForm formData={formData} setFormData={setFormData} />
 
                 <SGPACalculator mainData={mainData} dispatch={dispatch} />
             </Grid>
