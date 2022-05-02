@@ -21,7 +21,40 @@ const init = (semesterDetails: Array<any>, noOfSemesters: number) => {
     return data
 }
 
-function CalculateYourCGPA() {
+interface Props {
+    mainData: any
+}
+
+function calculateSGPA(subjects: Array<any>) {
+    console.log(subjects)
+    let result = 0
+
+    const totalCredit = subjects.reduce((acc, curr) => acc + curr.credit, 0)
+    const totalGradePoints = subjects.reduce((acc, curr) => acc + (curr.grade ? curr.grade : 0) * curr.credit, 0)
+
+    console.log({ totalCredit, totalGradePoints })
+
+    result = totalGradePoints / totalCredit
+    return +result.toFixed(2)
+}
+
+const extractSemesterDetails = (semesters: any = {}) => {
+    const data: Array<any> = []
+    console.log(semesters)
+
+    for (let sem = 1; sem <= Object.keys(semesters).length; sem += 1) {
+        const semester = semesters[sem]
+        data.push({
+            semesterNumber: sem,
+            totalCredits: semester?.subject?.reduce((acc: number, curr: any) => acc + curr.credit, 0),
+            SGPA: calculateSGPA(semester.subject),
+        })
+    }
+
+    return data
+}
+
+function CalculateYourCGPA({ mainData }: Props) {
     const [noOfSemesters, setNoOfSemesters] = useState<string | number>(1)
     const [semesterDetails, setSemesterDetails] = useState<Array<any>>([])
 
@@ -52,6 +85,16 @@ function CalculateYourCGPA() {
         data[semesterNumber - 1].SGPA = SGPA
         setSemesterDetails(data)
     }
+
+    useEffect(() => {
+        console.log(mainData)
+        if (mainData.college === 'None' || mainData.regulation === '' || mainData.department === '') {
+            return
+        }
+        setNoOfSemesters(Object.keys(mainData?.semesters).length || 1)
+        // console.log('data', extractSemesterDetails(mainData.semesters))
+        setSemesterDetails(extractSemesterDetails(mainData.semesters))
+    }, [mainData])
 
     return (
         <Grid item xs={12}>
