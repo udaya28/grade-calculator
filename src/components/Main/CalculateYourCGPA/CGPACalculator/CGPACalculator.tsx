@@ -58,7 +58,11 @@ const sxProps: SxProps<Theme> = {
     },
 }
 
-const displayCGPA = () => 0
+const displayCGPA = (semesterDetails: Array<any>) => {
+    const totalCredits = semesterDetails.reduce((acc, curr) => acc + +curr.totalCredits, 0)
+    const totalGradePoints = semesterDetails.reduce((acc, curr) => acc + +curr.totalCredits * +curr.SGPA, 0)
+    return totalCredits === 0 ? 0 : (totalGradePoints / totalCredits).toFixed(2)
+}
 
 interface SemesterDetails {
     semesterNumber: number
@@ -67,10 +71,12 @@ interface SemesterDetails {
 }
 
 interface Prop {
+    setTotalCredits: any
+    setSGPA: any
     semesterDetails: Array<SemesterDetails>
 }
 
-function CGPACalculator({ semesterDetails }: Prop) {
+function CGPACalculator({ semesterDetails, setTotalCredits, setSGPA }: Prop) {
     return (
         <Grid item xs={12}>
             <Grid
@@ -85,15 +91,21 @@ function CGPACalculator({ semesterDetails }: Prop) {
             >
                 <Grid item xs={12}>
                     <Typography sx={{ fontWeight: 'bold', color: 'primary.main', padding: '10px' }}>
-                        {`CGPA ${displayCGPA() || '0'}`}
+                        {`CGPA ${displayCGPA(semesterDetails) || '0.00'}`}
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
                     <Grid container sx={sxProps}>
                         <CGPATableHead />
-                        {semesterDetails.map((semester) => (
-                            <SGPADetails semesterData={semester} key={semester.semesterNumber} />
-                        ))}
+                        {semesterDetails &&
+                            semesterDetails?.map((semester) => (
+                                <SGPADetails
+                                    semesterData={semester}
+                                    key={semester.semesterNumber}
+                                    setTotalCredits={setTotalCredits}
+                                    setSGPA={setSGPA}
+                                />
+                            ))}
                     </Grid>
                 </Grid>
             </Grid>

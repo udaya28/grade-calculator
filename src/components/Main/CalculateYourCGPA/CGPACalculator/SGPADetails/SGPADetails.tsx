@@ -35,9 +35,11 @@ interface SemesterDetails {
 }
 interface Prop {
     semesterData: SemesterDetails
+    setTotalCredits: any
+    setSGPA: any
 }
 
-function SGPADetails({ semesterData }: Prop) {
+function SGPADetails({ semesterData, setTotalCredits, setSGPA }: Prop) {
     return (
         <Grid item xs={12}>
             <Grid
@@ -63,7 +65,7 @@ function SGPADetails({ semesterData }: Prop) {
                         type="number"
                         // inputProps={{ sx: { textAlign: 'center' } }}
                         value={semesterData.totalCredits}
-                        // onChange={(e) => setSubject(e.target.value)}
+                        onChange={(e) => setTotalCredits(semesterData.semesterNumber, e.target.value)}
                         // disabled
                         // readOnly
                     />
@@ -78,7 +80,7 @@ function SGPADetails({ semesterData }: Prop) {
                         type="number"
                         // inputProps={{ sx: { textAlign: 'center' } }}
                         value={semesterData.SGPA}
-                        // onChange={(e) => setSubject(e.target.value)}
+                        onChange={(e) => setSGPA(semesterData.semesterNumber, e.target.value)}
                         // disabled
                         // readOnly
                     />
