@@ -22,7 +22,7 @@ const gradeArr = [
     { value: 8, name: 'A' },
     { value: 7, name: 'B+' },
     { value: 6, name: 'B' },
-    { value: 0, name: 'RA' },
+    { value: 0, name: 'RA/AB' },
 ]
 
 interface Props {
