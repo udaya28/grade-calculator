@@ -165,7 +165,7 @@ const DATA = {
                     subject: [
                         { subject: 'Professional Elective - V', credit: 3 },
                         { subject: 'Professional Elective - VI', credit: 3 },
-                        { subject: 'Project Work', credit: 6 },
+                        { subject: 'Project Work', credit: 10 },
                     ],
                 },
             },
