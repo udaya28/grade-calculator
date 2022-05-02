@@ -51,9 +51,9 @@ const boxStyles: SxProps<Theme> = {
     },
 }
 
-function roundToTwo(num: number) {
-    return Math.round((num + Number.EPSILON) * 100) / 100
-}
+// function roundToTwo(num: number) {
+//     return Math.round((num + Number.EPSILON) * 100) / 100
+// }
 
 function displayResult(subjects: Array<any>) {
     console.log(subjects)
@@ -66,7 +66,7 @@ function displayResult(subjects: Array<any>) {
 
     result = totalGradePoints / totalCredit
     console.log('totalCredit', totalCredit)
-    return `SGPA ${roundToTwo(result)}`
+    return result.toFixed(2)
 }
 
 interface Props {
@@ -101,7 +101,7 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                         </Grid>
                         <Grid item>
                             <Typography sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-                                {`${displayResult(data?.subject || [])}`}
+                                {`SGPA ${displayResult(data?.subject || []) || '0.00'}`}
                             </Typography>
                         </Grid>
                     </Grid>

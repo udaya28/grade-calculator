@@ -3,6 +3,7 @@ import { Grid, Container } from '@mui/material'
 import GradeCalculator from './GradeCalculator/GradeCalculator'
 import CalculateYourSGPA from './CalculateYourSGPA/CalculateYourSGPA'
 import Aside from './Aside/Aside'
+import CalculateYourCGPA from './CalculateYourCGPA/CalculateYourCGPA'
 
 function Main() {
     return (
@@ -12,6 +13,7 @@ function Main() {
                     <Grid container alignItems="flex-start" justifyContent="flex-start" rowSpacing={2}>
                         <GradeCalculator />
                         <CalculateYourSGPA />
+                        <CalculateYourCGPA />
                     </Grid>
                 </Grid>
 

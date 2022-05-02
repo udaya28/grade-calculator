@@ -28,6 +28,10 @@ function CreditBox({ removeBorder, credit, setCredit }: Props) {
         { value: 4, name: 4 },
         { value: 5, name: 5 },
         { value: 6, name: 6 },
+        { value: 7, name: 7 },
+        { value: 8, name: 8 },
+        { value: 9, name: 9 },
+        { value: 10, name: 10 },
     ]
     return (
         <Grid item xs={6} sm={3} sx={creditBoxStyles}>
