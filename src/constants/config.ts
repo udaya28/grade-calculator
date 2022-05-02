@@ -7,6 +7,9 @@ switch (environment) {
     case 'production':
         url = 'https://grade-api-prod.netlify.app'
         break
+    case 'local':
+        url = 'http://localhost:9000'
+        break
     default:
         url = 'http://localhost:9000'
         break
