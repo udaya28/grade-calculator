@@ -1,80 +1,100 @@
-import { Grid, Input, Typography } from '@mui/material'
-import { SxProps, Theme } from '@mui/system'
 import React from 'react'
+import { Grid, Typography, SxProps } from '@mui/material'
+import { Theme } from '@mui/system'
+import CGPATableHead from './CGPATableHead/CGPATableHead'
+import SGPADetails from './SGPADetails/SGPADetails'
 
-// const boxStyles: SxProps<Theme> = {}
+const sxProps: SxProps<Theme> = {
+    // border: '1px solid red',
 
-const removeBorder: SxProps<Theme> = {
-    '&&&:before': {
-        borderBottom: 'none',
+    '& > div > div > div': {
+        borderWidth: '1px',
+        borderTopStyle: 'solid',
+        borderTopColor: 'secondary.main',
     },
-    '&&:after': {
-        borderBottom: 'none',
+
+    '& > div > div:last-child > div': {
+        borderWidth: '1px',
+        borderRightStyle: 'solid',
+        borderRightColor: 'secondary.main',
     },
-    height: '100%',
-    color: 'secondary.main',
-    '& div:focus': { backgroundColor: 'inherit' },
-    '& .MuiSvgIcon-root': {
-        color: 'secondary.main',
-        opacity: 0.9,
+
+    '& > div > div > div:first-child': {
+        borderWidth: '1px',
+        borderLeftStyle: 'solid',
+        borderLeftColor: 'secondary.main',
     },
-    '& > input::placeholder': {
-        color: 'secondary.main',
-        fontWeight: 500,
-        fontSize: '1rem',
-        lineHeight: 1.5,
-        opacity: 0.7,
+    '& > div:last-child > div > div': {
+        borderWidth: '1px',
+        borderBottomStyle: 'solid',
+        borderBottomColor: 'secondary.main',
     },
-    textAlign: 'center',
+
+    '& > div:first-child > div > div:first-child': {
+        borderWidth: '1px',
+        borderTopStyle: 'solid',
+        borderTopColor: 'secondary.main',
+        borderTopLeftRadius: '10px',
+    },
+
+    '& > div:first-child > div > div:last-child': {
+        borderWidth: '1px',
+        borderTopStyle: 'solid',
+        borderTopColor: 'secondary.main',
+        borderTopRightRadius: '10px',
+    },
+
+    '& > div:last-child > div > div:first-child': {
+        borderWidth: '1px',
+        borderTopStyle: 'solid',
+        borderTopColor: 'secondary.main',
+        borderBottomLeftRadius: '10px',
+    },
+    '& > div:last-child > div > div:last-child': {
+        borderWidth: '1px',
+        borderTopStyle: 'solid',
+        borderTopColor: 'secondary.main',
+        borderBottomRightRadius: '10px',
+    },
+}
+
+const displayCGPA = () => 0
+
+interface SemesterDetails {
+    semesterNumber: number
+    totalCredits: number | string
+    SGPA: number | string
 }
 
 interface Prop {
-    semesterNumber: number | string
+    semesterDetails: Array<SemesterDetails>
 }
 
-function CGPACalculator({ semesterNumber }: Prop) {
+function CGPACalculator({ semesterDetails }: Prop) {
     return (
         <Grid item xs={12}>
             <Grid
                 container
                 sx={{
-                    '& > div': {
-                        padding: { xs: '10px 14px', sm: '12px 18px' },
-                    },
+                    padding: { xs: '15px', md: '30px' },
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    borderColor: 'secondary.main',
+                    borderRadius: '20px',
                 }}
             >
-                <Grid item xs={4}>
-                    <Typography sx={{ color: 'secondary.main', textAlign: 'center' }}>{`${semesterNumber}`}</Typography>
+                <Grid item xs={12}>
+                    <Typography sx={{ fontWeight: 'bold', color: 'primary.main', padding: '10px' }}>
+                        {`CGPA ${displayCGPA() || '0'}`}
+                    </Typography>
                 </Grid>
-                <Grid item xs={5}>
-                    <Input
-                        id="outlined-basic"
-                        fullWidth
-                        size="small"
-                        placeholder="Total Credits"
-                        sx={removeBorder}
-                        type="number"
-                        // inputProps={{ sx: { textAlign: 'center' } }}
-                        // value={subject}
-                        // onChange={(e) => setSubject(e.target.value)}
-                        // disabled
-                        // readOnly
-                    />
-                </Grid>
-                <Grid item xs={3}>
-                    <Input
-                        id="outlined-basic"
-                        fullWidth
-                        size="small"
-                        placeholder="SGPA"
-                        sx={removeBorder}
-                        type="number"
-                        // inputProps={{ sx: { textAlign: 'center' } }}
-                        // value={subject}
-                        // onChange={(e) => setSubject(e.target.value)}
-                        // disabled
-                        // readOnly
-                    />
+                <Grid item xs={12}>
+                    <Grid container sx={sxProps}>
+                        <CGPATableHead />
+                        {semesterDetails.map((semester) => (
+                            <SGPADetails semesterData={semester} key={semester.semesterNumber} />
+                        ))}
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
