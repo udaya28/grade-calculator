@@ -101,7 +101,7 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                         </Grid>
                         <Grid item>
                             <Typography sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-                                {`CGPA ${displayResult(data?.subject || []) || '0'}`}
+                                {`SGPA ${displayResult(data?.subject || []) || '0'}`}
                             </Typography>
                         </Grid>
                     </Grid>
