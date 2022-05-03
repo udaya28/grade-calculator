@@ -1,5 +1,5 @@
 /* eslint-disable */
-import Data from '../../data/Data.js'
+import Data from '../data/Data'
 
 function send(data) {
     return {
