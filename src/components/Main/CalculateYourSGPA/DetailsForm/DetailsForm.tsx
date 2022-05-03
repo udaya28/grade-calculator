@@ -1,6 +1,7 @@
 import { Grid, MenuItem, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { URL } from '../../../../constants/config'
+import { getLocalStorage, setLocalStorage } from '../../../../util/LocalStorage'
 
 const sxStyles = {
     '& .MuiOutlinedInput-root': {
@@ -32,18 +33,8 @@ const sxStyles = {
     //     borderColor: 'secondary.main',
     // },
 }
-
 interface Props {
     setFormData: any
-}
-
-const getLocalStorage = (key: string) => {
-    const data = JSON.parse(localStorage.getItem(key) || '{}')
-    return Object.keys(data).length === 0 ? null : data
-}
-
-const setLocalStorage = (key: string, value: any) => {
-    localStorage.setItem(key, JSON.stringify(value))
 }
 
 function DetailsForm({ setFormData }: Props) {
