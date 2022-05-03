@@ -56,16 +56,16 @@ const boxStyles: SxProps<Theme> = {
 // }
 
 function displayResult(subjects: Array<any>) {
-    console.log(subjects)
+    // console.log(subjects)
     let result = 0
 
     const totalCredit = subjects.reduce((acc, curr) => acc + curr.credit, 0)
     const totalGradePoints = subjects.reduce((acc, curr) => acc + (curr.grade ? curr.grade : 0) * curr.credit, 0)
 
-    console.log({ totalCredit, totalGradePoints })
+    // console.log({ totalCredit, totalGradePoints })
 
     result = totalGradePoints / totalCredit
-    console.log('totalCredit', totalCredit)
+    // console.log('totalCredit', totalCredit)
     return result.toFixed(2)
 }
 
