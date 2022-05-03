@@ -37,19 +37,23 @@ interface Props {
     setFormData: any
 }
 
+const getLocalStorage = (key: string) => {
+    const data = JSON.parse(localStorage.getItem(key) || '{}')
+    return Object.keys(data).length === 0 ? null : data
+}
+
+const setLocalStorage = (key: string, value: any) => {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+
 function DetailsForm({ setFormData }: Props) {
     const [colleges, setColleges] = useState(['None'])
     const [regulations, setRegulations] = useState([''])
     const [departments, setDepartments] = useState([''])
 
-    const [selectedCollege, setSelectedCollege] = useState<string>('None')
-    const [selectedRegulation, setSelectedRegulation] = useState('')
-    const [selectedDepartment, setSelectedDepartment] = useState('')
-
-    const handelChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        console.log(e.target.value)
-        setSelectedCollege(e.target.value)
-    }
+    const [selectedCollege, setSelectedCollege] = useState(getLocalStorage('selectedCollege') || 'None')
+    const [selectedRegulation, setSelectedRegulation] = useState(getLocalStorage('selectedRegulation') || '')
+    const [selectedDepartment, setSelectedDepartment] = useState(getLocalStorage('selectedDepartment') || '')
 
     const fetchCollege = async () => {
         const response = await fetch(`${URL.FULL_URL}/data`)
@@ -90,27 +94,32 @@ function DetailsForm({ setFormData }: Props) {
     }, [])
 
     useEffect(() => {
+        setLocalStorage('selectedCollege', selectedCollege)
         if (selectedCollege !== 'None' && selectedCollege !== '') {
             fetchRegulation()
-            setSelectedRegulation('')
+            setSelectedRegulation(getLocalStorage('selectedRegulation') || '')
         }
         if (selectedCollege === 'None' || selectedCollege === '') {
             setSelectedRegulation('')
+            setLocalStorage('selectedRegulation', '')
+            setLocalStorage('selectedDepartment', '')
         }
     }, [selectedCollege])
 
     useEffect(() => {
+        setLocalStorage('selectedRegulation', selectedRegulation)
         if (selectedCollege !== 'None' && selectedCollege !== '' && selectedRegulation !== '') {
             fetchDepartment()
-            setSelectedDepartment('')
+            setSelectedDepartment(getLocalStorage('selectedDepartment') || '')
         }
         if (selectedRegulation === '') {
             setSelectedDepartment('')
-            setSelectedRegulation('')
+            setLocalStorage('selectedDepartment', '')
         }
     }, [selectedRegulation])
 
     useEffect(() => {
+        setLocalStorage('selectedDepartment', selectedDepartment)
         if (selectedDepartment !== '') {
             fetchSemester()
         }
@@ -126,6 +135,17 @@ function DetailsForm({ setFormData }: Props) {
         })
     }, [selectedCollege, selectedRegulation, selectedDepartment])
 
+    const handleCollegeChange = (e: any) => {
+        setLocalStorage('selectedRegulation', '')
+        setLocalStorage('selectedDepartment', '')
+        setSelectedCollege(e.target.value)
+    }
+
+    const handleRegulationChange = (e: any) => {
+        setLocalStorage('selectedDepartment', '')
+        setSelectedRegulation(e.target.value)
+    }
+
     return (
         <>
             <Grid item xs={12} sm={6}>
@@ -136,7 +156,7 @@ function DetailsForm({ setFormData }: Props) {
                     label="University/College"
                     variant="outlined"
                     fullWidth
-                    onChange={(e) => handelChange(e)}
+                    onChange={handleCollegeChange}
                     InputProps={{ sx: { color: 'secondary.main' } }}
                     sx={sxStyles}
                 >
@@ -159,7 +179,7 @@ function DetailsForm({ setFormData }: Props) {
                     sx={sxStyles}
                     disabled={selectedCollege === 'None'}
                     value={selectedRegulation}
-                    onChange={(e) => setSelectedRegulation(e.target.value)}
+                    onChange={handleRegulationChange}
                 >
                     {regulations.map((regulation) => (
                         <MenuItem key={regulation} value={regulation}>
