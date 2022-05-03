@@ -41,6 +41,7 @@ function CalculateYourSGPA({ mainData, dispatch }: Prop) {
 
     const addGrade = (semesters: any): any => {
         const data: any = {}
+        if (!semesters) return data
         Object.keys(semesters).forEach((semester) => {
             data[semester] = {
                 ...semesters[semester],
@@ -74,11 +75,11 @@ function CalculateYourSGPA({ mainData, dispatch }: Prop) {
 
         if (formData.college === 'None' || formData.regulation === '' || formData.department === '') {
             dispatch({
-                type: 'DEFAULT',
+                type: 'ADD',
                 payload: {
-                    college: 'None',
-                    regulation: '',
-                    department: '',
+                    college: formData.college,
+                    regulation: formData.regulation,
+                    department: formData.department,
                     semesters: {},
                 },
             })
