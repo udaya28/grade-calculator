@@ -1,11 +1,15 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Grid, Typography } from '@mui/material'
 import DetailsForm from './DetailsForm/DetailsForm'
 import SGPACalculator from './SGPACalculator/SGPACalculator'
-import reducer from './reducer'
 // import useLocalStorage from '../../../hooks/useLocalStorage'
 
-function CalculateYourSGPA() {
+interface Prop {
+    mainData: any
+    dispatch: any
+}
+
+function CalculateYourSGPA({ mainData, dispatch }: Prop) {
     const [formData, setFormData] = useState({
         college: 'None',
         regulation: '',
@@ -13,12 +17,12 @@ function CalculateYourSGPA() {
         semesters: {},
     })
 
-    const [mainData, dispatch] = useReducer(reducer, {
-        college: 'None',
-        regulation: '',
-        department: '',
-        semesters: {},
-    })
+    // const [mainData, dispatch] = useReducer(reducer, {
+    //     college: 'None',
+    //     regulation: '',
+    //     department: '',
+    //     semesters: {},
+    // })
 
     // const initializer = (
     //     initialValue = {
