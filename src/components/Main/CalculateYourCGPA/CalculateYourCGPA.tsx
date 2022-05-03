@@ -26,13 +26,13 @@ interface Props {
 }
 
 function calculateSGPA(subjects: Array<any>) {
-    console.log(subjects)
+    // console.log(subjects)
     let result = 0
 
     const totalCredit = subjects.reduce((acc, curr) => acc + curr.credit, 0)
     const totalGradePoints = subjects.reduce((acc, curr) => acc + (curr.grade ? curr.grade : 0) * curr.credit, 0)
 
-    console.log({ totalCredit, totalGradePoints })
+    // console.log({ totalCredit, totalGradePoints })
 
     result = totalGradePoints / totalCredit
     return +result.toFixed(2)
@@ -40,7 +40,7 @@ function calculateSGPA(subjects: Array<any>) {
 
 const extractSemesterDetails = (semesters: any = {}) => {
     const data: Array<any> = []
-    console.log(semesters)
+    // console.log(semesters)
 
     for (let sem = 1; sem <= Object.keys(semesters).length; sem += 1) {
         const semester = semesters[sem]
@@ -87,7 +87,7 @@ function CalculateYourCGPA({ mainData }: Props) {
     }
 
     useEffect(() => {
-        console.log(mainData)
+        // console.log(mainData)
         if (mainData.college === 'None' || mainData.regulation === '' || mainData.department === '') {
             return
         }

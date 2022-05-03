@@ -14,7 +14,7 @@ interface Props {
 }
 
 function SGPACalculator({ mainData, dispatch }: Props) {
-    console.log(mainData)
+    // console.log(mainData)
 
     const [currentAccordion, setCurrentAccordion] = useState(0)
 
@@ -24,31 +24,35 @@ function SGPACalculator({ mainData, dispatch }: Props) {
 
     return (
         <Grid item xs={12}>
-            {mainData.college !== 'None' && (
-                <Grid
-                    container
-                    sx={{
-                        p: { xs: '10px', sm: '20px', lg: '30px' },
-                        borderWidth: '1px',
-                        borderStyle: 'solid',
-                        borderColor: 'secondary.main',
-                        borderRadius: '10px',
-                    }}
-                >
-                    {mainData.college !== 'None' &&
-                        mainData.semesters &&
-                        mainData.semesters &&
-                        [1, 2, 3, 4, 5, 6, 7, 8].map((semesterNumber) => (
-                            <SemesterDetails
-                                key={semesterNumber}
-                                semesterNumber={semesterNumber}
-                                data={mainData.semesters?.[semesterNumber]}
-                                currentAccordion={currentAccordion}
-                                handleAccordionChange={handleAccordionChange}
-                                dispatch={dispatch}
-                            />
-                        ))}
-                    {/* {mainData.college === 'None' && (
+            {mainData &&
+                mainData?.college !== 'None' &&
+                mainData?.regulation !== '' &&
+                mainData?.department !== '' &&
+                mainData?.semesters &&
+                Object.keys(mainData?.semesters).length !== 0 && (
+                    <Grid
+                        container
+                        sx={{
+                            p: { xs: '10px', sm: '20px', lg: '30px' },
+                            borderWidth: '1px',
+                            borderStyle: 'solid',
+                            borderColor: 'secondary.main',
+                            borderRadius: '10px',
+                        }}
+                    >
+                        {mainData &&
+                            mainData?.semesters &&
+                            Array.from(Array(Object.keys(mainData.semesters).length).keys()).map((semesterNumber) => (
+                                <SemesterDetails
+                                    key={semesterNumber + 1}
+                                    semesterNumber={semesterNumber + 1}
+                                    data={mainData.semesters?.[semesterNumber + 1]}
+                                    currentAccordion={currentAccordion}
+                                    handleAccordionChange={handleAccordionChange}
+                                    dispatch={dispatch}
+                                />
+                            ))}
+                        {/* {mainData.college === 'None' && (
                     <SemesterDetails
                         semesterNumber={1}
                         key={1}
@@ -57,8 +61,8 @@ function SGPACalculator({ mainData, dispatch }: Props) {
                         handleAccordionChange={handleAccordionChange}
                     />
                 )} */}
-                </Grid>
-            )}
+                    </Grid>
+                )}
         </Grid>
     )
 }

@@ -32,7 +32,7 @@ interface Props {
 }
 
 function GradeBox({ removeBorder, grade, handleGradeChange }: Props) {
-    console.log('GradeBox', grade, grade.toString())
+    // console.log('GradeBox', grade, grade.toString())
     return (
         <Grid item xs={6} sm={3} sx={gradeBoxStyles}>
             <Select

@@ -10,7 +10,7 @@ import SubjectDetails from '../SubjectDetails/SubjectDetails'
 
 const boxStyles: SxProps<Theme> = {
     // subject box
-    '& > div:first-child > div > div > div:first-child': {
+    '& > div:first-of-type > div > div > div:first-of-type': {
         borderTopWidth: {
             xs: '0px',
             sm: '1px',
@@ -22,12 +22,12 @@ const boxStyles: SxProps<Theme> = {
             sm: '10px',
         },
     },
-    '& > div:last-child > div > div > div:first-child': {
+    '& > div:last-child > div > div > div:first-of-type': {
         borderBottomLeftRadius: { xs: '0px', sm: '10px' },
     },
 
     // credit box
-    '& > div:first-child > div > div > div:nth-child(2)': {
+    '& > div:first-of-type > div > div > div:nth-of-type(2)': {
         borderTopWidth: {
             xs: '0px',
             sm: '1px',
@@ -40,7 +40,7 @@ const boxStyles: SxProps<Theme> = {
     '& > div:last-child > div > div > div:last-child': {
         borderBottomRightRadius: '10px',
     },
-    '& > div:first-child > div > div > div:last-child': {
+    '& > div:first-of-type > div > div > div:last-child': {
         borderTopRightRadius: '10px',
         borderTopWidth: {
             xs: '0px',
@@ -56,16 +56,16 @@ const boxStyles: SxProps<Theme> = {
 // }
 
 function displayResult(subjects: Array<any>) {
-    console.log(subjects)
+    // console.log(subjects)
     let result = 0
 
     const totalCredit = subjects.reduce((acc, curr) => acc + curr.credit, 0)
     const totalGradePoints = subjects.reduce((acc, curr) => acc + (curr.grade ? curr.grade : 0) * curr.credit, 0)
 
-    console.log({ totalCredit, totalGradePoints })
+    // console.log({ totalCredit, totalGradePoints })
 
     result = totalGradePoints / totalCredit
-    console.log('totalCredit', totalCredit)
+    // console.log('totalCredit', totalCredit)
     return result.toFixed(2)
 }
 

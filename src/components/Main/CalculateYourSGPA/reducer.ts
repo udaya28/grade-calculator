@@ -6,14 +6,6 @@ function reducer(state: any, action: any) {
                 ...action.payload,
             }
         }
-        case 'DEFAULT': {
-            return {
-                college: 'None',
-                regulation: '',
-                department: '',
-                semesters: {},
-            }
-        }
 
         case 'UPDATE_GRADE_DETAILS': {
             const currentSemesterNumber = action.payload.semesterNumber

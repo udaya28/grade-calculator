@@ -4,18 +4,19 @@ const DATA = {
             CSE: {
                 1: {
                     subject: [
-                        { subject: 'Communicative English - I', credit: 3 },
-                        { subject: 'Engineering Mathematics - I', credit: 4 },
-                        { subject: 'Engineering Physics', credit: 3 },
-                        { subject: 'Engineering Chemistry', credit: 3 },
-                        { subject: 'Problem Solving and Python Programming', credit: 3 },
-                        { subject: 'Engineering Graphics', credit: 4 },
-                        { subject: 'Physics and Chemistry Laboratory - I', credit: 1 },
+                        { subject: 'Communicative English - I', credit: 3, subjectCode: '18ENT11' },
+                        { subject: 'Engineering Mathematics - I', credit: 4, subjectCode: '18MAT11' },
+                        { subject: 'Engineering Physics', credit: 3, subjectCode: '18PHT11' },
+                        { subject: 'Engineering Chemistry', credit: 3, subjectCode: '18CYT11' },
+                        { subject: 'Python Programming', credit: 3, subjectCode: '18CST11' },
+                        { subject: 'Engineering Graphics', credit: 4, subjectCode: '18MEC11' },
+                        { subject: 'Physics and Chemistry Laboratory - I', credit: 1, subjectCode: '18PHL11' },
                         {
-                            subject: 'Problem Solving and Python Programming Laboratory ',
+                            subject: 'Python Programming Laboratory ',
                             credit: 1,
+                            subjectCode: '18CSL11',
                         },
-                        { subject: 'Value Education for Youth Empowerment', credit: 0 },
+                        { subject: 'Universal Human Values-1', credit: 0, subjectCode: '18MCL11' },
                     ],
                 },
                 2: {
@@ -111,9 +112,9 @@ const DATA = {
                         { subject: 'Artificial Intelligence', credit: 3 },
                         { subject: 'Compiler Design', credit: 4 },
                         { subject: 'Mobile Application Development', credit: 3 },
-                        { subject: 'Internet of Things', credit: 3 },
                         { subject: 'Professional Elective - II', credit: 3 },
                         { subject: 'Professional Elective - III', credit: 3 },
+                        { subject: 'Open Elective - II', credit: 3 },
                         {
                             subject: 'Mobile Application Development Laboratory',
                             credit: 1,
@@ -138,7 +139,8 @@ const DATA = {
                         { subject: 'Network Security', credit: 3 },
                         { subject: 'Machine Learning', credit: 3 },
                         { subject: 'Professional Elective - IV', credit: 3 },
-                        { subject: 'Open Elective - II', credit: 3 },
+                        { subject: 'Open Elective - III', credit: 3 },
+                        { subject: 'Universal Human Values-2', credit: 3, subjectCode: '18MCL12' },
                         {
                             subject: 'Network Security Laboratory',
                             credit: 1,

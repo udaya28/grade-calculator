@@ -19,7 +19,7 @@ const sxProps: SxProps<Theme> = {
         borderRightColor: 'secondary.main',
     },
 
-    '& > div > div > div:first-child': {
+    '& > div > div > div:first-of-type': {
         borderWidth: '1px',
         borderLeftStyle: 'solid',
         borderLeftColor: 'secondary.main',
@@ -30,21 +30,21 @@ const sxProps: SxProps<Theme> = {
         borderBottomColor: 'secondary.main',
     },
 
-    '& > div:first-child > div > div:first-child': {
+    '& > div:first-of-type > div > div:first-of-type': {
         borderWidth: '1px',
         borderTopStyle: 'solid',
         borderTopColor: 'secondary.main',
         borderTopLeftRadius: '10px',
     },
 
-    '& > div:first-child > div > div:last-child': {
+    '& > div:first-of-type > div > div:last-child': {
         borderWidth: '1px',
         borderTopStyle: 'solid',
         borderTopColor: 'secondary.main',
         borderTopRightRadius: '10px',
     },
 
-    '& > div:last-child > div > div:first-child': {
+    '& > div:last-child > div > div:first-of-type': {
         borderWidth: '1px',
         borderTopStyle: 'solid',
         borderTopColor: 'secondary.main',
