@@ -51,21 +51,12 @@ const boxStyles: SxProps<Theme> = {
     },
 }
 
-// function roundToTwo(num: number) {
-//     return Math.round((num + Number.EPSILON) * 100) / 100
-// }
-
 function displayResult(subjects: Array<any>) {
-    // console.log(subjects)
     let result = 0
-
     const totalCredit = subjects.reduce((acc, curr) => acc + curr.credit, 0)
     const totalGradePoints = subjects.reduce((acc, curr) => acc + (curr.grade ? curr.grade : 0) * curr.credit, 0)
-
     // console.log({ totalCredit, totalGradePoints })
-
     result = totalGradePoints / totalCredit
-    // console.log('totalCredit', totalCredit)
     return result.toFixed(2)
 }
 
@@ -73,12 +64,12 @@ interface Props {
     semesterNumber: number
     currentAccordion: number
     handleAccordionChange: (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => void
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data: any
     dispatch: React.Dispatch<any>
+    mainData: any
 }
 
-function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordionChange, dispatch }: Props) {
+function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordionChange, dispatch, mainData }: Props) {
     return (
         <Grid item xs={12}>
             <Accordion
@@ -112,23 +103,14 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                             {data &&
                                 data.subject &&
                                 data.subject.length &&
-                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                 data.subject.map((subject: any) => (
                                     <SubjectDetails
-                                        key={subject.subjectCode}
+                                        key={`${mainData.college}-${mainData.regulation}-${mainData.department}-${subject.subject}`}
                                         subject={subject}
                                         semesterNumber={semesterNumber}
                                         dispatch={dispatch}
                                     />
                                 ))}
-
-                            {/* {data.map((subject: any) =><SubjectDetails key={subject.subjectCode}/>)} */}
-                            {/* <SubjectDetails />
-                        <SubjectDetails />
-                        <SubjectDetails />
-                        <SubjectDetails />
-                        <SubjectDetails />
-                        <SubjectDetails /> */}
                         </Box>
                     )}
                 </AccordionDetails>

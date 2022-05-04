@@ -1,3 +1,66 @@
+import { getLocalStorage } from '../../../util/LocalStorage'
+
+// const localFetchedData = getLocalStorage('fetchedData')
+const localMainData = getLocalStorage('mainData')
+
+const getGrade = (semester: string, currentSubject: any, state: any, payload: any) => {
+    if (!state || Object.keys(state.semesters).length === 0) return ''
+    let storedData: any = {}
+
+    if (localMainData) {
+        storedData = localMainData
+    } else {
+        return ''
+    }
+
+    const {
+        college: localFetchedCollege,
+        regulation: localFetchedRegulation,
+        department: localFetchedDepartment,
+        semesters: localFetchedSemesters,
+    } = storedData
+
+    if (!localFetchedCollege || !localFetchedRegulation || !localFetchedDepartment) return ''
+
+    if (
+        localFetchedCollege !== payload.college ||
+        localFetchedRegulation !== payload.regulation ||
+        localFetchedDepartment !== payload.department
+    ) {
+        return ''
+    }
+
+    if (!localFetchedSemesters) return ''
+    const { subject } = localFetchedSemesters[semester]
+    if (!subject) return ''
+    const storedSubject: any = subject.find((s: any) => s.subject === currentSubject.subject)
+    if (!storedSubject) return ''
+    const { grade } = storedSubject
+    return grade
+}
+
+const addGrade = (payload: any, state: any): any => {
+    const { semesters } = payload
+    console.log('state.semesters', state.semesters[1])
+    const data: any = {}
+    if (!semesters) return data
+    Object.keys(semesters).forEach((semester) => {
+        data[semester] = {
+            ...semesters[semester],
+            // eslint-disable-next-line arrow-body-style
+            subject: semesters[semester].subject.map((sub: any) => {
+                return {
+                    ...sub,
+                    grade: getGrade(semester, sub, state, payload),
+                    // grade: '',
+                }
+            }),
+        }
+    })
+
+    return data
+}
+
 function reducer(state: any, action: any) {
     console.log({ state }, { action })
     switch (action.type) {
@@ -5,6 +68,43 @@ function reducer(state: any, action: any) {
             return {
                 ...action.payload,
             }
+        }
+
+        case 'SET_REGULATION': {
+            return {
+                ...state,
+                regulation: action.payload,
+            }
+        }
+
+        case 'SET_DEPARTMENT': {
+            return {
+                ...state,
+                department: action.payload,
+            }
+        }
+
+        case 'SET_COLLEGE': {
+            return {
+                ...state,
+                college: action.payload,
+            }
+        }
+
+        case 'SET_FETCHED_DATA': {
+            const data = {
+                ...action.payload,
+            }
+            return data
+        }
+
+        case 'SET_FETCHED_DATA_WITHOUT_GRADE': {
+            const data = {
+                ...action.payload,
+                semesters: addGrade(action.payload, state),
+                // semesters:  state.semesters,
+            }
+            return data
         }
 
         case 'UPDATE_GRADE_DETAILS': {

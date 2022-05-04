@@ -7,7 +7,6 @@ interface Props {
         college: string
         regulation: string
         department: string
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         semesters: any
     }
     dispatch: React.Dispatch<any>
@@ -44,23 +43,16 @@ function SGPACalculator({ mainData, dispatch }: Props) {
                             mainData?.semesters &&
                             Array.from(Array(Object.keys(mainData.semesters).length).keys()).map((semesterNumber) => (
                                 <SemesterDetails
-                                    key={semesterNumber + 1}
+                                    // key={`${mainData.college}-${mainData.regulation}-${mainData.department}-${semesterNumber}`}
+                                    key={`${semesterNumber}`}
                                     semesterNumber={semesterNumber + 1}
                                     data={mainData.semesters?.[semesterNumber + 1]}
+                                    mainData={mainData}
                                     currentAccordion={currentAccordion}
                                     handleAccordionChange={handleAccordionChange}
                                     dispatch={dispatch}
                                 />
                             ))}
-                        {/* {mainData.college === 'None' && (
-                    <SemesterDetails
-                        semesterNumber={1}
-                        key={1}
-                        data={null}
-                        currentAccordion={currentAccordion}
-                        handleAccordionChange={handleAccordionChange}
-                    />
-                )} */}
                     </Grid>
                 )}
         </Grid>

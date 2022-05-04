@@ -34,17 +34,16 @@ const sxStyles = {
     // },
 }
 interface Props {
-    setFormData: any
+    dispatch: any
+    mainData: any
 }
 
-function DetailsForm({ setFormData }: Props) {
+function DetailsForm({ dispatch, mainData }: Props) {
     const [colleges, setColleges] = useState(['None'])
     const [regulations, setRegulations] = useState([''])
     const [departments, setDepartments] = useState([''])
 
-    const [selectedCollege, setSelectedCollege] = useState(getLocalStorage('selectedCollege') || 'None')
-    const [selectedRegulation, setSelectedRegulation] = useState(getLocalStorage('selectedRegulation') || '')
-    const [selectedDepartment, setSelectedDepartment] = useState(getLocalStorage('selectedDepartment') || '')
+    const { college: selectedCollege, regulation: selectedRegulation, department: selectedDepartment } = mainData
 
     const fetchCollege = async () => {
         const response = await fetch(`${URL.FULL_URL}/data`)
@@ -72,11 +71,15 @@ function DetailsForm({ setFormData }: Props) {
             `${URL.FULL_URL}/data?college=${selectedCollege}&regulation=${selectedRegulation}&department=${selectedDepartment}`,
         )
         const data = await response.json()
-        setFormData({
-            college: selectedCollege,
-            regulation: selectedRegulation,
-            department: selectedDepartment,
-            semesters: data.semesters,
+
+        dispatch({
+            type: 'SET_FETCHED_DATA_WITHOUT_GRADE',
+            payload: {
+                college: selectedCollege,
+                regulation: selectedRegulation,
+                department: selectedDepartment,
+                semesters: data.semesters,
+            },
         })
     }
 
@@ -85,13 +88,14 @@ function DetailsForm({ setFormData }: Props) {
     }, [])
 
     useEffect(() => {
+        console.log('selectedCollege Change', selectedCollege)
         setLocalStorage('selectedCollege', selectedCollege)
         if (selectedCollege !== 'None' && selectedCollege !== '') {
             fetchRegulation()
-            setSelectedRegulation(getLocalStorage('selectedRegulation') || '')
+            dispatch({ type: 'SET_REGULATION', payload: getLocalStorage('selectedRegulation') || '' })
         }
         if (selectedCollege === 'None' || selectedCollege === '') {
-            setSelectedRegulation('')
+            dispatch({ type: 'SET_REGULATION', payload: '' })
             setLocalStorage('selectedRegulation', '')
             setLocalStorage('selectedDepartment', '')
         }
@@ -101,10 +105,11 @@ function DetailsForm({ setFormData }: Props) {
         setLocalStorage('selectedRegulation', selectedRegulation)
         if (selectedCollege !== 'None' && selectedCollege !== '' && selectedRegulation !== '') {
             fetchDepartment()
-            setSelectedDepartment(getLocalStorage('selectedDepartment') || '')
+            dispatch({ type: 'SET_DEPARTMENT', payload: getLocalStorage('selectedDepartment') || '' })
         }
         if (selectedRegulation === '') {
-            setSelectedDepartment('')
+            dispatch({ type: 'SET_DEPARTMENT', payload: '' })
+
             setLocalStorage('selectedDepartment', '')
         }
     }, [selectedRegulation])
@@ -116,25 +121,19 @@ function DetailsForm({ setFormData }: Props) {
         }
     }, [selectedDepartment])
 
-    useEffect(() => {
-        console.log({ selectedCollege, selectedRegulation, selectedDepartment })
-        setFormData({
-            college: selectedCollege,
-            regulation: selectedRegulation,
-            department: selectedDepartment,
-            semesters: {},
-        })
-    }, [selectedCollege, selectedRegulation, selectedDepartment])
-
     const handleCollegeChange = (e: any) => {
         setLocalStorage('selectedRegulation', '')
         setLocalStorage('selectedDepartment', '')
-        setSelectedCollege(e.target.value)
+        dispatch({ type: 'SET_COLLEGE', payload: e.target.value })
     }
 
     const handleRegulationChange = (e: any) => {
         setLocalStorage('selectedDepartment', '')
-        setSelectedRegulation(e.target.value)
+        dispatch({ type: 'SET_REGULATION', payload: e.target.value })
+    }
+
+    const handleDepartmentChange = (e: any) => {
+        dispatch({ type: 'SET_DEPARTMENT', payload: e.target.value })
     }
 
     return (
@@ -191,7 +190,7 @@ function DetailsForm({ setFormData }: Props) {
                     sx={sxStyles}
                     disabled={selectedCollege === 'None' || selectedRegulation === ''}
                     value={selectedDepartment}
-                    onChange={(e) => setSelectedDepartment(e.target.value)}
+                    onChange={handleDepartmentChange}
                 >
                     {departments.map((department) => (
                         <MenuItem key={department} value={department}>

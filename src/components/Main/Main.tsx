@@ -1,18 +1,34 @@
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import { Grid, Container } from '@mui/material'
 import GradeCalculator from './GradeCalculator/GradeCalculator'
 import CalculateYourSGPA from './CalculateYourSGPA/CalculateYourSGPA'
 import Aside from './Aside/Aside'
 import CalculateYourCGPA from './CalculateYourCGPA/CalculateYourCGPA'
 import reducer from './CalculateYourSGPA/reducer'
+import { getLocalStorage, setLocalStorage } from '../../util/LocalStorage'
 
 function Main() {
     const [mainData, dispatch] = useReducer(reducer, {
-        college: 'None',
-        regulation: '',
-        department: '',
-        semesters: {},
+        college: getLocalStorage('selectedCollege') || 'None',
+        regulation: getLocalStorage('selectedRegulation') || '',
+        department: getLocalStorage('selectedDepartment') || '',
+        semesters: getLocalStorage('mainData')?.semesters || {},
     })
+
+    useEffect(() => {
+        setLocalStorage('mainData', mainData)
+    }, [mainData])
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setLocalStorage('selectedCollege', mainData.college)
+    //         setLocalStorage('selectedRegulation', sampleData.regulation)
+    //         setLocalStorage('selectedDepartment', sampleData.department)
+    //         setLocalStorage('selectedSemesters', sampleData.semesters)
+    //         setLocalStorage('fetchedData', sampleData)
+    //         dispatch({ type: 'SET_FETCHED_DATA', payload: sampleData })
+    //     }, 400)
+    // }, [])
 
     return (
         <Container maxWidth="xl" sx={{ px: { md: '50px', lg: '70px' } }}>
