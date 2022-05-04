@@ -1,14 +1,23 @@
 import { getLocalStorage } from '../../../util/LocalStorage'
 
 // const localFetchedData = getLocalStorage('fetchedData')
+
 const localMainData = getLocalStorage('mainData')
+let localFetchedData = getLocalStorage('fetchedData')
 
 const getGrade = (semester: string, currentSubject: any, state: any, payload: any) => {
     if (!state || Object.keys(state.semesters).length === 0) return ''
     let storedData: any = {}
 
-    if (localMainData) {
+    if (
+        localMainData &&
+        localMainData.college === payload.college &&
+        localMainData.regulation === payload.regulation &&
+        localMainData.department === payload.department
+    ) {
         storedData = localMainData
+    } else if (localFetchedData) {
+        storedData = localFetchedData
     } else {
         return ''
     }
@@ -40,6 +49,7 @@ const getGrade = (semester: string, currentSubject: any, state: any, payload: an
 }
 
 const addGrade = (payload: any, state: any): any => {
+    localFetchedData = getLocalStorage('fetchedData')
     const { semesters } = payload
     console.log('state.semesters', state.semesters[1])
     const data: any = {}

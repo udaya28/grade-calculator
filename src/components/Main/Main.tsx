@@ -21,13 +21,9 @@ function Main() {
 
     // useEffect(() => {
     //     setTimeout(() => {
-    //         setLocalStorage('selectedCollege', mainData.college)
-    //         setLocalStorage('selectedRegulation', sampleData.regulation)
-    //         setLocalStorage('selectedDepartment', sampleData.department)
-    //         setLocalStorage('selectedSemesters', sampleData.semesters)
     //         setLocalStorage('fetchedData', sampleData)
     //         dispatch({ type: 'SET_FETCHED_DATA', payload: sampleData })
-    //     }, 400)
+    //     }, 1000)
     // }, [])
 
     return (
