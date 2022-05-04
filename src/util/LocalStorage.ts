@@ -1,5 +1,9 @@
 const getLocalStorage = (key: string) => {
-    const data = JSON.parse(localStorage.getItem(key) || '{}')
+    // eslint-disable-next-line eqeqeq
+    const value = localStorage.getItem(key) == 'undefined' ? null : localStorage.getItem(key)
+    // console.log(key, value,localStorage.getItem(key))
+
+    const data = JSON.parse(value || '{}')
     return Object.keys(data).length === 0 ? null : data
 }
 
