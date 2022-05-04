@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Grid, Typography } from '@mui/material'
 import DetailsForm from './DetailsForm/DetailsForm'
 import SGPACalculator from './SGPACalculator/SGPACalculator'
@@ -9,6 +9,8 @@ interface Prop {
 }
 
 function CalculateYourSGPA({ mainData, dispatch }: Prop) {
+    const [currentAccordion, setCurrentAccordion] = useState(0)
+
     useEffect(() => {
         console.log('mainData', mainData)
     }, [mainData])
@@ -26,9 +28,14 @@ function CalculateYourSGPA({ mainData, dispatch }: Prop) {
                     </Typography>
                 </Grid>
 
-                <DetailsForm mainData={mainData} dispatch={dispatch} />
+                <DetailsForm mainData={mainData} dispatch={dispatch} setCurrentAccordion={setCurrentAccordion} />
 
-                <SGPACalculator mainData={mainData} dispatch={dispatch} />
+                <SGPACalculator
+                    mainData={mainData}
+                    dispatch={dispatch}
+                    currentAccordion={currentAccordion}
+                    setCurrentAccordion={setCurrentAccordion}
+                />
             </Grid>
         </Grid>
     )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Grid } from '@mui/material'
 import SemesterDetails from './SemesterDetails/SemesterDetails'
 
@@ -10,16 +10,22 @@ interface Props {
         semesters: any
     }
     dispatch: React.Dispatch<any>
+    setCurrentAccordion: any
+    currentAccordion: number
 }
 
-function SGPACalculator({ mainData, dispatch }: Props) {
+function SGPACalculator({ mainData, dispatch, currentAccordion, setCurrentAccordion }: Props) {
     // console.log(mainData)
-
-    const [currentAccordion, setCurrentAccordion] = useState(0)
+    // const { semesters } = mainData
 
     const handleAccordionChange = (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
         setCurrentAccordion(isExpanded ? panel : 0)
     }
+
+    // useEffect(() => {
+    //     console.log('currentAccordion', currentAccordion)
+    //     setCurrentAccordion(0)
+    // }, [semesters])
 
     return (
         <Grid item xs={12}>

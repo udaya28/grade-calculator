@@ -36,9 +36,10 @@ const sxStyles = {
 interface Props {
     dispatch: any
     mainData: any
+    setCurrentAccordion: any
 }
 
-function DetailsForm({ dispatch, mainData }: Props) {
+function DetailsForm({ dispatch, mainData, setCurrentAccordion }: Props) {
     const [colleges, setColleges] = useState(['None'])
     const [regulations, setRegulations] = useState([''])
     const [departments, setDepartments] = useState([''])
@@ -119,6 +120,7 @@ function DetailsForm({ dispatch, mainData }: Props) {
         if (selectedDepartment !== '') {
             fetchSemester()
         }
+        setCurrentAccordion(0)
     }, [selectedDepartment])
 
     const handleCollegeChange = (e: any) => {
