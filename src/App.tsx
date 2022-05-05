@@ -8,11 +8,13 @@ import Header from './components/Header/Header'
 import { darkTheme, lightTheme } from './theme/Themes'
 import themeContext from './theme/ThemeHandler'
 import Main from './components/Main/Main'
+import LoginDialog from './components/LoginDialog/LoginDialog'
 
 function App() {
     const theme = useContext(themeContext)
 
     const [darkMode, setDarkMode] = useState(false)
+    const [loginDialogOpen, setLoginDialogOpen] = useState(true)
 
     useEffect(() => {
         console.log(process.env.REACT_APP_ENV_NAME)
@@ -39,9 +41,14 @@ function App() {
             <themeContext.Provider value={theme}>
                 <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
                     <Box sx={{ pb: '50vh', backgroundColor: 'background.default' }}>
-                        <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
+                        <Header
+                            darkMode={darkMode}
+                            handleThemeChange={handleThemeChange}
+                            setLoginDialogOpen={setLoginDialogOpen}
+                        />
                         <Box sx={{ pt: '80px' }} />
                         <Main />
+                        <LoginDialog loginDialogOpen={loginDialogOpen} setLoginDialogOpen={setLoginDialogOpen} />
                     </Box>
                 </ThemeProvider>
             </themeContext.Provider>
