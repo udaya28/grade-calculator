@@ -19,6 +19,12 @@ const lightTheme = createTheme({
             default: '#FFFFFF',
             paper: '#FFFFFF',
         },
+        error: {
+            main: '#f44336',
+            light: '#e57373',
+            dark: '#d32f2f',
+            contrastText: '#fff',
+        },
     },
 })
 const darkTheme = createTheme({
@@ -42,6 +48,12 @@ const darkTheme = createTheme({
         background: {
             default: 'rgba(24, 26, 27, 1)',
             paper: 'rgba(35, 38, 39, 1)',
+        },
+        error: {
+            main: '#f44336',
+            light: '#e57373',
+            dark: '#d32f2f',
+            contrastText: '#fff',
         },
     },
 })
