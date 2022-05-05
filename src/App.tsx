@@ -9,6 +9,7 @@ import { darkTheme, lightTheme } from './theme/Themes'
 import themeContext from './theme/ThemeHandler'
 import Main from './components/Main/Main'
 import LoginDialog from './components/LoginDialog/LoginDialog'
+import './firebaseSetup'
 
 function App() {
     const theme = useContext(themeContext)
