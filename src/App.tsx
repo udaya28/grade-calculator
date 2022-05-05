@@ -3,16 +3,23 @@ import { ThemeProvider } from '@mui/material/styles'
 import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
 import { Box } from '@mui/material'
+// import { setDoc, doc } from 'firebase/firestore'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
 import { darkTheme, lightTheme } from './theme/Themes'
 import themeContext from './theme/ThemeHandler'
 import Main from './components/Main/Main'
+import LoginDialog from './components/LoginDialog/LoginDialog'
+
+import AuthProvider from './provider/AuthProvider'
+
+
 
 function App() {
     const theme = useContext(themeContext)
 
     const [darkMode, setDarkMode] = useState(false)
+    const [loginDialogOpen, setLoginDialogOpen] = useState(false)
 
     useEffect(() => {
         console.log(process.env.REACT_APP_ENV_NAME)
@@ -21,7 +28,6 @@ function App() {
         if (localStorage.getItem('preferred-theme') === 'dark') {
             setDarkMode(true)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleThemeChange = () => {
@@ -36,15 +42,22 @@ function App() {
 
     return (
         <BrowserRouter>
-            <themeContext.Provider value={theme}>
-                <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-                    <Box sx={{ pb: '50vh', backgroundColor: 'background.default' }}>
-                        <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
-                        <Box sx={{ pt: '80px' }} />
-                        <Main />
-                    </Box>
-                </ThemeProvider>
-            </themeContext.Provider>
+            <AuthProvider>
+                <themeContext.Provider value={theme}>
+                    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+                        <Box sx={{ pb: '50vh', backgroundColor: 'background.default' }}>
+                            <Header
+                                darkMode={darkMode}
+                                handleThemeChange={handleThemeChange}
+                                setLoginDialogOpen={setLoginDialogOpen}
+                            />
+                            <Box sx={{ pt: '80px' }} />
+                            <Main />
+                            <LoginDialog loginDialogOpen={loginDialogOpen} setLoginDialogOpen={setLoginDialogOpen} />
+                        </Box>
+                    </ThemeProvider>
+                </themeContext.Provider>
+            </AuthProvider>
         </BrowserRouter>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Grid } from '@mui/material'
 import SemesterDetails from './SemesterDetails/SemesterDetails'
 
@@ -7,20 +7,25 @@ interface Props {
         college: string
         regulation: string
         department: string
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         semesters: any
     }
     dispatch: React.Dispatch<any>
+    setCurrentAccordion: any
+    currentAccordion: number
 }
 
-function SGPACalculator({ mainData, dispatch }: Props) {
+function SGPACalculator({ mainData, dispatch, currentAccordion, setCurrentAccordion }: Props) {
     // console.log(mainData)
-
-    const [currentAccordion, setCurrentAccordion] = useState(0)
+    // const { semesters } = mainData
 
     const handleAccordionChange = (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
         setCurrentAccordion(isExpanded ? panel : 0)
     }
+
+    // useEffect(() => {
+    //     console.log('currentAccordion', currentAccordion)
+    //     setCurrentAccordion(0)
+    // }, [semesters])
 
     return (
         <Grid item xs={12}>
@@ -44,23 +49,16 @@ function SGPACalculator({ mainData, dispatch }: Props) {
                             mainData?.semesters &&
                             Array.from(Array(Object.keys(mainData.semesters).length).keys()).map((semesterNumber) => (
                                 <SemesterDetails
-                                    key={semesterNumber + 1}
+                                    // key={`${mainData.college}-${mainData.regulation}-${mainData.department}-${semesterNumber}`}
+                                    key={`${semesterNumber}`}
                                     semesterNumber={semesterNumber + 1}
                                     data={mainData.semesters?.[semesterNumber + 1]}
+                                    mainData={mainData}
                                     currentAccordion={currentAccordion}
                                     handleAccordionChange={handleAccordionChange}
                                     dispatch={dispatch}
                                 />
                             ))}
-                        {/* {mainData.college === 'None' && (
-                    <SemesterDetails
-                        semesterNumber={1}
-                        key={1}
-                        data={null}
-                        currentAccordion={currentAccordion}
-                        handleAccordionChange={handleAccordionChange}
-                    />
-                )} */}
                     </Grid>
                 )}
         </Grid>

@@ -32,7 +32,6 @@ interface Props {
 }
 
 function GradeBox({ removeBorder, grade, handleGradeChange }: Props) {
-    // console.log('GradeBox', grade, grade.toString())
     return (
         <Grid item xs={6} sm={3} sx={gradeBoxStyles}>
             <Select
@@ -42,7 +41,7 @@ function GradeBox({ removeBorder, grade, handleGradeChange }: Props) {
                 sx={removeBorder}
                 size="small"
                 displayEmpty
-                value={grade.toString() || ''}
+                value={grade?.toString() || ''}
                 onChange={handleGradeChange}
             >
                 <MenuItem value="" disabled>

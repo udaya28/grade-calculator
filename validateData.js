@@ -1498,4 +1498,41 @@ const DATA = {
     },
 }
 
-export default DATA
+const validateData = (data) => {
+    const colleges = Object.keys(data)
+    colleges.forEach((college) => {
+        const regulations = Object.keys(data[college])
+        regulations.forEach((regulation) => {
+            console.log(regulation)
+            const departments = Object.keys(data[college][regulation])
+            departments.forEach((department) => {
+                console.log(department)
+                const semesters = Object.keys(data[college][regulation][department])
+                if (semesters.length !== 8) {
+                    console.log(`Semesters length is not 8 for ${college} ${regulation} ${department}`)
+                }
+                semesters.forEach((semester) => {
+                    console.log(semester)
+                    if (!(semester >= 1 && semester <= 8)) {
+                        console.log('Semester is not between 1 and 8')
+                    }
+                    const subjects = data[college][regulation][department][semester].subject
+                    if (!Array.isArray(subjects)) {
+                        console.log(`Subjects is not an array for ${college} ${regulation} ${department} ${semester}`)
+                    }
+
+                    subjects.forEach((subjectDetails) => {
+                        const { subject, credit, subjectCode } = subjectDetails
+                        if (!subject || !Number.isInteger(credit) || !subjectCode) {
+                            console.log(
+                                `Fields not found or Invalid for ${college} ${regulation} ${department} ${semester} ${subject} ${credit} ${subjectCode}`,
+                            )
+                        }
+                    })
+                })
+            })
+        })
+    })
+}
+
+validateData(DATA)

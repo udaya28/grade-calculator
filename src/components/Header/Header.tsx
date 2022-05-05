@@ -1,26 +1,47 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import { Grid } from '@mui/material'
+import { getAuth, signOut } from 'firebase/auth'
+import { Button, Grid, Typography } from '@mui/material'
 import { NavLink } from 'react-router-dom'
-
 import Logo from '../Logo/Logo'
-import NavMenu from './NavMenu/NavMenu'
 import ThemeToggle from './ThemeToggle/ThemeToggle'
-import NavItems from './NavItems/NavItems'
+import AuthContext from '../../context/AuthContext'
 
 interface Props {
     darkMode: boolean
     handleThemeChange: () => void
+    setLoginDialogOpen: (value: boolean) => void
 }
 
-function Header({ darkMode, handleThemeChange }: Props) {
-    const menuItems = [
-        { id: 1, name: 'SGPA', link: '#sgpa' },
-        { id: 2, name: 'CGPA', link: '#cgpa' },
-        { id: 3, name: 'ABOUT US', link: '#about-us' },
-        { id: 4, name: 'CONTACT US', link: '#contact-us' },
-    ]
+function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
+    // const menuItems = [
+    //     { id: 1, name: 'SGPA', link: '#sgpa' },
+    //     { id: 2, name: 'CGPA', link: '#cgpa' },
+    //     { id: 3, name: 'ABOUT US', link: '#about-us' },
+    //     { id: 4, name: 'CONTACT US', link: '#contact-us' },
+    // ]
+    const user = useContext(AuthContext)
+
+    useEffect(() => {
+        console.log('user in Header', user?.uid)
+    }, [user])
+
+    const handleLoginClick = () => {
+        setLoginDialogOpen(true)
+    }
+
+    const handleLogoutClick = async () => {
+        try {
+            const auth = getAuth()
+            await signOut(auth)
+            console.log('sign out success')
+            console.log('id', user.uid)
+        } catch (error) {
+            console.log('error in sign out', error)
+        }
+    }
+
     return (
         <AppBar sx={{ backgroundColor: 'background.default' }} position="fixed">
             <Toolbar>
@@ -31,19 +52,39 @@ function Header({ darkMode, handleThemeChange }: Props) {
                         </NavLink>
                     </Grid>
 
-                    <Grid item xs={6}>
-                        <Grid container alignItems="center" justifyContent="flex-end">
-                            <Grid item xs={10} sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+                    <Grid item>
+                        <Grid container alignItems="center" justifyContent="flex-end" columnSpacing={2}>
+                            {/* <Grid item xs={10} sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
                                 <NavItems menuItems={menuItems} />
-                            </Grid>
+                            </Grid> */}
+
+                            {/* <Grid item>
+                                <Button variant="outlined">SIGN IN</Button>
+                            </Grid> */}
+
+                            {!user && (
+                                <Grid item>
+                                    <Button variant="contained" onClick={handleLoginClick}>
+                                        <Typography sx={{ color: '#FFFFFF', fontSize: '14px' }}>SIGN IN</Typography>
+                                    </Button>
+                                </Grid>
+                            )}
+
+                            {user && user?.uid !== '' && (
+                                <Grid item>
+                                    <Button variant="outlined" color="error" onClick={handleLogoutClick}>
+                                        SIGN OUT
+                                    </Button>
+                                </Grid>
+                            )}
 
                             <Grid item>
                                 <ThemeToggle darkMode={darkMode} handleThemeChange={handleThemeChange} />
                             </Grid>
 
-                            <Grid item sx={{ display: { md: 'none' } }}>
+                            {/* <Grid item sx={{ display: { md: 'none' } }}>
                                 <NavMenu menuItems={menuItems} />
-                            </Grid>
+                            </Grid> */}
                         </Grid>
                     </Grid>
                 </Grid>
