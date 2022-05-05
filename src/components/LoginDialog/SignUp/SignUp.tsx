@@ -3,6 +3,7 @@ import LockIcon from '@mui/icons-material/Lock'
 import { Grid, InputAdornment, TextField, Button, Typography, IconButton } from '@mui/material'
 import React, { useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
+import { createNewUserWithEmail } from '../../../services/Auth'
 
 const sxStyles = {
     '& .MuiOutlinedInput-root': {
@@ -28,18 +29,48 @@ function SignUp({ setTabValue }: Props) {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [passwordError, setPasswordError] = useState(false)
+    const [signUpError, setSignUpError] = useState('')
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword)
     }
 
-    const handleSignUp = () => {
+    const handleSignUp = async () => {
         if (password !== confirmPassword) {
             setPasswordError(true)
             return
         }
         console.log('Sign up')
-        console.log(email, password)
+        console.log(email, password, confirmPassword)
+        if (email !== '' && password !== '' && confirmPassword !== '') {
+            try {
+                const res = await createNewUserWithEmail(email, password)
+                console.log('user created', res)
+            } catch (error: any) {
+                console.log(JSON.stringify(error))
+                const { code } = error
+                let message = ''
+                switch (code) {
+                    case 'auth/invalid-email':
+                        console.log('Invalid email')
+                        message = 'Invalid email, Enter a valid email address'
+                        break
+                    case 'auth/weak-password':
+                        console.log('Weak password')
+                        message = 'Weak password, Password must be at least 6 characters long'
+                        break
+                    case 'auth/email-already-in-use':
+                        console.log('Email already in use')
+                        message = 'Email already in use, Enter a different email address'
+                        break
+                    default:
+                        console.log('Something went wrong')
+                        message = 'Something went wrong, Contact support'
+                        break
+                }
+                setSignUpError(message)
+            }
+        }
     }
 
     return (
@@ -156,6 +187,15 @@ function SignUp({ setTabValue }: Props) {
                     helperText={passwordError ? 'Password does not match' : ''}
                 />
             </Grid>
+
+            {signUpError !== '' && (
+                <Grid item xs={12}>
+                    <Grid container justifyContent="center">
+                        <Typography sx={{ color: 'red' }}>{signUpError}</Typography>
+                    </Grid>
+                </Grid>
+            )}
+
             <Grid item xs={12}>
                 <Grid container justifyContent="center">
                     <Grid item>

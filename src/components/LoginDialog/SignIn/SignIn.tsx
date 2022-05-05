@@ -3,6 +3,7 @@ import LockIcon from '@mui/icons-material/Lock'
 import { Grid, InputAdornment, TextField, Button, Typography, IconButton } from '@mui/material'
 import React, { useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
+import { signInWithEmail } from '../../../services/Auth'
 
 const sxStyles = {
     '& .MuiOutlinedInput-root': {
@@ -26,13 +27,44 @@ function SignIn({ setTabValue }: Props) {
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [signInError, setSignInError] = useState('')
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword)
     }
 
-    const handleSignIn = () => {
+    const handleSignIn = async () => {
         console.log('Sign in')
         console.log(email, password)
+        if (email !== '' && password !== '') {
+            // signInWithEmailAndPassword
+            try {
+                const res = await signInWithEmail(email, password)
+                console.log('user signed in', res)
+            } catch (error: any) {
+                console.log(JSON.stringify(error))
+                const { code } = error
+                let message = ''
+                switch (code) {
+                    case 'auth/invalid-email':
+                        console.log('Invalid email')
+                        message = 'Invalid email, Enter a valid email address'
+                        break
+                    case 'auth/wrong-password':
+                        console.log('Wrong password')
+                        message = 'Wrong password, Enter a valid password'
+                        break
+                    case 'auth/user-not-found':
+                        console.log('User not found')
+                        message = 'User not found, Enter a valid email address'
+                        break
+                    default:
+                        console.log('Something went wrong')
+                        message = 'Something went wrong, Contact support'
+                        break
+                }
+                setSignInError(message)
+            }
+        }
     }
 
     return (
@@ -109,6 +141,15 @@ function SignIn({ setTabValue }: Props) {
                     variant="outlined"
                 />
             </Grid>
+
+            {signInError !== '' && (
+                <Grid item xs={12}>
+                    <Grid container justifyContent="center">
+                        <Typography sx={{ color: 'red' }}>{signInError}</Typography>
+                    </Grid>
+                </Grid>
+            )}
+
             <Grid item xs={12}>
                 <Grid container justifyContent="center">
                     <Grid item>
