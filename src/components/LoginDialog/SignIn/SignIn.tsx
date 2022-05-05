@@ -21,9 +21,10 @@ const sxStyles = {
 
 interface Props {
     setTabValue: any
+    setLoginDialogOpen: any
 }
 
-function SignIn({ setTabValue }: Props) {
+function SignIn({ setTabValue, setLoginDialogOpen }: Props) {
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -40,6 +41,7 @@ function SignIn({ setTabValue }: Props) {
             try {
                 const res = await signInWithEmail(email, password)
                 console.log('user signed in', res)
+                setLoginDialogOpen(false)
             } catch (error: any) {
                 console.log(JSON.stringify(error))
                 const { code } = error

@@ -37,10 +37,10 @@ function LoginDialog({ loginDialogOpen, setLoginDialogOpen }: Props) {
                             </TabList>
                         </Box>
                         <TabPanel value="sign-in" sx={{ p: '10px' }}>
-                            <SignIn setTabValue={setTabValue} />
+                            <SignIn setTabValue={setTabValue} setLoginDialogOpen={setLoginDialogOpen} />
                         </TabPanel>
                         <TabPanel value="sign-up" sx={{ p: '10px' }}>
-                            <SignUp setTabValue={setTabValue} />
+                            <SignUp setTabValue={setTabValue} setLoginDialogOpen={setLoginDialogOpen} />
                         </TabPanel>
                     </TabContext>
                 </Box>
