@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
+import { getAuth, signOut } from 'firebase/auth'
 import { Button, Grid, Typography } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import ThemeToggle from './ThemeToggle/ThemeToggle'
+import AuthContext from '../../context/AuthContext'
 
 interface Props {
     darkMode: boolean
@@ -19,8 +21,25 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
     //     { id: 3, name: 'ABOUT US', link: '#about-us' },
     //     { id: 4, name: 'CONTACT US', link: '#contact-us' },
     // ]
+    const user = useContext(AuthContext)
+
+    useEffect(() => {
+        console.log('user in Header', user?.uid)
+    }, [user])
+
     const handleLoginClick = () => {
         setLoginDialogOpen(true)
+    }
+
+    const handleLogoutClick = async () => {
+        try {
+            const auth = getAuth()
+            await signOut(auth)
+            console.log('sign out success')
+            console.log('id', user.uid)
+        } catch (error) {
+            console.log('error in sign out', error)
+        }
     }
 
     return (
@@ -33,7 +52,7 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
                         </NavLink>
                     </Grid>
 
-                    <Grid item xs={6}>
+                    <Grid item>
                         <Grid container alignItems="center" justifyContent="flex-end" columnSpacing={2}>
                             {/* <Grid item xs={10} sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
                                 <NavItems menuItems={menuItems} />
@@ -43,11 +62,21 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
                                 <Button variant="outlined">SIGN IN</Button>
                             </Grid> */}
 
-                            <Grid item>
-                                <Button variant="contained" onClick={handleLoginClick}>
-                                    <Typography sx={{ color: '#FFFFFF', fontSize: '14px' }}>SIGN IN</Typography>
-                                </Button>
-                            </Grid>
+                            {!user && (
+                                <Grid item>
+                                    <Button variant="contained" onClick={handleLoginClick}>
+                                        <Typography sx={{ color: '#FFFFFF', fontSize: '14px' }}>SIGN IN</Typography>
+                                    </Button>
+                                </Grid>
+                            )}
+
+                            {user && user?.uid !== '' && (
+                                <Grid item>
+                                    <Button variant="outlined" color="error" onClick={handleLogoutClick}>
+                                        SIGN OUT
+                                    </Button>
+                                </Grid>
+                            )}
 
                             <Grid item>
                                 <ThemeToggle darkMode={darkMode} handleThemeChange={handleThemeChange} />
