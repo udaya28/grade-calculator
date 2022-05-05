@@ -10,26 +10,10 @@ import { darkTheme, lightTheme } from './theme/Themes'
 import themeContext from './theme/ThemeHandler'
 import Main from './components/Main/Main'
 import LoginDialog from './components/LoginDialog/LoginDialog'
-// import { firestoreDB } from './firebaseSetup'
 
 import AuthProvider from './provider/AuthProvider'
 
-// const test = async () => {
-//     console.log('test')
-//     try {
-//         const document = doc(firestoreDB, 'users', '1234')
-//         await setDoc(document, { details: { name: 'udaya' } }, { merge: true })
-//         console.log('Document written with ID: ')
-//     } catch (e) {
-//         console.error('Error adding document: ', e)
-//     }
 
-    // const querySnapshot = await getDocs(collection(firestoreDB, 'data'))
-    // console.log('querySnapshot',querySnapshot)
-    // querySnapshot.forEach((doc: any) => {
-    //     console.log(`${doc.id} => ${doc.data()}`)
-    // })
-// }
 
 function App() {
     const theme = useContext(themeContext)
@@ -44,8 +28,6 @@ function App() {
         if (localStorage.getItem('preferred-theme') === 'dark') {
             setDarkMode(true)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        // test()
     }, [])
 
     const handleThemeChange = () => {
