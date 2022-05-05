@@ -14,7 +14,7 @@ function App() {
     const theme = useContext(themeContext)
 
     const [darkMode, setDarkMode] = useState(false)
-    const [loginDialogOpen, setLoginDialogOpen] = useState(true)
+    const [loginDialogOpen, setLoginDialogOpen] = useState(false)
 
     useEffect(() => {
         console.log(process.env.REACT_APP_ENV_NAME)

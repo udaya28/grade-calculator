@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { TabContext, TabList, TabPanel } from '@mui/lab'
 import { Box } from '@mui/system'
 import SignIn from './SignIn/SignIn'
-// import SignUp from './SignUp/SignUp'
+import SignUp from './SignUp/SignUp'
 
 interface Props {
     loginDialogOpen: boolean
@@ -23,10 +23,6 @@ function LoginDialog({ loginDialogOpen, setLoginDialogOpen }: Props) {
     return (
         <Dialog onClose={handleDialogClose} open={loginDialogOpen} maxWidth="xs">
             <DialogContent>
-                {/* <Grid container justifyContent="space-between">
-                    <Grid item>SignIn to access more features</Grid>
-                    <Grid item>X</Grid>
-                </Grid> */}
                 <Box>
                     <TabContext value={tabValue}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -41,10 +37,10 @@ function LoginDialog({ loginDialogOpen, setLoginDialogOpen }: Props) {
                             </TabList>
                         </Box>
                         <TabPanel value="sign-in" sx={{ p: '10px' }}>
-                            <SignIn />
+                            <SignIn setTabValue={setTabValue} />
                         </TabPanel>
                         <TabPanel value="sign-up" sx={{ p: '10px' }}>
-                            <SignIn />
+                            <SignUp setTabValue={setTabValue} />
                         </TabPanel>
                     </TabContext>
                 </Box>
