@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useContext, useEffect, useReducer } from 'react'
 import { Grid, Container } from '@mui/material'
 import GradeCalculator from './GradeCalculator/GradeCalculator'
 import CalculateYourSGPA from './CalculateYourSGPA/CalculateYourSGPA'
@@ -6,8 +6,10 @@ import Aside from './Aside/Aside'
 import CalculateYourCGPA from './CalculateYourCGPA/CalculateYourCGPA'
 import reducer from './CalculateYourSGPA/reducer'
 import { getLocalStorage, setLocalStorage } from '../../util/LocalStorage'
+import AuthContext from '../../context/AuthContext'
 
 function Main() {
+    const user = useContext(AuthContext)
     const [mainData, dispatch] = useReducer(reducer, {
         college: getLocalStorage('selectedCollege') || 'None',
         regulation: getLocalStorage('selectedRegulation') || '',
@@ -18,6 +20,10 @@ function Main() {
     useEffect(() => {
         setLocalStorage('mainData', mainData)
     }, [mainData])
+
+    useEffect(() => {
+        console.log('AuthContext USER in main', user)
+    }, [user])
 
     // useEffect(() => {
     //     setTimeout(() => {

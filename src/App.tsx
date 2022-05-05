@@ -3,13 +3,33 @@ import { ThemeProvider } from '@mui/material/styles'
 import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
 import { Box } from '@mui/material'
+// import { setDoc, doc } from 'firebase/firestore'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
 import { darkTheme, lightTheme } from './theme/Themes'
 import themeContext from './theme/ThemeHandler'
 import Main from './components/Main/Main'
 import LoginDialog from './components/LoginDialog/LoginDialog'
-import './firebaseSetup'
+// import { firestoreDB } from './firebaseSetup'
+
+import AuthProvider from './provider/AuthProvider'
+
+// const test = async () => {
+//     console.log('test')
+//     try {
+//         const document = doc(firestoreDB, 'users', '1234')
+//         await setDoc(document, { details: { name: 'udaya' } }, { merge: true })
+//         console.log('Document written with ID: ')
+//     } catch (e) {
+//         console.error('Error adding document: ', e)
+//     }
+
+    // const querySnapshot = await getDocs(collection(firestoreDB, 'data'))
+    // console.log('querySnapshot',querySnapshot)
+    // querySnapshot.forEach((doc: any) => {
+    //     console.log(`${doc.id} => ${doc.data()}`)
+    // })
+// }
 
 function App() {
     const theme = useContext(themeContext)
@@ -25,6 +45,7 @@ function App() {
             setDarkMode(true)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
+        // test()
     }, [])
 
     const handleThemeChange = () => {
@@ -39,20 +60,22 @@ function App() {
 
     return (
         <BrowserRouter>
-            <themeContext.Provider value={theme}>
-                <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-                    <Box sx={{ pb: '50vh', backgroundColor: 'background.default' }}>
-                        <Header
-                            darkMode={darkMode}
-                            handleThemeChange={handleThemeChange}
-                            setLoginDialogOpen={setLoginDialogOpen}
-                        />
-                        <Box sx={{ pt: '80px' }} />
-                        <Main />
-                        <LoginDialog loginDialogOpen={loginDialogOpen} setLoginDialogOpen={setLoginDialogOpen} />
-                    </Box>
-                </ThemeProvider>
-            </themeContext.Provider>
+            <AuthProvider>
+                <themeContext.Provider value={theme}>
+                    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+                        <Box sx={{ pb: '50vh', backgroundColor: 'background.default' }}>
+                            <Header
+                                darkMode={darkMode}
+                                handleThemeChange={handleThemeChange}
+                                setLoginDialogOpen={setLoginDialogOpen}
+                            />
+                            <Box sx={{ pt: '80px' }} />
+                            <Main />
+                            <LoginDialog loginDialogOpen={loginDialogOpen} setLoginDialogOpen={setLoginDialogOpen} />
+                        </Box>
+                    </ThemeProvider>
+                </themeContext.Provider>
+            </AuthProvider>
         </BrowserRouter>
     )
 }
