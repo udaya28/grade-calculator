@@ -7,6 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import React from 'react'
 import { SxProps, Theme } from '@mui/system'
 import SubjectDetails from '../SubjectDetails/SubjectDetails'
+import SGPATableHead from './SGPATableHead/SGPATableHead'
 
 const boxStyles: SxProps<Theme> = {
     // subject box
@@ -100,6 +101,7 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                 <AccordionDetails sx={{ padding: '8px' }}>
                     {currentAccordion === semesterNumber && (
                         <Box sx={boxStyles}>
+                            {data && data.subject && data.subject.length && <SGPATableHead />}
                             {data &&
                                 data.subject &&
                                 data.subject.length &&

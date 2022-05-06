@@ -13,13 +13,13 @@ function CGPATableHead() {
                 }}
             >
                 <Grid item xs={4}>
-                    <Typography sx={{ color: 'secondary.main' }}>Semester</Typography>
+                    <Typography sx={{ textAlign: 'center', fontWeight: 700 }}>Semester</Typography>
                 </Grid>
                 <Grid item xs={5}>
-                    <Typography sx={{ color: 'secondary.main' }}>Total Credits</Typography>
+                    <Typography sx={{ textAlign: 'center', fontWeight: 700 }}>Total Credits</Typography>
                 </Grid>
                 <Grid item xs={3}>
-                    <Typography sx={{ color: 'secondary.main' }}>SGPA</Typography>
+                    <Typography sx={{ textAlign: 'center', fontWeight: 700 }}>SGPA</Typography>
                 </Grid>
             </Grid>
         </Grid>

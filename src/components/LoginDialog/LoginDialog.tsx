@@ -32,8 +32,16 @@ function LoginDialog({ loginDialogOpen, setLoginDialogOpen }: Props) {
                                 sx={{ display: 'flex', justifyContent: 'space-evenly' }}
                                 variant="fullWidth"
                             >
-                                <Tab label="Sign In" value="sign-in" sx={{ color: 'secondary.main' }} />
-                                <Tab label="Sign Up" value="sign-up" sx={{ color: 'secondary.main' }} />
+                                <Tab
+                                    label="Sign In"
+                                    value="sign-in"
+                                    sx={{ color: '#808080', fontSize: '18px', fontWeight: 700 }}
+                                />
+                                <Tab
+                                    label="Sign Up"
+                                    value="sign-up"
+                                    sx={{ color: '#808080', fontSize: '18px', fontWeight: 700 }}
+                                />
                             </TabList>
                         </Box>
                         <TabPanel value="sign-in" sx={{ p: '10px' }}>
