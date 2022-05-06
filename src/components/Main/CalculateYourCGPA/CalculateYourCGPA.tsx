@@ -3,28 +3,6 @@ import React, { useEffect, useState } from 'react'
 import CGPACalculator from './CGPACalculator/CGPACalculator'
 import SemestersForm from './SemestersForm/SemestersForm'
 
-const init = (semesterDetails: Array<any>, noOfSemesters: number) => {
-    if (semesterDetails.length > noOfSemesters - 1) {
-        const data = [...semesterDetails]
-        data.length = noOfSemesters
-        return data
-    }
-
-    const data = [...semesterDetails]
-    for (let i = 0; i < noOfSemesters - semesterDetails.length; i += 1) {
-        data.push({
-            semesterNumber: i + 1 + semesterDetails.length,
-            totalCredits: '',
-            SGPA: '',
-        })
-    }
-    return data
-}
-
-interface Props {
-    mainData: any
-}
-
 function calculateSGPA(subjects: Array<any>) {
     // console.log(subjects)
     let result = 0
@@ -36,6 +14,31 @@ function calculateSGPA(subjects: Array<any>) {
 
     result = totalGradePoints / totalCredit
     return +result.toFixed(2)
+}
+
+const init = (semesterDetails: Array<any>, noOfSemesters: number, semesters: any) => {
+    // console.log('init', semesterDetails, noOfSemesters)
+    if (semesterDetails.length > noOfSemesters - 1) {
+        const data = [...semesterDetails]
+        data.length = noOfSemesters
+        return data
+    }
+
+    const data = [...semesterDetails]
+    for (let i = 0; i < noOfSemesters - semesterDetails.length; i += 1) {
+        const semester = semesters[i + 1 + semesterDetails.length]
+        // console.log('semester', semester)
+        data.push({
+            semesterNumber: i + 1 + semesterDetails.length,
+            totalCredits: semester?.subject?.reduce((acc: number, curr: any) => acc + curr.credit, 0),
+            SGPA: calculateSGPA(semester.subject),
+        })
+    }
+    return data
+}
+
+interface Props {
+    mainData: any
 }
 
 const extractSemesterDetails = (semesters: any = {}) => {
@@ -59,7 +62,7 @@ function CalculateYourCGPA({ mainData }: Props) {
     const [semesterDetails, setSemesterDetails] = useState<Array<any>>([])
 
     useEffect(() => {
-        setSemesterDetails(init(semesterDetails, +noOfSemesters))
+        setSemesterDetails(init(semesterDetails, +noOfSemesters, mainData.semesters))
     }, [noOfSemesters])
 
     const setTotalCredits = (semesterNumber: number, totalCredits: string) => {

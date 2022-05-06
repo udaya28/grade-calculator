@@ -8,6 +8,7 @@ import React from 'react'
 import { SxProps, Theme } from '@mui/system'
 import SubjectDetails from '../SubjectDetails/SubjectDetails'
 import SGPATableHead from './SGPATableHead/SGPATableHead'
+import SGPATableBottom from './SGPATableBottom/SGPATableBottom'
 
 const boxStyles: SxProps<Theme> = {
     // subject box
@@ -106,11 +107,11 @@ function SemesterDetails({
                             <Typography
                                 ref={myRef}
                                 sx={{ fontWeight: 'bold' }}
-                            >{`Semester ${semesterNumber} \u00A0  - \u00A0`}</Typography>
+                            >{`Semester ${semesterNumber} \u00A0 \u00A0`}</Typography>
                         </Grid>
                         <Grid item>
                             <Typography sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-                                {`SGPA ${displayResult(data?.subject || []) || '0.00'}`}
+                                {`SGPA - ${displayResult(data?.subject || []) || '0.00'}`}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -130,6 +131,9 @@ function SemesterDetails({
                                         dispatch={dispatch}
                                     />
                                 ))}
+                            {data && data.subject && data.subject.length && (
+                                <SGPATableBottom displayResult={displayResult} data={data} />
+                            )}
                         </Box>
                     )}
                 </AccordionDetails>
