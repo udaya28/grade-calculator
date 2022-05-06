@@ -32,7 +32,15 @@ function AboutUs() {
                     </Grid>
                     <Grid item xs={12} md={7}>
                         <Typography
-                            sx={{ color: 'rgba(255,255,255,1)', pb: '20px', pt: '0', px: '40px', textAlign: 'justify' }}
+                            sx={{
+                                color: 'rgba(255,255,255,1)',
+                                pb: '20px',
+                                pt: '0',
+                                px: '40px',
+                                mr: { xs: '0px', lg: '60px' },
+                                textAlign: 'justify',
+                                fontSize: { xs: '14px', sm: '16px', md: '18px' },
+                            }}
                         >
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur

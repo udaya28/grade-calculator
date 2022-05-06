@@ -19,7 +19,18 @@ function SGPACalculator({ mainData, dispatch, currentAccordion, setCurrentAccord
     // const { semesters } = mainData
 
     const handleAccordionChange = (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+        console.log({ panel, event })
         setCurrentAccordion(isExpanded ? panel : 0)
+    }
+
+    const executeScroll = () => {
+    // const executeScroll = (myRef: any) => {
+        // myRef.current.scrollIntoView({ behavior: 'sm\\\\\\\\ooth', block: 'start' })
+        // setTimeout(() => {
+        //     window.scrollTo(0,300)
+        //     // window.scrollBy(0, 100)
+        // }, 1000)
+        // console.log(myRef.current.)
     }
 
     // useEffect(() => {
@@ -50,6 +61,7 @@ function SGPACalculator({ mainData, dispatch, currentAccordion, setCurrentAccord
                             Array.from(Array(Object.keys(mainData.semesters).length).keys()).map((semesterNumber) => (
                                 <SemesterDetails
                                     // key={`${mainData.college}-${mainData.regulation}-${mainData.department}-${semesterNumber}`}
+                                    executeScroll={executeScroll}
                                     key={`${semesterNumber}`}
                                     semesterNumber={semesterNumber + 1}
                                     data={mainData.semesters?.[semesterNumber + 1]}

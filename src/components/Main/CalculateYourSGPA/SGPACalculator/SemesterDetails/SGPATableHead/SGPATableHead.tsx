@@ -53,7 +53,16 @@ const gradeBoxStyles: SxProps<Theme> = {
 function SGPATableHead() {
     return (
         <Grid container alignItems="center" justifyContent="center">
-            <Grid item xs={12}>
+            <Grid
+                item
+                xs={12}
+                sx={{
+                    borderWidth: { xs: '1px', sm: '0px' },
+                    borderColor: 'secondary.main',
+                    borderStyle: 'solid',
+                    borderRadius: '10px',
+                }}
+            >
                 <Grid container>
                     <Grid item xs={12} sm={6} sx={SubjectBoxStyles}>
                         <Typography sx={{ padding: '10px 16px', textAlign: 'center', fontWeight: 700 }}>

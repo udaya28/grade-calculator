@@ -68,9 +68,19 @@ interface Props {
     data: any
     dispatch: React.Dispatch<any>
     mainData: any
+    executeScroll: any
 }
 
-function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordionChange, dispatch, mainData }: Props) {
+function SemesterDetails({
+    semesterNumber,
+    data,
+    currentAccordion,
+    handleAccordionChange,
+    dispatch,
+    mainData,
+    executeScroll,
+}: Props) {
+    const myRef = React.useRef<HTMLDivElement>(null)
     return (
         <Grid item xs={12}>
             <Accordion
@@ -79,15 +89,22 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                 sx={{ backgroundColor: 'inherit' }}
                 expanded={currentAccordion === semesterNumber}
                 onChange={handleAccordionChange(semesterNumber)}
+                // onChange={(e: React.SyntheticEvent, expanded: boolean) => console.log(expanded)}
             >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon sx={{ color: 'secondary.main' }} />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
+                    onClick={(e) => {
+                        console.log(e.target)
+                        executeScroll(myRef)
+                        // e.target.scrollIntoView({ behavior: 'smooth' })
+                    }}
                 >
                     <Grid container justifyContent="flex-start" alignItems="center">
                         <Grid item>
                             <Typography
+                                ref={myRef}
                                 sx={{ fontWeight: 'bold' }}
                             >{`Semester ${semesterNumber} \u00A0  - \u00A0`}</Typography>
                         </Grid>
