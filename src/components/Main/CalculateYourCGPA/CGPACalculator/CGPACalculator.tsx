@@ -1,8 +1,9 @@
 import React from 'react'
-import { Grid, Typography, SxProps } from '@mui/material'
+import { Grid, SxProps } from '@mui/material'
 import { Theme } from '@mui/system'
 import CGPATableHead from './CGPATableHead/CGPATableHead'
 import SGPADetails from './SGPADetails/SGPADetails'
+import CGPATableBottom from './CGPATableBottom/CGPATableBottom'
 
 const sxProps: SxProps<Theme> = {
     // border: '1px solid red',
@@ -81,19 +82,7 @@ function CGPACalculator({ semesterDetails, setTotalCredits, setSGPA }: Prop) {
         <Grid item xs={12}>
             <Grid
                 container
-                sx={{
-                    padding: { xs: '15px', md: '30px' },
-                    borderWidth: '1px',
-                    borderStyle: 'solid',
-                    borderColor: 'secondary.main',
-                    borderRadius: '20px',
-                }}
             >
-                <Grid item xs={12}>
-                    <Typography sx={{ fontWeight: 'bold', color: 'primary.main', padding: '10px' }}>
-                        {`CGPA ${displayCGPA(semesterDetails) || '0.00'}`}
-                    </Typography>
-                </Grid>
                 <Grid item xs={12}>
                     <Grid container sx={sxProps}>
                         <CGPATableHead />
@@ -106,6 +95,7 @@ function CGPACalculator({ semesterDetails, setTotalCredits, setSGPA }: Prop) {
                                     setSGPA={setSGPA}
                                 />
                             ))}
+                        <CGPATableBottom semesterDetails={semesterDetails} displayCGPA={displayCGPA} />
                     </Grid>
                 </Grid>
             </Grid>

@@ -3,7 +3,7 @@ import React from 'react'
 
 function Logo() {
     return (
-        <Box sx={{ height: '64px' }}>
+        <Box sx={{ height: { xs: '50px', md: '64px' } }}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

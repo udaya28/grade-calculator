@@ -25,7 +25,9 @@ const removeBorder: SxProps<Theme> = {
         lineHeight: 1.5,
         opacity: 0.7,
     },
-    textAlign: 'center',
+    '& > input': {
+        textAlign: 'center',
+    },
 }
 
 interface SemesterDetails {
@@ -63,11 +65,8 @@ function SGPADetails({ semesterData, setTotalCredits, setSGPA }: Prop) {
                         placeholder="Total Credits"
                         sx={removeBorder}
                         type="number"
-                        // inputProps={{ sx: { textAlign: 'center' } }}
                         value={semesterData.totalCredits}
                         onChange={(e) => setTotalCredits(semesterData.semesterNumber, e.target.value)}
-                        // disabled
-                        // readOnly
                     />
                 </Grid>
                 <Grid item xs={3}>
@@ -78,11 +77,8 @@ function SGPADetails({ semesterData, setTotalCredits, setSGPA }: Prop) {
                         placeholder="SGPA"
                         sx={removeBorder}
                         type="number"
-                        // inputProps={{ sx: { textAlign: 'center' } }}
                         value={semesterData.SGPA}
                         onChange={(e) => setSGPA(semesterData.semesterNumber, e.target.value)}
-                        // disabled
-                        // readOnly
                     />
                 </Grid>
             </Grid>

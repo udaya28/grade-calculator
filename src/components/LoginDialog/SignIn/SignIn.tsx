@@ -72,7 +72,7 @@ function SignIn({ setTabValue, setLoginDialogOpen }: Props) {
     return (
         <Grid container rowSpacing={3}>
             <Grid item xs={12}>
-                <Typography variant="h6" sx={{ color: 'gray' }}>
+                <Typography variant="h6" sx={{ color: 'secondary.main' }}>
                     Hi there, Welcome Back!!!
                 </Typography>
                 <Typography sx={{ color: 'gray', fontSize: '14px' }}>
@@ -132,9 +132,9 @@ function SignIn({ setTabValue, setLoginDialogOpen }: Props) {
                                     edge="end"
                                 >
                                     {showPassword ? (
-                                        <VisibilityOff sx={{ color: 'secondary.main' }} />
+                                        <VisibilityOff sx={{ color: 'rgb(107 108 109)' }} />
                                     ) : (
-                                        <Visibility sx={{ color: 'secondary.main' }} />
+                                        <Visibility sx={{ color: 'rgb(107 108 109)' }} />
                                     )}
                                 </IconButton>
                             </InputAdornment>

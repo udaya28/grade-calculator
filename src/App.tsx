@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
-import { Box } from '@mui/material'
+import { Box, Container } from '@mui/material'
 // import { setDoc, doc } from 'firebase/firestore'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
@@ -12,8 +12,8 @@ import Main from './components/Main/Main'
 import LoginDialog from './components/LoginDialog/LoginDialog'
 
 import AuthProvider from './provider/AuthProvider'
-
-
+import AboutUs from './components/Main/AboutUs/AboutUs'
+import ContactUs from './components/Main/ContactUs/ContactUs'
 
 function App() {
     const theme = useContext(themeContext)
@@ -53,6 +53,10 @@ function App() {
                             />
                             <Box sx={{ pt: '80px' }} />
                             <Main />
+                            <AboutUs />
+                            <Container maxWidth="xl" sx={{ px: { md: '50px', lg: '70px' } }}>
+                                <ContactUs />
+                            </Container>
                             <LoginDialog loginDialogOpen={loginDialogOpen} setLoginDialogOpen={setLoginDialogOpen} />
                         </Box>
                     </ThemeProvider>

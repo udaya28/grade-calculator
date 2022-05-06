@@ -39,7 +39,11 @@ function CreditBox({ removeBorder, credit, setCredit }: Props) {
                 id="outlined-basic"
                 variant="standard"
                 fullWidth
-                sx={removeBorder}
+                sx={{
+                    ...removeBorder,
+                    '& > div ': { padding: '0px !important' },
+                    '& > svg': { display: 'none' },
+                }}
                 size="small"
                 displayEmpty
                 value={credit}

@@ -7,6 +7,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import React from 'react'
 import { SxProps, Theme } from '@mui/system'
 import SubjectDetails from '../SubjectDetails/SubjectDetails'
+import SGPATableHead from './SGPATableHead/SGPATableHead'
+import SGPATableBottom from './SGPATableBottom/SGPATableBottom'
 
 const boxStyles: SxProps<Theme> = {
     // subject box
@@ -67,9 +69,19 @@ interface Props {
     data: any
     dispatch: React.Dispatch<any>
     mainData: any
+    executeScroll: any
 }
 
-function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordionChange, dispatch, mainData }: Props) {
+function SemesterDetails({
+    semesterNumber,
+    data,
+    currentAccordion,
+    handleAccordionChange,
+    dispatch,
+    mainData,
+    executeScroll,
+}: Props) {
+    const myRef = React.useRef<HTMLDivElement>(null)
     return (
         <Grid item xs={12}>
             <Accordion
@@ -78,21 +90,28 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                 sx={{ backgroundColor: 'inherit' }}
                 expanded={currentAccordion === semesterNumber}
                 onChange={handleAccordionChange(semesterNumber)}
+                // onChange={(e: React.SyntheticEvent, expanded: boolean) => console.log(expanded)}
             >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon sx={{ color: 'secondary.main' }} />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
+                    onClick={(e) => {
+                        console.log(e.target)
+                        executeScroll(myRef)
+                        // e.target.scrollIntoView({ behavior: 'smooth' })
+                    }}
                 >
                     <Grid container justifyContent="flex-start" alignItems="center">
                         <Grid item>
                             <Typography
+                                ref={myRef}
                                 sx={{ fontWeight: 'bold' }}
-                            >{`Semester ${semesterNumber} \u00A0  - \u00A0`}</Typography>
+                            >{`Semester ${semesterNumber} \u00A0 \u00A0`}</Typography>
                         </Grid>
                         <Grid item>
                             <Typography sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-                                {`SGPA ${displayResult(data?.subject || []) || '0.00'}`}
+                                {`SGPA - ${displayResult(data?.subject || []) || '0.00'}`}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -100,6 +119,7 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                 <AccordionDetails sx={{ padding: '8px' }}>
                     {currentAccordion === semesterNumber && (
                         <Box sx={boxStyles}>
+                            {data && data.subject && data.subject.length && <SGPATableHead />}
                             {data &&
                                 data.subject &&
                                 data.subject.length &&
@@ -111,6 +131,9 @@ function SemesterDetails({ semesterNumber, data, currentAccordion, handleAccordi
                                         dispatch={dispatch}
                                     />
                                 ))}
+                            {data && data.subject && data.subject.length && (
+                                <SGPATableBottom displayResult={displayResult} data={data} />
+                            )}
                         </Box>
                     )}
                 </AccordionDetails>

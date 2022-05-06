@@ -28,7 +28,7 @@ function Aside() {
                                 voluptatibus corpor is, iusto quod assumenda alias quos.
                             </Typography>
                         </Grid>
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <iframe
                                 width="100%"
                                 height="250"
@@ -38,7 +38,7 @@ function Aside() {
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             />
-                        </Grid>
+                        </Grid> */}
 
                         <Grid>
                             <Typography
