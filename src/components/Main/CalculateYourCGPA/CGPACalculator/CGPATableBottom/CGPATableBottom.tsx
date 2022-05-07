@@ -19,7 +19,7 @@ function CGPATableBottom({ displayCGPA, semesterDetails }: Props) {
             >
                 <Grid item xs={12}>
                     <Typography sx={{ fontWeight: 'bold', color: 'primary.main', textAlign: 'center' }}>
-                        {`CGPA - ${displayCGPA(semesterDetails) || '0.00'}`}
+                        {`Your Calculated CGPA is ${displayCGPA(semesterDetails) || '0.00'}`}
                     </Typography>
                 </Grid>
             </Grid>

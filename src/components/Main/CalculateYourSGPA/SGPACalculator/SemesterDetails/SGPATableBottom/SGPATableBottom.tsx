@@ -36,7 +36,7 @@ function SGPATableBottom({ data, displayResult }: Props) {
                                 textAlign: 'center',
                             }}
                         >
-                            {`SGPA ${displayResult(data?.subject || []) || '0.00'}`}
+                            {`Your Calculated SGPA is ${displayResult(data?.subject || []) || '0.00'}`}
                         </Typography>
                     </Grid>
                 </Grid>

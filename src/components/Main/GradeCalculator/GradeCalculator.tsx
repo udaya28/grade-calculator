@@ -12,8 +12,7 @@ function GradeCalculator() {
                 Grade Calculator
             </Typography>
             <Typography sx={{ fontSize: { xs: '14px', sm: '16px', md: '18px' } }}>
-                Lorem ipsum, dolor sit amet consectetur ad ipisicing elit. Neque dolor dolore voluptatibus corpor is,
-                iusto quod assumenda alias quos. Id nobis aspernatur quos delectus possimus exercita tionem ipsa,
+                {`\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Grade calculator is a web application designed to calculate both your SGPA and CGPA of your college semester examination. You can calculate your SGPA just by entering your grades of your semester examination. After calculating your Grades, it can be stored in online via email and password for future CGPA calculation.`}
             </Typography>
         </Grid>
     )
