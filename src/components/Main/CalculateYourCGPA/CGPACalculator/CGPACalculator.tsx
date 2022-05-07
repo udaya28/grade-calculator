@@ -80,9 +80,7 @@ interface Prop {
 function CGPACalculator({ semesterDetails, setTotalCredits, setSGPA }: Prop) {
     return (
         <Grid item xs={12}>
-            <Grid
-                container
-            >
+            <Grid container>
                 <Grid item xs={12}>
                     <Grid container sx={sxProps}>
                         <CGPATableHead />

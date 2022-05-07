@@ -45,7 +45,7 @@ function App() {
             <AuthProvider>
                 <themeContext.Provider value={theme}>
                     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-                        <Box sx={{ pb: '50vh', backgroundColor: 'background.default' }}>
+                        <Box sx={{ pb: '6vh', backgroundColor: 'background.default' }}>
                             <Header
                                 darkMode={darkMode}
                                 handleThemeChange={handleThemeChange}

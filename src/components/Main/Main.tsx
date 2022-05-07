@@ -9,6 +9,7 @@ import reducer from './CalculateYourSGPA/reducer'
 import { getLocalStorage, setLocalStorage } from '../../util/LocalStorage'
 import AuthContext from '../../context/AuthContext'
 import { firestoreDB } from '../../firebaseSetup'
+import SaveData from './SaveData/SaveData'
 
 function Main() {
     const user = useContext(AuthContext)
@@ -57,9 +58,10 @@ function Main() {
             <Grid container columnSpacing={4} rowSpacing={3} justifyContent="space-around">
                 <Grid item xs={12} md={8} lg={7}>
                     <Grid container alignItems="flex-start" justifyContent="flex-start" rowSpacing={2}>
-                        <GradeCalculator mainData={mainData} />
+                        <GradeCalculator />
                         <CalculateYourSGPA mainData={mainData} dispatch={dispatch} />
                         <CalculateYourCGPA mainData={mainData} />
+                        <SaveData mainData={mainData} />
                     </Grid>
                 </Grid>
 
