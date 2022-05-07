@@ -23,9 +23,9 @@ function SGPACalculator({ mainData, dispatch, currentAccordion, setCurrentAccord
         setCurrentAccordion(isExpanded ? panel : 0)
     }
 
-    const executeScroll = () => {
-        // const executeScroll = (myRef: any) => {
-        // myRef.current.scrollIntoView({ behavior: 'sm\\\\\\\\ooth', block: 'start' })
+    // const executeScroll = () => {
+    const executeScroll = (myRef: any) => {
+        myRef.current.scrollIntoView(true)
         // setTimeout(() => {
         //     window.scrollTo(0,300)
         //     // window.scrollBy(0, 100)

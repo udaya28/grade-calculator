@@ -1,4 +1,4 @@
-import { Button, Grid, TextField, Typography } from '@mui/material'
+import { Button, Grid, Snackbar, TextField, Typography } from '@mui/material'
 import { doc, setDoc } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { firestoreDB } from '../../../../firebaseSetup'
@@ -18,6 +18,10 @@ const sxStyles = {
 }
 
 function ContactUsForm() {
+    const [openSnackBar, setOpenSnackBar] = useState({
+        open: false,
+        message: '',
+    })
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
@@ -33,7 +37,15 @@ function ContactUsForm() {
             const document = doc(firestoreDB, 'contactUs', `${Date.now()}`)
             await setDoc(document, { ...data })
             console.log('Message written with ID: ', document.id)
+            setOpenSnackBar({
+                open: true,
+                message: 'Message Sent Successfully',
+            })
         } catch (e) {
+            setOpenSnackBar({
+                open: true,
+                message: 'Error in Sending Message, Try again later',
+            })
             console.error('Error adding message: ', e)
         }
     }
@@ -130,6 +142,12 @@ function ContactUsForm() {
                     </Grid>
                 </Grid>
             </Grid>
+            <Snackbar
+                open={openSnackBar.open}
+                autoHideDuration={3000}
+                onClose={() => setOpenSnackBar({ open: false, message: '' })}
+                message={openSnackBar.message}
+            />
         </Grid>
     )
 }
