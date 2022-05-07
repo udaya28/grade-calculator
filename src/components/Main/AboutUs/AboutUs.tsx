@@ -42,7 +42,7 @@ function AboutUs() {
                                 fontSize: { xs: '14px', sm: '16px', md: '18px' },
                             }}
                         >
-                            {`\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Quality planning consists of developing the products and processes required to meet the
+                            {`Quality planning consists of developing the products and processes required to meet the
                             customer’s need. The concept may seems to be small and the tech we used here already exists
                             but our ultimate aim is to create a product that can be used by our fellow friends.`}
                         </Typography>
