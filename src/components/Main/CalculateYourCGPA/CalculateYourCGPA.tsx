@@ -31,7 +31,7 @@ const init = (semesterDetails: Array<any>, noOfSemesters: number, semesters: any
         data.push({
             semesterNumber: i + 1 + semesterDetails.length,
             totalCredits: semester?.subject?.reduce((acc: number, curr: any) => acc + curr.credit, 0),
-            SGPA: calculateSGPA(semester?.subject),
+            SGPA: semester?.subject ? calculateSGPA(semester?.subject) : '',
         })
     }
     return data
