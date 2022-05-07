@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import { getAuth, signOut } from 'firebase/auth'
-import { Button, Grid, Typography, Box } from '@mui/material'
+import { Button, Grid, Typography, Box, Snackbar } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import ThemeToggle from './ThemeToggle/ThemeToggle'
@@ -15,6 +15,10 @@ interface Props {
 }
 
 function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
+    const [openSnackBar, setOpenSnackBar] = useState({
+        open: false,
+        message: '',
+    })
     // const menuItems = [
     //     { id: 1, name: 'SGPA', link: '#sgpa' },
     //     { id: 2, name: 'CGPA', link: '#cgpa' },
@@ -35,6 +39,10 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
         try {
             const auth = getAuth()
             await signOut(auth)
+            setOpenSnackBar({
+                open: true,
+                message: 'Sign Out Successfully',
+            })
             console.log('sign out success')
             console.log('id', user.uid)
         } catch (error) {
@@ -118,6 +126,12 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
                     </Grid>
                 </Grid>
             </Toolbar>
+            <Snackbar
+                open={openSnackBar.open}
+                autoHideDuration={3000}
+                onClose={() => setOpenSnackBar({ open: false, message: '' })}
+                message={openSnackBar.message}
+            />
         </AppBar>
     )
 }

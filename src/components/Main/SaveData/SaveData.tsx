@@ -1,7 +1,7 @@
-import { Button, Grid, Typography } from '@mui/material'
+import { Button, Grid, Snackbar, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { doc, setDoc } from 'firebase/firestore'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import AuthContext from '../../../context/AuthContext'
 import { firestoreDB } from '../../../firebaseSetup'
 
@@ -10,6 +10,10 @@ interface Props {
 }
 
 function SaveData({ mainData }: Props) {
+    const [openSnackBar, setOpenSnackBar] = useState({
+        open: false,
+        message: '',
+    })
     const user = useContext(AuthContext)
     const handleSave = async () => {
         console.log('save')
@@ -18,7 +22,15 @@ function SaveData({ mainData }: Props) {
                 const document = doc(firestoreDB, 'users', user.uid)
                 await setDoc(document, { data: JSON.stringify(mainData) }, { merge: true })
                 console.log('Document written with ID: ', user.uid)
+                setOpenSnackBar({
+                    open: true,
+                    message: 'Data Saved Successfully',
+                })
             } catch (e) {
+                setOpenSnackBar({
+                    open: true,
+                    message: 'Error in Saving Data',
+                })
                 console.error('Error adding document: ', e)
             }
         }
@@ -77,6 +89,12 @@ function SaveData({ mainData }: Props) {
             </Grid>
         )} */}
             </Box>
+            <Snackbar
+                open={openSnackBar.open}
+                autoHideDuration={3000}
+                onClose={() => setOpenSnackBar({ open: false, message: '' })}
+                message={openSnackBar.message}
+            />
         </Grid>
     )
 }

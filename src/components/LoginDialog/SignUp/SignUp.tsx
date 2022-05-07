@@ -1,6 +1,6 @@
 import MailIcon from '@mui/icons-material/Mail'
 import LockIcon from '@mui/icons-material/Lock'
-import { Grid, InputAdornment, TextField, Button, Typography, IconButton } from '@mui/material'
+import { Grid, InputAdornment, TextField, Button, Typography, IconButton, Snackbar } from '@mui/material'
 import React, { useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import { createNewUserWithEmail } from '../../../services/Auth'
@@ -25,6 +25,10 @@ interface Props {
 }
 
 function SignUp({ setTabValue, setLoginDialogOpen }: Props) {
+    const [openSnackBar, setOpenSnackBar] = useState({
+        open: false,
+        message: '',
+    })
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -48,6 +52,7 @@ function SignUp({ setTabValue, setLoginDialogOpen }: Props) {
                 const res = await createNewUserWithEmail(email, password)
                 console.log('user created', res)
                 setLoginDialogOpen(false)
+                setOpenSnackBar({ open: true, message: 'Signed Up Successfully' })
             } catch (error: any) {
                 console.log(JSON.stringify(error))
                 const { code } = error
@@ -207,6 +212,12 @@ function SignUp({ setTabValue, setLoginDialogOpen }: Props) {
                     </Grid>
                 </Grid>
             </Grid>
+            <Snackbar
+                open={openSnackBar.open}
+                autoHideDuration={3000}
+                onClose={() => setOpenSnackBar({ open: false, message: '' })}
+                message={openSnackBar.message}
+            />
         </Grid>
     )
 }
