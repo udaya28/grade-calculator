@@ -42,9 +42,9 @@ function AboutUs() {
                                 fontSize: { xs: '14px', sm: '16px', md: '18px' },
                             }}
                         >
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculuss. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                            {`\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Quality planning consists of developing the products and processes required to meet the
+                            customer’s need. The concept may seems to be small and the tech we used here already exists
+                            but our ultimate aim is to create a product that can be used by our fellow friends.`}
                         </Typography>
                     </Grid>
                 </Grid>

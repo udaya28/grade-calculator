@@ -69,6 +69,17 @@ function Aside() {
                                 4. Lorem ipsum, dolor sit amet consectetur ad ipisicing elit. <br />
                                 5. Lorem ipsum, dolor sit amet consectetur ad ipisicing elit. <br /> */}
                             </Typography>
+                            <Typography
+                                sx={{
+                                    mt: '5px',
+                                    fontSize: { xs: '10px', sm: '12px', md: '14px' },
+                                    lineHeight: '20px',
+                                    textAlign: 'justify',
+                                }}
+                            >
+                                <b>Note : </b>The SGPA will be automatically updated in the CGPA column, you can also
+                                change the Total Credits and SGPA manually, if necessary.
+                            </Typography>
                         </Grid>
                     </Grid>
                 </Paper>
