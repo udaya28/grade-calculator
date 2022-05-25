@@ -80,7 +80,7 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
                     </Grid>
 
                     <Grid item>
-                        <Grid container alignItems="center" justifyContent="flex-end" columnSpacing={2}>
+                        <Grid container alignItems="center" justifyContent="flex-end">
                             {/* <Grid item xs={10} sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
                                 <NavItems menuItems={menuItems} />
                             </Grid> */}
@@ -115,7 +115,7 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
                                 </Grid>
                             )}
 
-                            <Grid item>
+                            <Grid item sx={{ paddingLeft: '16px' }}>
                                 <ThemeToggle darkMode={darkMode} handleThemeChange={handleThemeChange} />
                             </Grid>
 
