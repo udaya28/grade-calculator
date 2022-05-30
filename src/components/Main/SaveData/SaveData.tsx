@@ -48,10 +48,14 @@ function SaveData({ mainData }: Props) {
             >
                 <Grid container justifyContent="center" alignItems="center" columnSpacing={2}>
                     <Grid item>
-                        <Typography sx={{ textAlign: 'justify', fontSize: { xs: '14px', sm: '16px', md: '18px' } }}>
-                            {user && user.uid
-                                ? 'Click the save button to save your current data'
-                                : 'Sign in to save your data to online'}
+                        <Typography
+                            sx={{
+                                textAlign: 'justify',
+                                fontWeight: 'bold',
+                                fontSize: { xs: '14px', sm: '16px', md: '18px' },
+                            }}
+                        >
+                            {user && user.uid ? 'Click save button to save your changes' : 'Sign in to save your data'}
                         </Typography>
                     </Grid>
                     <Grid item>
