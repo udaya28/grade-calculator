@@ -363,6 +363,380 @@ const DATA = {
                     ],
                 },
             },
+            ECE: {
+                1: {
+                    subject: [
+                        {
+                            subject: 'Communicative English - I',
+                            credit: 3,
+                            subjectCode: '18ENT11',
+                        },
+                        {
+                            subject: 'Engineering Mathematics - I',
+                            credit: 4,
+                            subjectCode: '18MAT11',
+                        },
+                        {
+                            subject: 'Engineering Physics',
+                            credit: 3,
+                            subjectCode: '18PHT11',
+                        },
+                        {
+                            subject: 'Engineering Chemistry',
+                            credit: 3,
+                            subjectCode: '18CYT11',
+                        },
+                        {
+                            subject: 'Python Programming',
+                            credit: 3,
+                            subjectCode: '18CST13',
+                        },
+                        {
+                            subject: 'Semiconductor Devices',
+                            credit: 3,
+                            subjectCode: '18ECT11',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory - I',
+                            credit: 1,
+                            subjectCode: '18PHL11',
+                        },
+                        {
+                            subject: 'Python Programming Laboratory',
+                            credit: 1,
+                            subjectCode: '18CSL13',
+                        },
+                        {
+                            subject: 'Universal Human Values-I',
+                            credit: 0,
+                            subjectCode: '18MCL11',
+                        },
+                    ],
+                },
+                2: {
+                    subject: [
+                        {
+                            subject: 'Communicative English - II',
+                            credit: 3,
+                            subjectCode: '18ENT21',
+                        },
+                        {
+                            subject: 'Engineering Mathematics - II',
+                            credit: 4,
+                            subjectCode: '18MAT21',
+                        },
+                        {
+                            subject: 'Physics for Electrical Sciences',
+                            credit: 3,
+                            subjectCode: '18PHT23',
+                        },
+                        {
+                            subject: 'Environmental Science and Engineering',
+                            credit: 0,
+                            subjectCode: '18MCT02',
+                        },
+                        {
+                            subject: 'Basic Electrical Engineering',
+                            credit: 3,
+                            subjectCode: '18ECT21',
+                        },
+                        {
+                            subject: 'Engineering Graphics',
+                            credit: 4,
+                            subjectCode: '18MEC11',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory - II',
+                            credit: 1,
+                            subjectCode: '18PHL21',
+                        },
+                        {
+                            subject: 'Circuits and Devices Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL21',
+                        },
+                        {
+                            subject: 'Workshop Practices Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL21',
+                        },
+                    ],
+                },
+                3: {
+                    subject: [
+                        {
+                            subject: 'Transforms and Partial Differential Equations',
+                            credit: 4,
+                            subjectCode: '18MAT31',
+                        },
+                        {
+                            subject: 'Signals and Systems',
+                            credit: 4,
+                            subjectCode: '18ECT31',
+                        },
+                        {
+                            subject: 'Analog Electronics - I',
+                            credit: 4,
+                            subjectCode: '18ECT32',
+                        },
+                        {
+                            subject: 'Digital Electronics',
+                            credit: 4,
+                            subjectCode: '18ECT33',
+                        },
+                        {
+                            subject: 'Analog Communication',
+                            credit: 3,
+                            subjectCode: '18ECT34',
+                        },
+                        {
+                            subject: 'Analog Electronics Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL31',
+                        },
+                        {
+                            subject: 'Digital Electronics Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL32',
+                        },
+                        {
+                            subject: 'Essential English for Professionals',
+                            credit: 0,
+                            subjectCode: '18MCL03',
+                        },
+                    ],
+                },
+                4: {
+                    subject: [
+                        {
+                            subject: 'Probability and Random Processes',
+                            credit: 4,
+                            subjectCode: '18MAT41',
+                        },
+                        {
+                            subject: 'Analog Electronics - II',
+                            credit: 4,
+                            subjectCode: '18ECT41',
+                        },
+                        {
+                            subject: 'Linear Integrated Circuits and Applications',
+                            credit: 3,
+                            subjectCode: '18ECT42',
+                        },
+                        {
+                            subject: 'Electromagnetic Fields',
+                            credit: 4,
+                            subjectCode: '18ECT43',
+                        },
+                        {
+                            subject: 'Control Systems',
+                            credit: 4,
+                            subjectCode: '18ECT44',
+                        },
+                        {
+                            subject: 'Digital Communication',
+                            credit: 3,
+                            subjectCode: '18ECT45',
+                        },
+                        {
+                            subject: 'Circuits and Simulation Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL41',
+                        },
+                        {
+                            subject: 'Communication Systems Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL42',
+                        },
+                        {
+                            subject: 'Professional Communication',
+                            credit: 0,
+                            subjectCode: '18MCL04',
+                        },
+                    ],
+                },
+                5: {
+                    subject: [
+                        {
+                            subject: 'Data Structures Using Object Oriented Programming',
+                            credit: 3,
+                            subjectCode: '18ITT43',
+                        },
+                        {
+                            subject: 'Digital Signal Processing',
+                            credit: 4,
+                            subjectCode: '18ECC51',
+                        },
+                        {
+                            subject: 'Microprocessor and Microcontroller',
+                            credit: 3,
+                            subjectCode: '18ECT51',
+                        },
+                        {
+                            subject: 'Computer Communication Networks',
+                            credit: 3,
+                            subjectCode: '18ECT52',
+                        },
+                        {
+                            subject: 'Professional Elective - I',
+                            credit: 3,
+                            subjectCode: '18ECExx',
+                        },
+                        {
+                            subject: 'Open Elective - I',
+                            credit: 3,
+                            subjectCode: '18ECOxx',
+                        },
+                        {
+                            subject: 'Data Structures Using Object Oriented Programming Laboratory',
+                            credit: 1,
+                            subjectCode: '18ITL42',
+                        },
+                        {
+                            subject: 'Microprocessor and Microcontroller Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL51',
+                        },
+                        {
+                            subject: 'Aptitude and Logical Reasoning',
+                            credit: 0,
+                            subjectCode: '18MCT05',
+                        },
+                        {
+                            subject: 'Professional Ethics for Engineers',
+                            credit: 0,
+                            subjectCode: '18MCT06',
+                        },
+                    ],
+                },
+                6: {
+                    subject: [
+                        {
+                            subject: 'Economics and Management for Engineers',
+                            credit: 3,
+                            subjectCode: '18ITT71',
+                        },
+                        {
+                            subject: 'Wireless and Mobile Communication',
+                            credit: 3,
+                            subjectCode: '18ECT62',
+                        },
+                        {
+                            subject: 'CMOS VLSI Design',
+                            credit: 3,
+                            subjectCode: '18ECT64',
+                        },
+                        {
+                            subject: 'Professional Elective - II',
+                            credit: 3,
+                            subjectCode: '18ECExx',
+                        },
+                        {
+                            subject: 'Professional Elective - III',
+                            credit: 3,
+                            subjectCode: '18ECExx',
+                        },
+                        {
+                            subject: 'Open Elective - II',
+                            credit: 3,
+                            subjectCode: '18ECOxx',
+                        },
+                        {
+                            subject: 'Communication Networks Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL61',
+                        },
+                        {
+                            subject: 'VLSI Design Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL62',
+                        },
+                        {
+                            subject: 'Mini Project',
+                            credit: 3,
+                            subjectCode: '18ECL63',
+                        },
+                        {
+                            subject: 'Arithmetic and Analytical Ability',
+                            credit: 0,
+                            subjectCode: '18MCT07',
+                        },
+                        {
+                            subject: 'Communication Skills Laboratory',
+                            credit: 0,
+                            subjectCode: '18MCL09',
+                        },
+                    ],
+                },
+                7: {
+                    subject: [
+                        {
+                            subject: 'Embedded Systems Techniques',
+                            credit: 3,
+                            subjectCode: '18ECT71',
+                        },
+                        {
+                            subject: 'Microwave and Optical Communication',
+                            credit: 3,
+                            subjectCode: '18ECT72',
+                        },
+                        {
+                            subject: 'Professional Elective - IV',
+                            credit: 3,
+                            subjectCode: '18ECExx',
+                        },
+                        {
+                            subject: 'Open Elective - III',
+                            credit: 3,
+                            subjectCode: '18ECOxx',
+                        },
+                        {
+                            subject: 'Universal Human Values - 2',
+                            credit: 3,
+                            subjectCode: '18MCT12',
+                        },
+                        {
+                            subject: 'Embedded Systems Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL71',
+                        },
+                        {
+                            subject: 'Microwave and Optical Communication Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL72',
+                        },
+                        {
+                            subject: 'Indian Constitution and Traditional Knowledge',
+                            credit: 0,
+                            subjectCode: '18MCT08',
+                        },
+                        {
+                            subject: 'Internship/IPT/Value Added Practical Courses',
+                            credit: 2,
+                            subjectCode: '18ECL73',
+                        },
+                    ],
+                },
+                8: {
+                    subject: [
+                        {
+                            subject: 'Professional Elective - V',
+                            credit: 3,
+                            subjectCode: '18ECExx',
+                        },
+                        {
+                            subject: 'Professional Elective - VI',
+                            credit: 3,
+                            subjectCode: '18ECExx',
+                        },
+                        {
+                            subject: 'Project Work',
+                            credit: 10,
+                            subjectCode: '18ECL81',
+                        },
+                    ],
+                },
+            },
             EEE: {
                 1: {
                     subject: [
@@ -7513,10 +7887,12 @@ const validateData = (data) => {
                     subjects.forEach((subjectDetails) => {
                         const { subject, credit, subjectCode } = subjectDetails
                         if (!subject || !Number.isInteger(credit) || !subjectCode) {
-                            console.log(!Number.isInteger(credit), !subjectCode)
-                            console.log(
-                                `Fields not found or Invalid for ${college} ${regulation} ${department} ${semester} ${subject} ${credit} ${subjectCode}`,
-                            )
+                            // console.log(!Number.isInteger(credit), !subjectCode)
+                            if (college !== 'AU') {
+                                console.log(
+                                    `Fields not found or Invalid for ${college} ${regulation} ${department} ${semester} ${subject} ${credit} ${subjectCode}`,
+                                )
+                            }
                         }
                     })
                 })
