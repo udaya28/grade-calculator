@@ -1238,6 +1238,1133 @@ const DATA = {
                     ],
                 },
             },
+            MDE: {
+                1: {
+                    subject: [
+                        {
+                            subject: 'Communicative English - I',
+                            credit: 3,
+                            subjectCode: '18ENT11',
+                        },
+                        {
+                            subject: 'Engineering Mathematics - I',
+                            credit: 4,
+                            subjectCode: '18MAT11',
+                        },
+                        {
+                            subject: 'Engineering Physics',
+                            credit: 3,
+                            subjectCode: '18PHT11',
+                        },
+                        {
+                            subject: 'Engineering Chemistry',
+                            credit: 3,
+                            subjectCode: '18CYT11',
+                        },
+                        {
+                            subject: 'Semiconductor Devices',
+                            credit: 3,
+                            subjectCode: '18ECT11',
+                        },
+                        {
+                            subject: 'Engineering Graphics',
+                            credit: 4,
+                            subjectCode: '18MEC11',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory - I',
+                            credit: 1,
+                            subjectCode: '18PHL11',
+                        },
+                        {
+                            subject: 'Workshop Practices Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL11',
+                        },
+                        {
+                            subject: 'Universal Human Values-I',
+                            credit: 0,
+                            subjectCode: '18MCL11',
+                        },
+                    ],
+                },
+                2: {
+                    subject: [
+                        {
+                            subject: 'Communicative English - II',
+                            credit: 3,
+                            subjectCode: '18ENT21',
+                        },
+                        {
+                            subject: 'Engineering Mathematics - II',
+                            credit: 4,
+                            subjectCode: '18MAT21',
+                        },
+                        {
+                            subject: 'Medical Physics',
+                            credit: 3,
+                            subjectCode: '18BMT23',
+                        },
+                        {
+                            subject: 'Python Programming',
+                            credit: 3,
+                            subjectCode: '18CST13',
+                        },
+                        {
+                            subject: 'Basic Electrical Engineering',
+                            credit: 3,
+                            subjectCode: '18ECT21',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory - II',
+                            credit: 1,
+                            subjectCode: '18PHL21',
+                        },
+                        {
+                            subject: 'Python Programming Laboratory',
+                            credit: 1,
+                            subjectCode: '18CSL13',
+                        },
+                        {
+                            subject: 'Circuits and Devices Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL21',
+                        },
+                        {
+                            subject: 'Environmental Science and Engineering',
+                            credit: 0,
+                            subjectCode: '18MCT02',
+                        },
+                    ],
+                },
+                3: {
+                    subject: [
+                        {
+                            subject: 'Transforms and Partial Differential Equations',
+                            credit: 4,
+                            subjectCode: '18MAT31',
+                        },
+                        {
+                            subject: 'Life Sciences',
+                            credit: 3,
+                            subjectCode: '18MDT31',
+                        },
+                        {
+                            subject: 'Sensors and Measurements',
+                            credit: 3,
+                            subjectCode: '18MDT32',
+                        },
+                        {
+                            subject: 'Analog Electronics',
+                            credit: 4,
+                            subjectCode: '18MDC31',
+                        },
+                        {
+                            subject: 'Signals and Systems',
+                            credit: 4,
+                            subjectCode: '18ECT31',
+                        },
+                        {
+                            subject: 'Life Sciences Laboratory',
+                            credit: 1,
+                            subjectCode: '18MDL31',
+                        },
+                        {
+                            subject: 'Sensors and Measurements Laboratory',
+                            credit: 1,
+                            subjectCode: '18MDL32',
+                        },
+                        {
+                            subject: 'Essential English for Professionals',
+                            credit: 0,
+                            subjectCode: '18MCL03',
+                        },
+                    ],
+                },
+                4: {
+                    subject: [
+                        {
+                            subject: 'Probability and Random Process',
+                            credit: 4,
+                            subjectCode: '18MAT41',
+                        },
+                        {
+                            subject: 'Data Structures using Object Oriented Programming',
+                            credit: 3,
+                            subjectCode: '18ITT43',
+                        },
+                        {
+                            subject: 'Linear and Digital Integrated Circuits',
+                            credit: 3,
+                            subjectCode: '18MDT41',
+                        },
+                        {
+                            subject: 'Bio Control System Engineering',
+                            credit: 4,
+                            subjectCode: '18MDT42',
+                        },
+                        {
+                            subject: 'Medical Equipment - I',
+                            credit: 3,
+                            subjectCode: '18MDT43',
+                        },
+                        {
+                            subject: 'Analog and Digital Communication',
+                            credit: 3,
+                            subjectCode: '18ECT46',
+                        },
+                        {
+                            subject: 'Data Structures using Object Oriented Programming Laboratory',
+                            credit: 1,
+                            subjectCode: '18ITL42',
+                        },
+                        {
+                            subject: 'Linear and Digital Integrated Circuits Laboratory',
+                            credit: 1,
+                            subjectCode: '18MDL41',
+                        },
+                        {
+                            subject: 'Professional Communication',
+                            credit: 0,
+                            subjectCode: '18MCL04',
+                        },
+                    ],
+                },
+                5: {
+                    subject: [
+                        {
+                            subject: 'Bio Signal Processing',
+                            credit: 4,
+                            subjectCode: '18MDC51',
+                        },
+                        {
+                            subject: 'Microprocessor and Embedded Controllers',
+                            credit: 3,
+                            subjectCode: '18MDT51',
+                        },
+                        {
+                            subject: 'Medical Equipment - II',
+                            credit: 3,
+                            subjectCode: '18MDT52',
+                        },
+                        {
+                            subject: 'Biomechanics',
+                            credit: 3,
+                            subjectCode: '18MDT53',
+                        },
+                        {
+                            subject: 'Professional Elective - I',
+                            credit: 3,
+                            subjectCode: '18MDExx',
+                        },
+                        {
+                            subject: 'Open Elective - I',
+                            credit: 3,
+                            subjectCode: '18xxOxx',
+                        },
+                        {
+                            subject: 'Bio Medical Instrumentation Laboratory',
+                            credit: 1,
+                            subjectCode: '18MDL51',
+                        },
+                        {
+                            subject: 'Microprocessor and Embedded Controllers Laboratory',
+                            credit: 1,
+                            subjectCode: '18MDL52',
+                        },
+                        {
+                            subject: 'Aptitude and Logical Reasoning',
+                            credit: 0,
+                            subjectCode: '18MCT05',
+                        },
+                        {
+                            subject: 'Communication Skills Laboratory',
+                            credit: 0,
+                            subjectCode: '18MCL09',
+                        },
+                    ],
+                },
+                6: {
+                    subject: [
+                        {
+                            subject: 'Medical Image Processing',
+                            credit: 3,
+                            subjectCode: '18MDT61',
+                        },
+                        {
+                            subject: 'Rehabilitation Engineering',
+                            credit: 3,
+                            subjectCode: '18MDT62',
+                        },
+                        {
+                            subject: 'Hospital Engineering and Management',
+                            credit: 3,
+                            subjectCode: '18MDT63',
+                        },
+                        {
+                            subject: 'Professional Elective - II',
+                            credit: 3,
+                            subjectCode: '18MDExx',
+                        },
+                        {
+                            subject: 'Professional Elective - III',
+                            credit: 3,
+                            subjectCode: '18MDExx',
+                        },
+                        {
+                            subject: 'Open Elective - II',
+                            credit: 3,
+                            subjectCode: '18xxOxx',
+                        },
+                        {
+                            subject: 'Diagnostic and Therapeutic Equipment Laboratory',
+                            credit: 1,
+                            subjectCode: '18MDL61',
+                        },
+                        {
+                            subject: 'Medical Image Processing Laboratory',
+                            credit: 1,
+                            subjectCode: '18MDL62',
+                        },
+                        {
+                            subject: 'Mini Project',
+                            credit: 3,
+                            subjectCode: '18MDL63',
+                        },
+                        {
+                            subject: 'Professional Ethics for Engineers',
+                            credit: 0,
+                            subjectCode: '18MCT06',
+                        },
+                        {
+                            subject: 'Arithmetic and Analytical Ability',
+                            credit: 0,
+                            subjectCode: '18MCT07',
+                        },
+                    ],
+                },
+                7: {
+                    subject: [
+                        {
+                            subject: 'Economics and Management for Engineers',
+                            credit: 3,
+                            subjectCode: '18ITT71',
+                        },
+                        {
+                            subject: 'Medical Expert Systems',
+                            credit: 3,
+                            subjectCode: '18MDT71',
+                        },
+                        {
+                            subject: 'Professional Elective - IV',
+                            credit: 3,
+                            subjectCode: '18MDExx',
+                        },
+                        {
+                            subject: 'Open Elective - III',
+                            credit: 3,
+                            subjectCode: '18xxOxx',
+                        },
+                        {
+                            subject: 'Universal Human Values-II',
+                            credit: 3,
+                            subjectCode: '18MCT12',
+                        },
+                        {
+                            subject: 'Expert System Laboratory',
+                            credit: 1,
+                            subjectCode: '18MDL71',
+                        },
+                        {
+                            subject: 'Hospital Training',
+                            credit: 2,
+                            subjectCode: '18MDL72',
+                        },
+                        {
+                            subject: 'Internship/Value Added Course',
+                            credit: 2,
+                            subjectCode: '18MDVxx',
+                        },
+                        {
+                            subject: 'Indian Constitution and Traditional Knowledge',
+                            credit: 0,
+                            subjectCode: '18MCT08',
+                        },
+                    ],
+                },
+                8: {
+                    subject: [
+                        {
+                            subject: 'Professional Elective - V',
+                            credit: 3,
+                            subjectCode: '18MDExx',
+                        },
+                        {
+                            subject: 'Professional Elective - VI',
+                            credit: 3,
+                            subjectCode: '18MDExx',
+                        },
+                        {
+                            subject: 'Project Work',
+                            credit: 10,
+                            subjectCode: '18MDL81',
+                        },
+                    ],
+                },
+            },
+            MECH: {
+                1: {
+                    subject: [
+                        {
+                            subject: 'Communicative English - I',
+                            credit: 3,
+                            subjectCode: '18ENT11',
+                        },
+                        {
+                            subject: 'Engineering Mathematics - I',
+                            credit: 4,
+                            subjectCode: '18MAT11',
+                        },
+                        {
+                            subject: 'Engineering Physics',
+                            credit: 3,
+                            subjectCode: '18PHT11',
+                        },
+                        {
+                            subject: 'Engineering Chemistry',
+                            credit: 3,
+                            subjectCode: '18CYT11',
+                        },
+                        {
+                            subject: 'Basics of Electrical and Electronics Engineering',
+                            credit: 3,
+                            subjectCode: '18EET11',
+                        },
+                        {
+                            subject: 'Engineering Graphics',
+                            credit: 4,
+                            subjectCode: '18MEC11',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory - I',
+                            credit: 1,
+                            subjectCode: '18PHL11',
+                        },
+                        {
+                            subject: 'Workshop Practices Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL11',
+                        },
+                        {
+                            subject: 'Universal Human values- 1',
+                            credit: 0,
+                            subjectCode: '18MCL11',
+                        },
+                    ],
+                },
+                2: {
+                    subject: [
+                        {
+                            subject: 'Communicative English - II',
+                            credit: 3,
+                            subjectCode: '18ENT21',
+                        },
+                        {
+                            subject: 'Engineering Mathematics - II',
+                            credit: 4,
+                            subjectCode: '18MAT21',
+                        },
+                        {
+                            subject: 'Material Science',
+                            credit: 3,
+                            subjectCode: '18PHT21',
+                        },
+                        {
+                            subject: 'Problem solving and python Programming',
+                            credit: 3,
+                            subjectCode: '18CST21',
+                        },
+                        {
+                            subject: 'Engineering Mechanics',
+                            credit: 4,
+                            subjectCode: '18MET21',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory - II',
+                            credit: 1,
+                            subjectCode: '18PHL21',
+                        },
+                        {
+                            subject: 'Problem Solving and Python Programming Laboratory',
+                            credit: 1,
+                            subjectCode: '18CSL21',
+                        },
+                        {
+                            subject: 'Computer Aided Drafting and Modeling Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL22',
+                        },
+                        {
+                            subject: 'Environmental Science and Engineering',
+                            credit: 0,
+                            subjectCode: '18MCT02',
+                        },
+                    ],
+                },
+                3: {
+                    subject: [
+                        {
+                            subject: 'Transforms and Partial Differential Equations',
+                            credit: 4,
+                            subjectCode: '18MAT31',
+                        },
+                        {
+                            subject: 'Construction Materials and Practices',
+                            credit: 3,
+                            subjectCode: '18CET31',
+                        },
+                        {
+                            subject: 'Solid Mechanics',
+                            credit: 3,
+                            subjectCode: '18CET32',
+                        },
+                        {
+                            subject: 'Fluid Mechanics',
+                            credit: 3,
+                            subjectCode: '18CET33',
+                        },
+                        {
+                            subject: 'Surveying and Geomatics',
+                            credit: 3,
+                            subjectCode: '18CET34',
+                        },
+                        {
+                            subject: 'Solid Mechanics Laboratory',
+                            credit: 1,
+                            subjectCode: '18CEL31',
+                        },
+                        {
+                            subject: 'Surveying Laboratory',
+                            credit: 1,
+                            subjectCode: '18CEL32',
+                        },
+                        {
+                            subject: 'Computer Aided Building Drawing',
+                            credit: 1,
+                            subjectCode: '18CEL33',
+                        },
+                        {
+                            subject: 'Essential English for Professionals',
+                            credit: 0,
+                            subjectCode: '18MCL03',
+                        },
+                    ],
+                },
+                4: {
+                    subject: [
+                        {
+                            subject: 'Numerical Methods',
+                            credit: 4,
+                            subjectCode: '18MAT43',
+                        },
+                        {
+                            subject: 'Strength of Materials',
+                            credit: 4,
+                            subjectCode: '18CET41',
+                        },
+                        {
+                            subject: 'Hydraulic Engineering',
+                            credit: 4,
+                            subjectCode: '18CET42',
+                        },
+                        {
+                            subject: 'Soil Mechanics',
+                            credit: 3,
+                            subjectCode: '18CET43',
+                        },
+                        {
+                            subject: 'Highway and Pavement Engineering',
+                            credit: 3,
+                            subjectCode: '18CET44',
+                        },
+                        {
+                            subject: 'Physio-Chemical Process for water treatment',
+                            credit: 3,
+                            subjectCode: '18CET45',
+                        },
+                        {
+                            subject: 'Hydraulic Engineering Laboratory',
+                            credit: 1,
+                            subjectCode: '18CEL41',
+                        },
+                        {
+                            subject: 'Soil Mechanics and Highway Engineering Laboratory',
+                            credit: 1,
+                            subjectCode: '18CEL42',
+                        },
+                        {
+                            subject: 'Survey Camp/ Value Added course',
+                            credit: 1,
+                            subjectCode: '18CEL43',
+                        },
+                        {
+                            subject: 'Professional Communication',
+                            credit: 0,
+                            subjectCode: '18MCL04',
+                        },
+                    ],
+                },
+                5: {
+                    subject: [
+                        {
+                            subject: 'Design of reinforced concrete Elements',
+                            credit: 3,
+                            subjectCode: '18CET51',
+                        },
+                        {
+                            subject: 'Structural analysis-I',
+                            credit: 4,
+                            subjectCode: '18CET52',
+                        },
+                        {
+                            subject: 'Foundation Engineering',
+                            credit: 3,
+                            subjectCode: '18CET53',
+                        },
+                        {
+                            subject: 'Railways, Airports, Docks and Harbour',
+                            credit: 3,
+                            subjectCode: '18CET54',
+                        },
+                        {
+                            subject: 'Professional Elective-I',
+                            credit: 3,
+                            subjectCode: '18CEEXX',
+                        },
+                        {
+                            subject: 'Open Elective - I',
+                            credit: 3,
+                            subjectCode: 'OE-I',
+                        },
+                        {
+                            subject: 'Concrete technology Laboratory',
+                            credit: 1,
+                            subjectCode: '18CEL51',
+                        },
+                        {
+                            subject: 'Environmental Engineering Laboratory',
+                            credit: 1,
+                            subjectCode: '18CEL52',
+                        },
+                        {
+                            subject: 'Communication Skills Laboratory',
+                            credit: 0,
+                            subjectCode: '18MCL09',
+                        },
+                        {
+                            subject: 'Aptitude and Logical Reasoning',
+                            credit: 0,
+                            subjectCode: '18MCT05',
+                        },
+                    ],
+                },
+                6: {
+                    subject: [
+                        {
+                            subject: 'Design of reinforced concrete and Brick Masonry structures',
+                            credit: 3,
+                            subjectCode: '18CET61',
+                        },
+                        {
+                            subject: 'Structural analysis-II',
+                            credit: 4,
+                            subjectCode: '18CET62',
+                        },
+                        {
+                            subject: 'Design of steel Structures',
+                            credit: 4,
+                            subjectCode: '18CET63',
+                        },
+                        {
+                            subject: 'Professional Elective-II',
+                            credit: 3,
+                            subjectCode: '18CEEXX',
+                        },
+                        {
+                            subject: 'Professional Elective-III',
+                            credit: 3,
+                            subjectCode: '18CEEXX',
+                        },
+                        {
+                            subject: 'OpenElective-II',
+                            credit: 3,
+                            subjectCode: 'OE-II',
+                        },
+                        {
+                            subject: 'Environmental and Irrigation EngineeringDesign and Drawing',
+                            credit: 2,
+                            subjectCode: '18CEL61',
+                        },
+                        {
+                            subject: 'Professional Ethics for Engineers',
+                            credit: 0,
+                            subjectCode: '18MCT06',
+                        },
+                        {
+                            subject: 'Arithmetic and Analytical ability',
+                            credit: 0,
+                            subjectCode: '18MCT07',
+                        },
+                    ],
+                },
+                7: {
+                    subject: [
+                        {
+                            subject: 'Engineering Economics and cost analysis',
+                            credit: 3,
+                            subjectCode: '18CET71',
+                        },
+                        {
+                            subject: 'Universal Human Values - 2',
+                            credit: 3,
+                            subjectCode: '18VET12',
+                        },
+                        {
+                            subject: 'Estimation and Quantity surveying',
+                            credit: 3,
+                            subjectCode: '18CET72',
+                        },
+                        {
+                            subject: 'Professional Elective-IV',
+                            credit: 3,
+                            subjectCode: '18CETXX',
+                        },
+                        {
+                            subject: 'Open Elective - III',
+                            credit: 3,
+                            subjectCode: 'OE-III',
+                        },
+                        {
+                            subject: 'Computer Aided Design and Drafting Laboratory',
+                            credit: 1,
+                            subjectCode: '18CEL71',
+                        },
+                        {
+                            subject: 'Design Project',
+                            credit: 2,
+                            subjectCode: '18CEL72',
+                        },
+                        {
+                            subject: 'In- plant training',
+                            credit: 1,
+                            subjectCode: '18CEL73',
+                        },
+                        {
+                            subject: 'Value Added Course',
+                            credit: 1,
+                            subjectCode: '18CEVXX',
+                        },
+                        {
+                            subject: 'Indian Constitution and traditional knowledge',
+                            credit: 0,
+                            subjectCode: '18MCT08',
+                        },
+                    ],
+                },
+                8: {
+                    subject: [
+                        {
+                            subject: 'Professional Elective-V',
+                            credit: 3,
+                            subjectCode: '18CETXX',
+                        },
+                        {
+                            subject: 'Professional Elective-VI',
+                            credit: 3,
+                            subjectCode: '18CETXX',
+                        },
+                        {
+                            subject: 'Project Work',
+                            credit: 10,
+                            subjectCode: '18CEL81',
+                        },
+                    ],
+                },
+            },
+            CIVIL: {
+                1: {
+                    subject: [
+                        {
+                            subject: 'Communicative English - I',
+                            credit: 3,
+                            subjectCode: '18ENT11',
+                        },
+                        {
+                            subject: 'Engineering Mathematics - I',
+                            credit: 4,
+                            subjectCode: '18MAT11',
+                        },
+                        {
+                            subject: 'Engineering Physics',
+                            credit: 3,
+                            subjectCode: '18PHT11',
+                        },
+                        {
+                            subject: 'Engineering Chemistry',
+                            credit: 3,
+                            subjectCode: '18CYT11',
+                        },
+                        {
+                            subject: 'Basics of Electrical and Electronics Engineering',
+                            credit: 3,
+                            subjectCode: '18EET11',
+                        },
+                        {
+                            subject: 'Engineering Graphics',
+                            credit: 4,
+                            subjectCode: '18MEC11',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory - I',
+                            credit: 1,
+                            subjectCode: '18PHL11',
+                        },
+                        {
+                            subject: 'Workshop Practices Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL11',
+                        },
+                        {
+                            subject: 'Universal Human values- 1',
+                            credit: 0,
+                            subjectCode: '18MCL11',
+                        },
+                    ],
+                },
+                2: {
+                    subject: [
+                        {
+                            subject: 'Communicative English - II',
+                            credit: 3,
+                            subjectCode: '18ENT21',
+                        },
+                        {
+                            subject: 'Engineering Mathematics - II',
+                            credit: 4,
+                            subjectCode: '18MAT21',
+                        },
+                        {
+                            subject: 'Material Science',
+                            credit: 3,
+                            subjectCode: '18PHT21',
+                        },
+                        {
+                            subject: 'Problem solving and python Programming',
+                            credit: 3,
+                            subjectCode: '18CST21',
+                        },
+                        {
+                            subject: 'Engineering Mechanics',
+                            credit: 4,
+                            subjectCode: '18MET21',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory - II',
+                            credit: 1,
+                            subjectCode: '18PHL21',
+                        },
+                        {
+                            subject: 'Problem Solving and Python Programming Laboratory',
+                            credit: 1,
+                            subjectCode: '18CSL21',
+                        },
+                        {
+                            subject: 'Computer Aided Drafting and Modeling Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL22',
+                        },
+                        {
+                            subject: 'Environmental Science and Engineering',
+                            credit: 0,
+                            subjectCode: '18MCT02',
+                        },
+                    ],
+                },
+                3: {
+                    subject: [
+                        {
+                            subject: 'Transforms and Partial Differential Equations',
+                            credit: 4,
+                            subjectCode: '18MAT31',
+                        },
+                        {
+                            subject: 'Fluid Mechanics and Machinery',
+                            credit: 3,
+                            subjectCode: '18MET31',
+                        },
+                        {
+                            subject: 'Electrical Drives and Control',
+                            credit: 4,
+                            subjectCode: '18EEC31',
+                        },
+                        {
+                            subject: 'Engineering Thermodynamics',
+                            credit: 4,
+                            subjectCode: '18MET32',
+                        },
+                        {
+                            subject: 'Manufacturing Technology',
+                            credit: 3,
+                            subjectCode: '18MET33',
+                        },
+                        {
+                            subject: 'Manufacturing Technology Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL31',
+                        },
+                        {
+                            subject: 'Fluid Mechanics and Machinery Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL32',
+                        },
+                        {
+                            subject: 'Essential English for Professionals',
+                            credit: 0,
+                            subjectCode: '18MCL03',
+                        },
+                    ],
+                },
+                4: {
+                    subject: [
+                        {
+                            subject: 'Statistics and Numerical Methods',
+                            credit: 3,
+                            subjectCode: '18MAT44',
+                        },
+                        {
+                            subject: 'Design Engineering',
+                            credit: 3,
+                            subjectCode: '18MET41',
+                        },
+                        {
+                            subject: 'Strength of Materials',
+                            credit: 4,
+                            subjectCode: '18MEC42',
+                        },
+                        {
+                            subject: 'Thermal Engineering',
+                            credit: 4,
+                            subjectCode: '18MET43',
+                        },
+                        {
+                            subject: 'Theory of Machines',
+                            credit: 4,
+                            subjectCode: '18MET44',
+                        },
+                        {
+                            subject: 'Engineering Materials and Metallurgy',
+                            credit: 3,
+                            subjectCode: '18MET45',
+                        },
+                        {
+                            subject: 'Machining Processes Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL41',
+                        },
+                        {
+                            subject: 'Thermal Engineering Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL42',
+                        },
+                        {
+                            subject: 'Professional Communication',
+                            credit: 0,
+                            subjectCode: '18MCT04',
+                        },
+                    ],
+                },
+                5: {
+                    subject: [
+                        {
+                            subject: 'Machine Design',
+                            credit: 4,
+                            subjectCode: '18MET51',
+                        },
+                        {
+                            subject: 'Heat and Mass Transfer',
+                            credit: 4,
+                            subjectCode: '18MET52',
+                        },
+                        {
+                            subject: 'Automobile Engineering',
+                            credit: 3,
+                            subjectCode: '18MET53',
+                        },
+                        {
+                            subject: 'Metrology and Measurements',
+                            credit: 3,
+                            subjectCode: '18MET54',
+                        },
+                        {
+                            subject: 'Professional Elective -I',
+                            credit: 3,
+                            subjectCode: 'PE-I',
+                        },
+                        {
+                            subject: 'Open Elective -I',
+                            credit: 3,
+                            subjectCode: 'OE-I',
+                        },
+                        {
+                            subject: 'Computer Aided Design Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL51',
+                        },
+                        {
+                            subject: 'Dynamics and Metrology Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL52',
+                        },
+                        {
+                            subject: 'Heat and Mass Transfer Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL53',
+                        },
+                        {
+                            subject: 'Aptitude and Logical Reasoning',
+                            credit: 0,
+                            subjectCode: '18MCT05',
+                        },
+                        {
+                            subject: 'Professional Ethics for Engineers',
+                            credit: 0,
+                            subjectCode: '18MCT06',
+                        },
+                    ],
+                },
+                6: {
+                    subject: [
+                        {
+                            subject: 'Gas Dynamics and Jet Propulsion',
+                            credit: 4,
+                            subjectCode: '18MET61',
+                        },
+                        {
+                            subject: 'Design of Transmission Systems',
+                            credit: 4,
+                            subjectCode: '18MET62',
+                        },
+                        {
+                            subject: 'Finite Element Analysis',
+                            credit: 4,
+                            subjectCode: '18MET63',
+                        },
+                        {
+                            subject: 'Professional Elective -II',
+                            credit: 3,
+                            subjectCode: 'PE-II',
+                        },
+                        {
+                            subject: 'Professional Elective -III',
+                            credit: 3,
+                            subjectCode: 'PE-III',
+                        },
+                        {
+                            subject: 'Open Elective - II',
+                            credit: 3,
+                            subjectCode: 'OE-II',
+                        },
+                        {
+                            subject: 'Design and Fabrication Project',
+                            credit: 3,
+                            subjectCode: '18MEL61',
+                        },
+                        {
+                            subject: 'Simulation and Analysis Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL62',
+                        },
+                        {
+                            subject: 'Arithmetic and Analytical Ability',
+                            credit: 0,
+                            subjectCode: '18MCT07',
+                        },
+                        {
+                            subject: 'Communication Skills Laboratory',
+                            credit: 0,
+                            subjectCode: '18MCT09',
+                        },
+                    ],
+                },
+                7: {
+                    subject: [
+                        {
+                            subject: 'Total Quality Management',
+                            credit: 3,
+                            subjectCode: '18MET71',
+                        },
+                        {
+                            subject: 'Mechatronics',
+                            credit: 4,
+                            subjectCode: '18MET72',
+                        },
+                        {
+                            subject: 'Universal Human Values- II',
+                            credit: 3,
+                            subjectCode: '18MCT12',
+                        },
+                        {
+                            subject: 'Professional Elective -IV',
+                            credit: 3,
+                            subjectCode: 'PE-IV',
+                        },
+                        {
+                            subject: 'Open Elective - III',
+                            credit: 3,
+                            subjectCode: 'OE-III',
+                        },
+                        {
+                            subject: 'Automation Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL71',
+                        },
+                        {
+                            subject: 'Comprehension',
+                            credit: 1,
+                            subjectCode: '18MEL72',
+                        },
+                        {
+                            subject: 'Industry Internship / Value Added Course',
+                            credit: 2,
+                            subjectCode: '18MEL73',
+                        },
+                        {
+                            subject: 'Indian Constitution and Traditional Knowledge',
+                            credit: 0,
+                            subjectCode: '18MCT08',
+                        },
+                    ],
+                },
+                8: {
+                    subject: [
+                        {
+                            subject: 'Professional Elective - V',
+                            credit: 3,
+                            subjectCode: 'PE-V',
+                        },
+                        {
+                            subject: 'Professional Elective - VI',
+                            credit: 3,
+                            subjectCode: 'PE-VI',
+                        },
+                        {
+                            subject: 'Project Work',
+                            credit: 10,
+                            subjectCode: '18MEL81',
+                        },
+                    ],
+                },
+            },
         },
     },
     AU: {
