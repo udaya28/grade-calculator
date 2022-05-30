@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
-import { Box, Container } from '@mui/material'
+import { Box, Container, Grid, Typography } from '@mui/material'
 // import { setDoc, doc } from 'firebase/firestore'
 import { URL } from './constants/config'
 import Header from './components/Header/Header'
@@ -56,6 +56,22 @@ function App() {
                             <AboutUs />
                             <Container maxWidth="xl" sx={{ px: { md: '50px', lg: '70px' } }}>
                                 <ContactUs />
+                                <Grid container alignItems="center" justifyContent="center">
+                                    <Grid>
+                                        <Typography sx={{ marginTop: '12px' }}>
+                                            Developed By{' '}
+                                            <a
+                                                href="https://www.linkedin.com/in/udaya28/"
+                                                style={{ color: '#2DD4BF' }}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                Udaya
+                                            </a>{' '}
+                                            with ❤️
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
                             </Container>
                             <LoginDialog loginDialogOpen={loginDialogOpen} setLoginDialogOpen={setLoginDialogOpen} />
                         </Box>

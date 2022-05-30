@@ -59,9 +59,9 @@ function Main() {
                 <Grid item xs={12} md={8} lg={7}>
                     <Grid container alignItems="flex-start" justifyContent="flex-start" rowSpacing={2}>
                         <GradeCalculator />
+                        <SaveData mainData={mainData} />
                         <CalculateYourSGPA mainData={mainData} dispatch={dispatch} />
                         <CalculateYourCGPA mainData={mainData} />
-                        <SaveData mainData={mainData} />
                     </Grid>
                 </Grid>
 
