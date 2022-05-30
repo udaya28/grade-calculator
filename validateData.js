@@ -864,6 +864,380 @@ const DATA = {
                     ],
                 },
             },
+            BM: {
+                1: {
+                    subject: [
+                        {
+                            subject: 'Communicative English – I',
+                            credit: 3,
+                            subjectCode: '18ENT11',
+                        },
+                        {
+                            subject: 'Engineering Mathematics – I',
+                            credit: 4,
+                            subjectCode: '18MAT11',
+                        },
+                        {
+                            subject: 'Engineering Physics',
+                            credit: 3,
+                            subjectCode: '18PHT11',
+                        },
+                        {
+                            subject: 'Engineering Chemistry',
+                            credit: 3,
+                            subjectCode: '18CYT11',
+                        },
+                        {
+                            subject: 'Python Programming',
+                            credit: 3,
+                            subjectCode: '18CST13',
+                        },
+                        {
+                            subject: 'Basic Electrical Engineering',
+                            credit: 3,
+                            subjectCode: '18ECT21',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory – I',
+                            credit: 1,
+                            subjectCode: '18PHL11',
+                        },
+                        {
+                            subject: 'Python Programming Laboratory',
+                            credit: 1,
+                            subjectCode: '18CSL13',
+                        },
+                        {
+                            subject: 'Universal Human Values-1',
+                            credit: 0,
+                            subjectCode: '18MCL11',
+                        },
+                    ],
+                },
+                2: {
+                    subject: [
+                        {
+                            subject: 'Communicative English – II',
+                            credit: 3,
+                            subjectCode: '18ENT21',
+                        },
+                        {
+                            subject: 'Engineering Mathematics-II',
+                            credit: 4,
+                            subjectCode: '18MAT21',
+                        },
+                        {
+                            subject: 'Biochemistry',
+                            credit: 3,
+                            subjectCode: '18BMT21',
+                        },
+                        {
+                            subject: 'Human Anatomy and Physiology',
+                            credit: 3,
+                            subjectCode: '18BMT22',
+                        },
+                        {
+                            subject: 'Medical Physics',
+                            credit: 3,
+                            subjectCode: '18BMT23',
+                        },
+                        {
+                            subject: 'Engineering Graphics',
+                            credit: 4,
+                            subjectCode: '18MEC11',
+                        },
+                        {
+                            subject: 'Physics and Chemistry Laboratory – II',
+                            credit: 1,
+                            subjectCode: '18PHL21',
+                        },
+                        {
+                            subject: 'Workshop Practices Laboratory',
+                            credit: 1,
+                            subjectCode: '18MEL21',
+                        },
+                        {
+                            subject: 'Biochemistry and Human Physiology Laboratory',
+                            credit: 1,
+                            subjectCode: '18BML21',
+                        },
+                    ],
+                },
+                3: {
+                    subject: [
+                        {
+                            subject: 'Transforms and Partial Differential Equations',
+                            credit: 4,
+                            subjectCode: '18MAT31',
+                        },
+                        {
+                            subject: 'Signals and Systems',
+                            credit: 4,
+                            subjectCode: '18ECT31',
+                        },
+                        {
+                            subject: 'Pathology and Microbiology',
+                            credit: 3,
+                            subjectCode: '18BMT31',
+                        },
+                        {
+                            subject: 'Sensors and Measurements',
+                            credit: 3,
+                            subjectCode: '18BMT32',
+                        },
+                        {
+                            subject: 'Semiconductor Devices',
+                            credit: 3,
+                            subjectCode: '18BMT33',
+                        },
+                        {
+                            subject: 'Circuits and Devices Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL21',
+                        },
+                        {
+                            subject: 'Pathology and Microbiology Laboratory',
+                            credit: 1,
+                            subjectCode: '18BML31',
+                        },
+                        {
+                            subject: 'Environmental Science and Engineering',
+                            credit: 0,
+                            subjectCode: '18MCT02',
+                        },
+                        {
+                            subject: 'Essential English For Professionals',
+                            credit: 0,
+                            subjectCode: '18MCL03',
+                        },
+                    ],
+                },
+                4: {
+                    subject: [
+                        {
+                            subject: 'Probability and Random Processes',
+                            credit: 4,
+                            subjectCode: '18MAT41',
+                        },
+                        {
+                            subject: 'Data Structures using Object Oriented Programming concepts',
+                            credit: 4,
+                            subjectCode: '18ITC41',
+                        },
+                        {
+                            subject: 'Electronic Circuits',
+                            credit: 4,
+                            subjectCode: '18BMT41',
+                        },
+                        {
+                            subject: 'Analog and Digital Integrated Circuits',
+                            credit: 4,
+                            subjectCode: '18BMT42',
+                        },
+                        {
+                            subject: 'Biomaterials and Artificial Organs',
+                            credit: 3,
+                            subjectCode: '18BMT43',
+                        },
+                        {
+                            subject: 'Hospital Management',
+                            credit: 3,
+                            subjectCode: '18BMT44',
+                        },
+                        {
+                            subject: 'Electronic Circuits Laboratory',
+                            credit: 1,
+                            subjectCode: '18BML41',
+                        },
+                        {
+                            subject: 'Analog and Digital Integrated Circuits Laboratory',
+                            credit: 1,
+                            subjectCode: '18BML42',
+                        },
+                        {
+                            subject: 'Professional Communication',
+                            credit: 0,
+                            subjectCode: '18MCL04',
+                        },
+                    ],
+                },
+                5: {
+                    subject: [
+                        {
+                            subject: 'Analog and Digital Communication',
+                            credit: 3,
+                            subjectCode: '18ECT46',
+                        },
+                        {
+                            subject: 'Microprocessor and Microcontroller',
+                            credit: 3,
+                            subjectCode: '18ECT51',
+                        },
+                        {
+                            subject: 'Medical Instrumentation – I',
+                            credit: 3,
+                            subjectCode: '18BMT51',
+                        },
+                        {
+                            subject: 'Bio Control Systems',
+                            credit: 4,
+                            subjectCode: '18BMT52',
+                        },
+                        {
+                            subject: 'Professional Elective–I',
+                            credit: 3,
+                            subjectCode: 'PE–I',
+                        },
+                        {
+                            subject: 'Open Elective-I',
+                            credit: 3,
+                            subjectCode: 'OE-I',
+                        },
+                        {
+                            subject: 'Microprocessor and Microcontroller Laboratory',
+                            credit: 1,
+                            subjectCode: '18ECL51',
+                        },
+                        {
+                            subject: 'Medical Instrumentation Laboratory - I',
+                            credit: 1,
+                            subjectCode: '18BML51',
+                        },
+                        {
+                            subject: 'Aptitude and logical Reasoning',
+                            credit: 0,
+                            subjectCode: '18MCT05',
+                        },
+                        {
+                            subject: 'Professional Ethics for Engineers',
+                            credit: 0,
+                            subjectCode: '18MCT06',
+                        },
+                        {
+                            subject: 'Communication Skills Laboratory',
+                            credit: 0,
+                            subjectCode: '18MCL09',
+                        },
+                    ],
+                },
+                6: {
+                    subject: [
+                        {
+                            subject: 'Biosignal Processing',
+                            credit: 4,
+                            subjectCode: '18BMT61',
+                        },
+                        {
+                            subject: 'Medical Instrumentation - II',
+                            credit: 3,
+                            subjectCode: '18BMT62',
+                        },
+                        {
+                            subject: 'Radiological Equipment',
+                            credit: 3,
+                            subjectCode: '18BMT63',
+                        },
+                        {
+                            subject: 'Professional Elective – II',
+                            credit: 3,
+                            subjectCode: 'PE–II',
+                        },
+                        {
+                            subject: 'Professional Elective – III',
+                            credit: 3,
+                            subjectCode: 'PE–III',
+                        },
+                        {
+                            subject: 'OpenElective–II',
+                            credit: 3,
+                            subjectCode: 'OE–II',
+                        },
+                        {
+                            subject: 'Biosignal Processing Laboratory',
+                            credit: 1,
+                            subjectCode: '18BML61',
+                        },
+                        {
+                            subject: 'Medical Instrumentation Laboratory – II',
+                            credit: 1,
+                            subjectCode: '18BML62',
+                        },
+                        {
+                            subject: 'Mini Project',
+                            credit: 3,
+                            subjectCode: '18BML63',
+                        },
+                        {
+                            subject: 'Arithmetic and Analytical ability',
+                            credit: 0,
+                            subjectCode: '18MCT07',
+                        },
+                    ],
+                },
+                7: {
+                    subject: [
+                        {
+                            subject: 'Economics and Management for Engineers',
+                            credit: 3,
+                            subjectCode: '18ITT71',
+                        },
+                        {
+                            subject: 'Universal Human Values-2',
+                            credit: 3,
+                            subjectCode: '18MCT12',
+                        },
+                        {
+                            subject: 'Digital Image Processing',
+                            credit: 3,
+                            subjectCode: '18BMT72',
+                        },
+                        {
+                            subject: 'ProfessionalElective - IV',
+                            credit: 3,
+                            subjectCode: 'PE-IV',
+                        },
+                        {
+                            subject: 'OpenElective – III',
+                            credit: 3,
+                            subjectCode: 'OE–III',
+                        },
+                        {
+                            subject: 'Digital Image Processing Laboratory',
+                            credit: 1,
+                            subjectCode: '18BML71',
+                        },
+                        {
+                            subject: 'Hospital Training',
+                            credit: 2,
+                            subjectCode: '18BML72',
+                        },
+                        {
+                            subject: 'Indian Constitution and Traditional knowledge',
+                            credit: 0,
+                            subjectCode: '18MCT08',
+                        },
+                    ],
+                },
+                8: {
+                    subject: [
+                        {
+                            subject: 'Professional Elective - V',
+                            credit: 3,
+                            subjectCode: '18BMExx',
+                        },
+                        {
+                            subject: 'Professional Elective - VI',
+                            credit: 3,
+                            subjectCode: '18BMExx',
+                        },
+                        {
+                            subject: 'Project Work',
+                            credit: 10,
+                            subjectCode: '18ECL81',
+                        },
+                    ],
+                },
+            },
         },
     },
     AU: {
