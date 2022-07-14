@@ -14,12 +14,14 @@ import LoginDialog from './components/LoginDialog/LoginDialog'
 import AuthProvider from './provider/AuthProvider'
 import AboutUs from './components/Main/AboutUs/AboutUs'
 import ContactUs from './components/Main/ContactUs/ContactUs'
+import ForgotPassDialog from './components/ForgotPassDialog/ForgotPassDialog'
 
 function App() {
     const theme = useContext(themeContext)
 
     const [darkMode, setDarkMode] = useState(false)
     const [loginDialogOpen, setLoginDialogOpen] = useState(false)
+    const [forgotPassDialogOpen, setForgotPassDialogOpen] = useState(false)
 
     useEffect(() => {
         console.log(process.env.REACT_APP_ENV_NAME)
@@ -67,13 +69,21 @@ function App() {
                                                 rel="noreferrer"
                                             >
                                                 Udaya
-                                            </a>{' '}
-                                            with ❤️
+                                            </a>
+                                            ✨
                                         </Typography>
                                     </Grid>
                                 </Grid>
                             </Container>
-                            <LoginDialog loginDialogOpen={loginDialogOpen} setLoginDialogOpen={setLoginDialogOpen} />
+                            <LoginDialog
+                                loginDialogOpen={loginDialogOpen}
+                                setLoginDialogOpen={setLoginDialogOpen}
+                                setForgotPassDialogOpen={setForgotPassDialogOpen}
+                            />
+                            <ForgotPassDialog
+                                forgotPassDialogOpen={forgotPassDialogOpen}
+                                setForgotPassDialogOpen={setForgotPassDialogOpen}
+                            />
                         </Box>
                     </ThemeProvider>
                 </themeContext.Provider>
