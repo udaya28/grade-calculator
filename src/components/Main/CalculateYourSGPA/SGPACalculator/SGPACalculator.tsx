@@ -15,28 +15,14 @@ interface Props {
 }
 
 function SGPACalculator({ mainData, dispatch, currentAccordion, setCurrentAccordion }: Props) {
-    // console.log(mainData)
-    // const { semesters } = mainData
-
     const handleAccordionChange = (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
         console.log({ panel, event })
         setCurrentAccordion(isExpanded ? panel : 0)
     }
 
-    // const executeScroll = () => {
     const executeScroll = (myRef: any) => {
         myRef.current.scrollIntoView(true)
-        // setTimeout(() => {
-        //     window.scrollTo(0,300)
-        //     // window.scrollBy(0, 100)
-        // }, 1000)
-        // console.log(myRef.current.)
     }
-
-    // useEffect(() => {
-    //     console.log('currentAccordion', currentAccordion)
-    //     setCurrentAccordion(0)
-    // }, [semesters])
 
     return (
         <Grid item xs={12}>
@@ -60,7 +46,6 @@ function SGPACalculator({ mainData, dispatch, currentAccordion, setCurrentAccord
                             mainData?.semesters &&
                             Array.from(Array(Object.keys(mainData.semesters).length).keys()).map((semesterNumber) => (
                                 <SemesterDetails
-                                    // key={`${mainData.college}-${mainData.regulation}-${mainData.department}-${semesterNumber}`}
                                     executeScroll={executeScroll}
                                     key={`${semesterNumber}`}
                                     semesterNumber={semesterNumber + 1}

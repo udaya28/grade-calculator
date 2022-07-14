@@ -21,10 +21,11 @@ const sxStyles = {
 
 interface Props {
     setTabValue: any
-    setLoginDialogOpen: any
+    setLoginDialogOpen: (value: boolean) => void
+    setForgotPassDialogOpen: (value: boolean) => void
 }
 
-function SignIn({ setTabValue, setLoginDialogOpen }: Props) {
+function SignIn({ setTabValue, setLoginDialogOpen, setForgotPassDialogOpen }: Props) {
     const [openSnackBar, setOpenSnackBar] = useState({
         open: false,
         message: '',
@@ -74,6 +75,11 @@ function SignIn({ setTabValue, setLoginDialogOpen }: Props) {
                 setSignInError(message)
             }
         }
+    }
+
+    const openForgotPasswordDialog = () => {
+        setLoginDialogOpen(false)
+        setForgotPassDialogOpen(true)
     }
 
     return (
@@ -158,7 +164,17 @@ function SignIn({ setTabValue, setLoginDialogOpen }: Props) {
                     </Grid>
                 </Grid>
             )}
-
+            <Grid item xs={12}>
+                <Grid container justifyContent="flex-end">
+                    <Typography
+                        // variant="button"
+                        onClick={() => openForgotPasswordDialog()}
+                        sx={{ color: 'primary.main', fontSize: '12px' }}
+                    >
+                        Forgot Password?
+                    </Typography>
+                </Grid>
+            </Grid>
             <Grid item xs={12}>
                 <Grid container justifyContent="center">
                     <Grid item>

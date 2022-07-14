@@ -8,9 +8,10 @@ import SignUp from './SignUp/SignUp'
 interface Props {
     loginDialogOpen: boolean
     setLoginDialogOpen: (value: boolean) => void
+    setForgotPassDialogOpen: (value: boolean) => void
 }
 
-function LoginDialog({ loginDialogOpen, setLoginDialogOpen }: Props) {
+function LoginDialog({ loginDialogOpen, setLoginDialogOpen, setForgotPassDialogOpen }: Props) {
     const [tabValue, setTabValue] = useState('sign-in')
     const handleDialogClose = () => {
         setLoginDialogOpen(false)
@@ -45,7 +46,11 @@ function LoginDialog({ loginDialogOpen, setLoginDialogOpen }: Props) {
                             </TabList>
                         </Box>
                         <TabPanel value="sign-in" sx={{ p: '10px' }}>
-                            <SignIn setTabValue={setTabValue} setLoginDialogOpen={setLoginDialogOpen} />
+                            <SignIn
+                                setTabValue={setTabValue}
+                                setLoginDialogOpen={setLoginDialogOpen}
+                                setForgotPassDialogOpen={setForgotPassDialogOpen}
+                            />
                         </TabPanel>
                         <TabPanel value="sign-up" sx={{ p: '10px' }}>
                             <SignUp setTabValue={setTabValue} setLoginDialogOpen={setLoginDialogOpen} />
