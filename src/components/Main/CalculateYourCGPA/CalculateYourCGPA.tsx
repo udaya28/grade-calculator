@@ -29,9 +29,9 @@ const init = (semesterDetails: Array<any>, noOfSemesters: number, semesters: any
         const semester = semesters[i + 1 + semesterDetails.length]
         // console.log('semester', semester)
         data.push({
-            semesterNumber: i + 1 + semesterDetails.length,
-            totalCredits: semester?.subject?.reduce((acc: number, curr: any) => acc + curr.credit, 0),
-            SGPA: semester?.subject ? calculateSGPA(semester?.subject) : '',
+            semesterNumber: i + 1 + semesterDetails.length || 1,
+            totalCredits: semester?.subject?.reduce((acc: number, curr: any) => acc + curr.credit, 0) || 0,
+            SGPA: semester?.subject ? calculateSGPA(semester?.subject) : '' || '',
         })
     }
     return data

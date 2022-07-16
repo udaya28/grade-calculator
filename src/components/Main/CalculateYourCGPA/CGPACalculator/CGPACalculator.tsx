@@ -62,7 +62,7 @@ const sxProps: SxProps<Theme> = {
 const displayCGPA = (semesterDetails: Array<any>) => {
     const totalCredits = semesterDetails.reduce((acc, curr) => acc + +curr.totalCredits, 0)
     const totalGradePoints = semesterDetails.reduce((acc, curr) => acc + +curr.totalCredits * +curr.SGPA, 0)
-    return totalCredits === 0 ? 0 : (totalGradePoints / totalCredits).toFixed(2)
+    return (totalCredits === 0 ? 0 : (totalGradePoints / totalCredits).toFixed(2)) || 0
 }
 
 interface SemesterDetails {
