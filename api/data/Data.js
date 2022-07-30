@@ -307,7 +307,7 @@ const DATA = {
                 6: {
                     subject: [
                         { subject: 'Web Technology', credit: 4, subjectCode: '18ITC61' },
-                        { subject: 'Mobile Application Development ', credit: 4, subjectCode: '18ITT61' },
+                        { subject: 'Mobile Application Development ', credit: 3, subjectCode: '18ITT61' },
                         { subject: 'Cloud Computing ', credit: 3, subjectCode: '18CSE07' },
                         {
                             subject: 'Professional Elective - II',
