@@ -1612,7 +1612,7 @@ const DATA = {
                     ],
                 },
             },
-            MECH: {
+            CIVIL: {
                 1: {
                     subject: [
                         {
@@ -1991,7 +1991,7 @@ const DATA = {
                     ],
                 },
             },
-            CIVIL: {
+            MECH: {
                 1: {
                     subject: [
                         {
