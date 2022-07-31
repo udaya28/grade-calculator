@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import { getAuth, signOut } from 'firebase/auth'
@@ -27,9 +27,9 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
     // ]
     const user = useContext(AuthContext)
 
-    useEffect(() => {
-        console.log('user in Header', user?.uid)
-    }, [user])
+    // useEffect(() => {
+    //     console.log('user in Header', user?.uid)
+    // }, [user])
 
     const handleLoginClick = () => {
         setLoginDialogOpen(true)
@@ -43,10 +43,10 @@ function Header({ darkMode, handleThemeChange, setLoginDialogOpen }: Props) {
                 open: true,
                 message: 'Sign Out Successfully',
             })
-            console.log('sign out success')
-            console.log('id', user.uid)
+            // console.log('sign out success')
+            // console.log('id', user.uid)
         } catch (error) {
-            console.log('error in sign out', error)
+            // console.log('error in sign out', error)
         }
     }
 

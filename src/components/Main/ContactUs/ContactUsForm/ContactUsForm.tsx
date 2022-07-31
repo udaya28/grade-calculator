@@ -32,11 +32,11 @@ function ContactUsForm() {
     // const [messageError, setMessageError] = useState(false)
 
     const postMessage = async (data: any) => {
-        console.log('post message')
+        // console.log('post message')
         try {
             const document = doc(firestoreDB, 'contactUs', `${Date.now()}`)
             await setDoc(document, { ...data })
-            console.log('Message written with ID: ', document.id)
+            // console.log('Message written with ID: ', document.id)
             setOpenSnackBar({
                 open: true,
                 message: 'Message Sent Successfully',
@@ -51,27 +51,27 @@ function ContactUsForm() {
     }
 
     const handleSend = async () => {
-        console.log('Send')
-        console.log(name, email, message)
+        // console.log('Send')
+        // console.log(name, email, message)
         if (name !== '' && email !== '' && message !== '') {
             setError('')
             if (name.length > 2 && email.length > 2 && message.length > 2) {
                 // if()
-                // console.log(validateEmail(email))
-                console.log('valid')
+                // // console.log(validateEmail(email))
+                // console.log('valid')
                 try {
                     await postMessage({ name, email, message })
                     setName('')
                     setEmail('')
                     setMessage('')
-                    console.log('Message sent')
+                    // console.log('Message sent')
                 } catch (err: any) {
-                    console.log(err)
+                    // console.log(err)
                     setError('Something went wrong, please try again later')
                 }
             }
         } else {
-            console.log('Fill all fields')
+            // console.log('Fill all fields')
             setError('Fill all fields')
         }
     }

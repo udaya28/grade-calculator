@@ -35,31 +35,31 @@ function ForgotPassDialog({ forgotPassDialogOpen, setForgotPassDialogOpen }: Pro
     const handleForgotPassword = async () => {
         setResetEmailError('')
         setResetEmailSuccess(false)
-        console.log('Forgot password')
+        // console.log('Forgot password')
         try {
             await sendPasswordReset(email)
-            console.log('Email sent to', email)
+            // console.log('Email sent to', email)
             setResetEmailSuccess(true)
             setOpenSnackBar({ open: true, message: 'Password reset link has been sent to your email' })
         } catch (error: any) {
-            console.log(JSON.stringify(error))
+            // console.log(JSON.stringify(error))
             const { code } = error
             let message = ''
             switch (code) {
                 case 'auth/invalid-email':
-                    console.log('Invalid email')
+                    // console.log('Invalid email')
                     message = 'Invalid email, Enter a valid email address'
                     break
                 case 'auth/user-not-found':
-                    console.log('User not found')
+                    // console.log('User not found')
                     message = 'User not found, Enter a valid email address'
                     break
                 default:
-                    console.log('Something went wrong')
+                    // console.log('Something went wrong')
                     message = 'Something went wrong, Contact support'
                     break
             }
-            console.log(message)
+            // console.log(message)
             setResetEmailError(message)
         }
     }

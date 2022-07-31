@@ -16,12 +16,12 @@ function SaveData({ mainData }: Props) {
     })
     const user = useContext(AuthContext)
     const handleSave = async () => {
-        console.log('save')
+        // console.log('save')
         if (user && user.uid) {
             try {
                 const document = doc(firestoreDB, 'users', user.uid)
                 await setDoc(document, { data: JSON.stringify(mainData) }, { merge: true })
-                console.log('Document written with ID: ', user.uid)
+                // console.log('Document written with ID: ', user.uid)
                 setOpenSnackBar({
                     open: true,
                     message: 'Data Saved Successfully',

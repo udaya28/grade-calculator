@@ -51,7 +51,7 @@ const getGrade = (semester: string, currentSubject: any, state: any, payload: an
 const addGrade = (payload: any, state: any): any => {
     localFetchedData = getLocalStorage('fetchedData')
     const { semesters } = payload
-    console.log('state.semesters', state.semesters[1])
+    // console.log('state.semesters', state.semesters[1])
     const data: any = {}
     if (!semesters) return data
     Object.keys(semesters).forEach((semester) => {
@@ -72,7 +72,7 @@ const addGrade = (payload: any, state: any): any => {
 }
 
 function reducer(state: any, action: any) {
-    console.log({ state }, { action })
+    // console.log({ state }, { action })
     switch (action.type) {
         case 'ADD': {
             return {
@@ -119,7 +119,7 @@ function reducer(state: any, action: any) {
 
         case 'UPDATE_GRADE_DETAILS': {
             const currentSemesterNumber = action.payload.semesterNumber
-            console.log(state.semesters, currentSemesterNumber)
+            // console.log(state.semesters, currentSemesterNumber)
             const data = {
                 ...state,
                 semesters: {
@@ -128,7 +128,7 @@ function reducer(state: any, action: any) {
                         ...state.semesters[currentSemesterNumber],
                         subject: state.semesters[currentSemesterNumber].subject.map((subject: any) => {
                             if (subject.subject === action.payload.subjectName) {
-                                console.log(action.payload.grade)
+                                // console.log(action.payload.grade)
                                 return {
                                     ...subject,
                                     grade: action.payload.grade,
@@ -139,7 +139,7 @@ function reducer(state: any, action: any) {
                     },
                 },
             }
-            console.log(data)
+            // console.log(data)
             return data
         }
         default:

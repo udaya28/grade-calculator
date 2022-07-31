@@ -25,14 +25,14 @@ function Main() {
     }, [mainData])
 
     const fetchData = async () => {
-        console.log('fetching data')
+        // console.log('fetching data')
         try {
             if (user && user.uid) {
                 console.log('user.uid', user.uid)
                 const document = doc(firestoreDB, 'users', user.uid)
                 const docSnap = await getDoc(document)
                 if (docSnap.exists()) {
-                    console.log('Document data:', docSnap.data())
+                    // // console.log('Document data:', docSnap.data())
                     const allFetchedData = docSnap.data()
                     if (allFetchedData?.data) {
                         const parsedData = JSON.parse(allFetchedData.data)
@@ -40,16 +40,16 @@ function Main() {
                         dispatch({ type: 'SET_FETCHED_DATA', payload: parsedData })
                     }
                 } else {
-                    console.log('No such document!')
+                    // console.log('No such document!')
                 }
             }
         } catch (error) {
-            console.log('error', error)
+            // console.log('error', error)
         }
     }
 
     useEffect(() => {
-        console.log('AuthContext USER in main', user)
+        // console.log('AuthContext USER in main', user)
         fetchData()
     }, [user])
 

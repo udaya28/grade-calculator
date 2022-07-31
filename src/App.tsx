@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import { BrowserRouter } from 'react-router-dom'
-import axios from 'axios'
 import { Box, Container, Grid, Typography } from '@mui/material'
 // import { setDoc, doc } from 'firebase/firestore'
-import { URL } from './constants/config'
 import Header from './components/Header/Header'
 import { darkTheme, lightTheme } from './theme/Themes'
 import themeContext from './theme/ThemeHandler'
@@ -24,9 +22,9 @@ function App() {
     const [forgotPassDialogOpen, setForgotPassDialogOpen] = useState(false)
 
     useEffect(() => {
-        console.log(process.env.REACT_APP_ENV_NAME)
-        console.log(darkMode)
-        axios.get(`${URL.FULL_URL}/data`).then((data) => console.log(data))
+        // console.log(process.env.REACT_APP_ENV_NAME)
+        // console.log(darkMode)
+        // axios.get(`${URL.FULL_URL}/data`).then((data) => console.log(data))
         if (localStorage.getItem('preferred-theme') === 'dark') {
             setDarkMode(true)
         }

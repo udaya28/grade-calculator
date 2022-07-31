@@ -11,7 +11,7 @@ function AuthProvider({ children }: any) {
             if (data) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/firebase.User
-                console.log('User is signed in', data)
+                // console.log('User is signed in', data)
                 setUser(data)
                 // ...
             } else {

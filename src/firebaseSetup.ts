@@ -19,16 +19,16 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-console.log('app')
+// console.log('app')
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const analytics = getAnalytics(app)
-console.log('analytics')
+// console.log('analytics')
 
 // const auth = getAuth(app);
 // console.log('auth');
 
 const firestoreDB = getFirestore(app)
-console.log('firestoreDB')
+// console.log('firestoreDB')
 
 // eslint-disable-next-line import/prefer-default-export
 export { firestoreDB }

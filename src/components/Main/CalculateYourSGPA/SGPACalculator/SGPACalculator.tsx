@@ -16,7 +16,7 @@ interface Props {
 
 function SGPACalculator({ mainData, dispatch, currentAccordion, setCurrentAccordion }: Props) {
     const handleAccordionChange = (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-        console.log({ panel, event })
+        // console.log({ panel, event })
         setCurrentAccordion(isExpanded ? panel : 0)
     }
 

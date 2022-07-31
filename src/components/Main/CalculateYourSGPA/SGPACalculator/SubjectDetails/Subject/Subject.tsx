@@ -74,7 +74,7 @@ function Subject({ subjectDetails, semesterNumber, dispatch }: Props) {
     }
 
     const handleGradeChange = (event: SelectChangeEvent<string>) => {
-        console.log(event)
+        // console.log(event)
         dispatch({
             type: 'UPDATE_GRADE_DETAILS',
             payload: {

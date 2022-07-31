@@ -49,21 +49,21 @@ function DetailsForm({ dispatch, mainData, setCurrentAccordion }: Props) {
     const fetchCollege = async () => {
         const response = await fetch(`${URL.FULL_URL}/data`)
         const data = await response.json()
-        console.log(data.colleges)
+        // console.log(data.colleges)
         setColleges(['None', ...data.colleges])
     }
 
     const fetchRegulation = async () => {
         const response = await fetch(`${URL.FULL_URL}/data?college=${selectedCollege}`)
         const data = await response.json()
-        console.log(data.regulations)
+        // console.log(data.regulations)
         setRegulations(data.regulations)
     }
 
     const fetchDepartment = async () => {
         const response = await fetch(`${URL.FULL_URL}/data?college=${selectedCollege}&regulation=${selectedRegulation}`)
         const data = await response.json()
-        console.log(data.departments)
+        // console.log(data.departments)
         setDepartments(data.departments)
     }
 
@@ -89,7 +89,7 @@ function DetailsForm({ dispatch, mainData, setCurrentAccordion }: Props) {
     }, [])
 
     useEffect(() => {
-        console.log('selectedCollege Change', selectedCollege)
+        // console.log('selectedCollege Change', selectedCollege)
         setLocalStorage('selectedCollege', selectedCollege)
         if (selectedCollege !== 'None' && selectedCollege !== '') {
             fetchRegulation()

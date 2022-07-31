@@ -57,7 +57,7 @@ function displayResult(subjects: Array<any>) {
     let result = 0
     const totalCredit = subjects.reduce((acc, curr) => acc + curr.credit, 0)
     const totalGradePoints = subjects.reduce((acc, curr) => acc + (curr.grade ? curr.grade : 0) * curr.credit, 0)
-    // console.log({ totalCredit, totalGradePoints })
+    // // console.log({ totalCredit, totalGradePoints })
     result = totalGradePoints / totalCredit
     return result.toFixed(2)
 }
@@ -90,14 +90,14 @@ function SemesterDetails({
                 sx={{ backgroundColor: 'inherit' }}
                 expanded={currentAccordion === semesterNumber}
                 onChange={handleAccordionChange(semesterNumber)}
-                // onChange={(e: React.SyntheticEvent, expanded: boolean) => console.log(expanded)}
+                // onChange={(e: React.SyntheticEvent, expanded: boolean) => // console.log(expanded)}
             >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon sx={{ color: 'secondary.main' }} />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
-                    onClick={(e) => {
-                        console.log(e.target)
+                    onClick={() => {
+                        // console.log(e.target)
                         executeScroll(myRef)
                         // e.target.scrollIntoView({ behavior: 'smooth' })
                     }}

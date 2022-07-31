@@ -45,33 +45,33 @@ function SignUp({ setTabValue, setLoginDialogOpen }: Props) {
             setPasswordError(true)
             return
         }
-        console.log('Sign up')
-        console.log(email, password, confirmPassword)
+        // console.log('Sign up')
+        // console.log(email, password, confirmPassword)
         if (email !== '' && password !== '' && confirmPassword !== '') {
             try {
-                const res = await createNewUserWithEmail(email, password)
-                console.log('user created', res)
+                await createNewUserWithEmail(email, password)
+                // console.log('user created', res)
                 setLoginDialogOpen(false)
                 setOpenSnackBar({ open: true, message: 'Signed Up Successfully' })
             } catch (error: any) {
-                console.log(JSON.stringify(error))
+                // console.log(JSON.stringify(error))
                 const { code } = error
                 let message = ''
                 switch (code) {
                     case 'auth/invalid-email':
-                        console.log('Invalid email')
+                        // console.log('Invalid email')
                         message = 'Invalid email, Enter a valid email address'
                         break
                     case 'auth/weak-password':
-                        console.log('Weak password')
+                        // console.log('Weak password')
                         message = 'Weak password, Password must be at least 6 characters long'
                         break
                     case 'auth/email-already-in-use':
-                        console.log('Email already in use')
+                        // console.log('Email already in use')
                         message = 'Email already in use, Enter a different email address'
                         break
                     default:
-                        console.log('Something went wrong')
+                        // console.log('Something went wrong')
                         message = 'Something went wrong, Contact support'
                         break
                 }

@@ -39,36 +39,36 @@ function SignIn({ setTabValue, setLoginDialogOpen, setForgotPassDialogOpen }: Pr
     }
 
     const handleSignIn = async () => {
-        console.log('Sign in')
-        console.log(email, password)
+        // console.log('Sign in')
+        // console.log(email, password)
         if (email !== '' && password !== '') {
             // signInWithEmailAndPassword
             try {
-                const res = await signInWithEmail(email, password)
-                console.log('user signed in', res)
+                await signInWithEmail(email, password)
+                // console.log('user signed in', res)
                 setLoginDialogOpen(false)
                 // setTimeout(() => {
                 //     setOpenSnackBar({ open: true, message: 'Signed In Successfully' })
                 // }, 5000)
             } catch (error: any) {
-                console.log(JSON.stringify(error))
+                // console.log(JSON.stringify(error))
                 const { code } = error
                 let message = ''
                 switch (code) {
                     case 'auth/invalid-email':
-                        console.log('Invalid email')
+                        // console.log('Invalid email')
                         message = 'Invalid email, Enter a valid email address'
                         break
                     case 'auth/wrong-password':
-                        console.log('Wrong password')
+                        // console.log('Wrong password')
                         message = 'Wrong password, Enter a valid password'
                         break
                     case 'auth/user-not-found':
-                        console.log('User not found')
+                        // console.log('User not found')
                         message = 'User not found, Enter a valid email address'
                         break
                     default:
-                        console.log('Something went wrong')
+                        // console.log('Something went wrong')
                         message = 'Something went wrong, Contact support'
                         break
                 }
